@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Z1x-Ws-NvV" customClass="KKShareContent">
+            <rect key="frame" x="0.0" y="0.0" width="341" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWH-Be-Tgh">
+                    <rect key="frame" x="0.0" y="95" width="341" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="upg-13-9fi"/>
+                    </constraints>
+                    <state key="normal" title="取消">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tr9-NY-Uua">
+                    <rect key="frame" x="0.0" y="0.0" width="341" height="95"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="wWH-Be-Tgh" secondAttribute="bottom" id="Pba-On-2aU"/>
+                <constraint firstItem="wWH-Be-Tgh" firstAttribute="trailing" secondItem="Z1x-Ws-NvV" secondAttribute="trailing" id="TMq-uZ-4x9"/>
+                <constraint firstItem="tr9-NY-Uua" firstAttribute="leading" secondItem="Z1x-Ws-NvV" secondAttribute="leading" id="bwn-lu-1iy"/>
+                <constraint firstItem="tr9-NY-Uua" firstAttribute="top" secondItem="Z1x-Ws-NvV" secondAttribute="top" id="eOW-Qh-Glb"/>
+                <constraint firstItem="wWH-Be-Tgh" firstAttribute="leading" secondItem="Z1x-Ws-NvV" secondAttribute="leading" id="kqB-H8-sbC"/>
+                <constraint firstItem="wWH-Be-Tgh" firstAttribute="top" secondItem="tr9-NY-Uua" secondAttribute="bottom" id="nrI-UY-SwF"/>
+                <constraint firstAttribute="trailing" secondItem="tr9-NY-Uua" secondAttribute="trailing" id="r2v-ad-rol"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cancleBtn" destination="wWH-Be-Tgh" id="NCq-uZ-Ist"/>
+                <outlet property="scroll" destination="tr9-NY-Uua" id="762-nN-bZF"/>
+            </connections>
+            <point key="canvasLocation" x="-371" y="-12"/>
+        </view>
+    </objects>
+</document>

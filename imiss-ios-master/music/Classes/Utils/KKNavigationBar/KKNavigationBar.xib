@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="hHn-o4-YiS" customClass="KKNavigationBar">
+            <rect key="frame" x="0.0" y="0.0" width="354" height="62"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psd-gg-Jxs">
+                    <rect key="frame" x="177" y="23" width="0.0" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="794-qT-FaX">
+                    <rect key="frame" x="177" y="40" width="0.0" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s90-6c-ZmV">
+                    <rect key="frame" x="177" y="18" width="0.0" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4e5-NV-w2C">
+                    <rect key="frame" x="0.0" y="18" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="AjZ-Oj-2Ep"/>
+                        <constraint firstAttribute="width" secondItem="4e5-NV-w2C" secondAttribute="height" multiplier="1:1" id="DVa-mH-tDv"/>
+                    </constraints>
+                    <connections>
+                        <action selector="leftClick:" destination="hHn-o4-YiS" eventType="touchUpInside" id="FsJ-pe-ptL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nf0-tS-49R">
+                    <rect key="frame" x="310" y="18" width="44" height="44"/>
+                    <connections>
+                        <action selector="rightClick:" destination="hHn-o4-YiS" eventType="touchUpInside" id="l5h-rZ-b02"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="nf0-tS-49R" firstAttribute="width" secondItem="4e5-NV-w2C" secondAttribute="width" id="1G0-tO-8BG"/>
+                <constraint firstItem="s90-6c-ZmV" firstAttribute="height" secondItem="4e5-NV-w2C" secondAttribute="height" id="6EG-iN-Bbu"/>
+                <constraint firstAttribute="bottom" secondItem="4e5-NV-w2C" secondAttribute="bottom" id="9Np-7g-UEv"/>
+                <constraint firstItem="psd-gg-Jxs" firstAttribute="centerX" secondItem="hHn-o4-YiS" secondAttribute="centerX" id="Jeb-V1-ZbQ"/>
+                <constraint firstItem="794-qT-FaX" firstAttribute="centerX" secondItem="psd-gg-Jxs" secondAttribute="centerX" id="NWm-p1-lgg"/>
+                <constraint firstItem="794-qT-FaX" firstAttribute="top" secondItem="psd-gg-Jxs" secondAttribute="bottom" id="NyD-Lo-tja"/>
+                <constraint firstItem="s90-6c-ZmV" firstAttribute="centerX" secondItem="hHn-o4-YiS" secondAttribute="centerX" id="VP3-k6-4Oy"/>
+                <constraint firstItem="s90-6c-ZmV" firstAttribute="centerY" secondItem="4e5-NV-w2C" secondAttribute="centerY" id="Vcy-bP-7aP"/>
+                <constraint firstItem="nf0-tS-49R" firstAttribute="height" secondItem="4e5-NV-w2C" secondAttribute="height" id="aFB-ih-78d"/>
+                <constraint firstItem="794-qT-FaX" firstAttribute="height" secondItem="psd-gg-Jxs" secondAttribute="height" id="d3n-w8-Yz4"/>
+                <constraint firstItem="psd-gg-Jxs" firstAttribute="top" secondItem="4e5-NV-w2C" secondAttribute="top" constant="5" id="ejG-ZJ-8un"/>
+                <constraint firstAttribute="bottom" secondItem="nf0-tS-49R" secondAttribute="bottom" id="ojK-pb-Voz"/>
+                <constraint firstItem="4e5-NV-w2C" firstAttribute="leading" secondItem="hHn-o4-YiS" secondAttribute="leading" id="pHS-Iw-U5m"/>
+                <constraint firstAttribute="trailing" secondItem="nf0-tS-49R" secondAttribute="trailing" id="qji-oN-1Ol"/>
+                <constraint firstAttribute="bottom" secondItem="794-qT-FaX" secondAttribute="bottom" constant="5" id="ucy-8x-yj3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="detailLab" destination="794-qT-FaX" id="YsH-Ff-PP5"/>
+                <outlet property="leftBtn" destination="4e5-NV-w2C" id="BXX-h0-N1O"/>
+                <outlet property="nameLab" destination="psd-gg-Jxs" id="Nkd-35-Y8j"/>
+                <outlet property="rightBtn" destination="nf0-tS-49R" id="Zxq-CP-VGl"/>
+                <outlet property="titleLab" destination="s90-6c-ZmV" id="bPp-Mf-O6w"/>
+            </connections>
+            <point key="canvasLocation" x="-750" y="-127"/>
+        </view>
+    </objects>
+</document>

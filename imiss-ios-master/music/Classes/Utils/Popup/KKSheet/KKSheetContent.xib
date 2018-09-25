@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="UG7-0n-wzW" customClass="KKSheetContent">
+            <rect key="frame" x="0.0" y="0.0" width="340" height="234"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d2r-tQ-0jx">
+                    <rect key="frame" x="0.0" y="0.0" width="340" height="234"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="UG7-0n-wzW" id="BVn-2C-otu"/>
+                        <outlet property="delegate" destination="UG7-0n-wzW" id="R5f-rj-2D2"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="d2r-tQ-0jx" secondAttribute="bottom" id="HUt-kM-LWY"/>
+                <constraint firstAttribute="trailing" secondItem="d2r-tQ-0jx" secondAttribute="trailing" id="Ogj-v4-tsz"/>
+                <constraint firstItem="d2r-tQ-0jx" firstAttribute="leading" secondItem="UG7-0n-wzW" secondAttribute="leading" id="W8u-y4-AyL"/>
+                <constraint firstItem="d2r-tQ-0jx" firstAttribute="top" secondItem="UG7-0n-wzW" secondAttribute="top" id="mPI-f4-bEd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="table" destination="d2r-tQ-0jx" id="DJp-hE-yVC"/>
+            </connections>
+            <point key="canvasLocation" x="-262" y="114"/>
+        </view>
+    </objects>
+</document>
