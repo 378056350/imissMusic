@@ -11,7 +11,7 @@
 #import "HomeContent.h"
 
 #pragma mark - 声明
-@interface HomeController()
+@interface HomeController()<HomeTitleDelegate, HomeContentDelegate>
 
 @property (nonatomic, strong) HomeConfig *config;
 @property (nonatomic, strong) HomeTitle *header;
@@ -28,6 +28,18 @@
     [self header];
     [self scroll];
 }
+
+#pragma mark - HomeTitleDelegate
+- (void)homeTitle:(HomeTitle *)content selectedIndex:(NSInteger)selectedIndex {
+    [_scroll scrollWithIndex:selectedIndex];
+}
+
+#pragma mark - HomeContentDelegate
+- (void)homeContent:(HomeContent *)content progress:(CGFloat)progress originalIndex:(NSInteger)originalIndex targetIndex:(NSInteger)targetIndex {
+    [_header setProgress:progress originalIndex:originalIndex targetIndex:targetIndex];
+}
+
+#pragma mark - get
 - (HomeConfig *)config {
     if (!_config) {
         _config = [HomeConfig shareConfig];
@@ -39,6 +51,7 @@
     if (!_header) {
         _header = [HomeTitle loadCode:CGRectMake(0, StatusBarHeight, SCREEN_WIDTH, 44)];
         _header.config = [self config];
+        _header.delegate = self;
         [self.view addSubview:_header];
     }
     return _header;
@@ -51,6 +64,7 @@
             CGRectMake(0, top, SCREEN_WIDTH, height);
         })];
         _scroll.config = [self config];
+        _scroll.delegate = self;
         [self.view addSubview:_scroll];
     }
     return _scroll;

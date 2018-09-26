@@ -9,8 +9,22 @@
 #import "BaseView.h"
 #import "HomeConfig.h"
 
+
+#pragma mark - 代理
+@class HomeContent;
+@protocol HomeContentDelegate <NSObject>
+@optional
+- (void)homeContent:(HomeContent *)content progress:(CGFloat)progress originalIndex:(NSInteger)originalIndex targetIndex:(NSInteger)targetIndex;
+
+@end
+
+
+#pragma mark - 声明
 @interface HomeContent : BaseView
 
 @property (nonatomic, strong) HomeConfig *config;
+@property (nonatomic, weak  ) id<HomeContentDelegate> delegate;
+
+- (void)scrollWithIndex:(NSInteger)index;
 
 @end

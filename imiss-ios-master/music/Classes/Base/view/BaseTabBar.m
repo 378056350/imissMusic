@@ -13,7 +13,6 @@
 
 @property (strong, nonatomic) UIButton *composeButton;
 @property (nonatomic, strong) NSMutableArray *views;
-@property (nonatomic, strong) UIView *line;
 
 @end
 
@@ -37,7 +36,6 @@
 
 - (void)setupUI {
     [self setShadowLine:kColor_BG];
-    [self line];
 }
 
 - (void)layoutSubviews {
@@ -46,13 +44,13 @@
     
     for (id obj in self.subviews) {
         if ([obj isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
-            [obj removeFromSuperview];
+//            [obj removeFromSuperview];
+            [obj setAlpha:0];
         }
     }
     
     
     [self views];
-    [self bringSubviewToFront:self.line];
 }
 
 - (void)themeChanged {
@@ -109,7 +107,7 @@
             UIView *item = ({
                 UIView *item = [[UIView alloc] initWithFrame:({
                     CGFloat left = width * i;
-                    CGRectMake(left, 0, width, 30);
+                    CGRectMake(left, 0, width, 49);
                 })];
                 [item addSubview:icon];
                 [item setAllowNight:YES];
@@ -140,14 +138,6 @@
         }
     }
     return _views;
-}
-- (UIView *)line {
-    if (!_line) {
-        _line = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH / 3, 2)];
-        _line.backgroundColor = kColor_Text_Gary;
-        [self addSubview:_line];
-    }
-    return _line;
 }
 
 - (void)dealloc {

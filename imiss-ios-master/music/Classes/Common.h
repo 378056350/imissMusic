@@ -36,6 +36,7 @@
 #import "MJRefreshBackNormalFooter+Extension.h"
 #import "UIView+Visuals.h"
 #import "UITableView+Extension.h"
+#import "NSAttributedString+Extension.h"
 //#import "RLMRealm+Extension.h"
 //#import "RLMObject+Extension.h"
 #import "UMSocialManager+Extension.h"
