@@ -30,6 +30,11 @@
 - (void)setConfig:(HomeConfig *)config {
     _config = config;
     [_scroll setContentSize:CGSizeMake(config.titles.count * self.width, 0)];
+    for (int i=0; i<config.views.count; i++) {
+        UIView *view = config.views[i];
+        [view setFrame:CGRectMake(i * self.width, 0, self.width, self.height)];
+        [_scroll addSubview:view];
+    }
 }
 
 #pragma mark - 操作
@@ -69,6 +74,7 @@
         _scroll = [[UIScrollView alloc] initWithFrame:self.bounds];
         _scroll.delegate = self;
         _scroll.pagingEnabled = YES;
+        _scroll.showsHorizontalScrollIndicator = NO;
         [self addSubview:_scroll];
     }
     return _scroll;

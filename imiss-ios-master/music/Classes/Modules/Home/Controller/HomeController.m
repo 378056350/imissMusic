@@ -9,6 +9,7 @@
 #import "HomeController.h"
 #import "HomeTitle.h"
 #import "HomeContent.h"
+#import "HomeCollection.h"
 
 #pragma mark - 声明
 @interface HomeController()<HomeTitleDelegate, HomeContentDelegate>
@@ -16,6 +17,7 @@
 @property (nonatomic, strong) HomeConfig *config;
 @property (nonatomic, strong) HomeTitle *header;
 @property (nonatomic, strong) HomeContent *scroll;
+@property (nonatomic, strong) HomeCollection *collection;
 
 @end
 
@@ -44,6 +46,7 @@
     if (!_config) {
         _config = [HomeConfig shareConfig];
         _config.titles = @[@"asdad", @"zxczczxczxczxc"];
+        _config.views = @[self.collection, [UIView new]];
     }
     return _config;
 }
@@ -68,6 +71,16 @@
         [self.view addSubview:_scroll];
     }
     return _scroll;
+}
+- (HomeCollection *)collection {
+    if (!_collection) {
+        _collection = [HomeCollection initWithFrame:({
+            CGFloat top = CGRectGetMaxY(_header.frame);
+            CGFloat height = SCREEN_HEIGHT - TabbarHeight - top;
+            CGRectMake(0, 0, SCREEN_WIDTH, height);
+        })];
+    }
+    return _collection;
 }
 
 @end

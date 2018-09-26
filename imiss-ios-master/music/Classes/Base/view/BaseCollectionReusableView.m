@@ -13,7 +13,6 @@
 + (instancetype)initWithCollection:(UICollectionView *)collection kind:(NSString *)kind indexPath:(NSIndexPath *)indexPath {
     NSString *identifier = NSStringFromClass(self);
     BaseCollectionReusableView *view = [collection dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:identifier forIndexPath:indexPath];
-    [view initUI];
     return view;
 }
 

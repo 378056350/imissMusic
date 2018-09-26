@@ -12,7 +12,6 @@
 
 + (HomeConfig *)shareConfig {
     HomeConfig *config = [[HomeConfig alloc] init];
-    
     return config;
 }
 

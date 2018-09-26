@@ -25,6 +25,7 @@
 @property (nonatomic, strong) HomeConfig *config;
 @property (nonatomic, weak  ) id<HomeContentDelegate> delegate;
 
+// 滚动到某一个View
 - (void)scrollWithIndex:(NSInteger)index;
 
 @end

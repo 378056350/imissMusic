@@ -5,7 +5,7 @@ target 'music' do
   pod 'MJRefresh', '3.1.0'
   pod 'MBProgressHUD', '1.1.0'
   pod 'SDCycleScrollView', '1.75'
-  pod 'Realm', '3.7.6'
+  # pod 'Realm', '3.7.6'
 
   pod 'JZNavigationExtension', '1.5.0'
 # 网络

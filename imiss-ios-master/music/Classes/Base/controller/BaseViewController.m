@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, BarButtonItemState) {
     [self setJz_wantsNavigationBarVisible:NO];
     [self.navigationController.interactivePopGestureRecognizer setEnabled:YES];
     [self.navigationController.interactivePopGestureRecognizer setDelegate:self];
-    [self.view setBackgroundColor:kColor_White];
+    [self.view setBackgroundColor:kColor_BG];
     [self initUI];
 }
 - (void)initUI {

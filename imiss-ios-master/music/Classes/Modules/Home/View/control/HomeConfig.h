@@ -11,6 +11,7 @@
 @interface HomeConfig : NSObject
 
 @property (nonatomic, strong) NSArray<NSString *> *titles;
+@property (nonatomic, strong) NSArray<UIView *> *views;
 
 + (HomeConfig *)shareConfig;
 
