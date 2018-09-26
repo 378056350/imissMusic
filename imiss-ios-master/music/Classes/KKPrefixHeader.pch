@@ -19,8 +19,8 @@
 //======================================================================//
 //                                 主题
 //======================================================================//
-#import "UIView+UIConfig.h"
-#define kThemeDidChangeNotification @"kThemeDidChangeNotification"
+//#import "UIView+UIConfig.h"
+//#define kThemeDidChangeNotification @"kThemeDidChangeNotification"
 
 
 //======================================================================//

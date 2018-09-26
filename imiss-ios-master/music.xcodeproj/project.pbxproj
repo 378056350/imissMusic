@@ -52,9 +52,6 @@
 		4B1B33AE215A791F00A0C4D2 /* NSString+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B3370215A791F00A0C4D2 /* NSString+Encryption.m */; };
 		4B1B33AF215A791F00A0C4D2 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B3371215A791F00A0C4D2 /* NSString+Extension.m */; };
 		4B1B33B0215A791F00A0C4D2 /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B3375215A791F00A0C4D2 /* UITableView+Extension.m */; };
-		4B1B33B1215A791F00A0C4D2 /* ThemeConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B3379215A791F00A0C4D2 /* ThemeConst.m */; };
-		4B1B33B2215A791F00A0C4D2 /* ThemeConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B1B337A215A791F00A0C4D2 /* ThemeConfig.plist */; };
-		4B1B33B3215A791F00A0C4D2 /* UIView+UIConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B337B215A791F00A0C4D2 /* UIView+UIConfig.m */; };
 		4B1B33B4215A791F00A0C4D2 /* CALayer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B337F215A791F00A0C4D2 /* CALayer+Extension.m */; };
 		4B1B33C4215A79EF00A0C4D2 /* HomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B33C3215A79EF00A0C4D2 /* HomeController.m */; };
 		4B1B33C7215A7A1100A0C4D2 /* SheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B33C6215A7A1100A0C4D2 /* SheetController.m */; };
@@ -80,8 +77,6 @@
 		4B1B3416215A7C1600A0C4D2 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B33F5215A7C1500A0C4D2 /* EmptyView.m */; };
 		4B1B3417215A7C1600A0C4D2 /* SongModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B33F8215A7C1500A0C4D2 /* SongModel.m */; };
 		4B1B3418215A7C1600A0C4D2 /* SheetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B33F9215A7C1500A0C4D2 /* SheetModel.m */; };
-		4B1B3419215A7C1600A0C4D2 /* LogTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B1B33FD215A7C1500A0C4D2 /* LogTextField.xib */; };
-		4B1B341A215A7C1600A0C4D2 /* LogTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B33FF215A7C1500A0C4D2 /* LogTextField.m */; };
 		4B1B341B215A7C1600A0C4D2 /* KKNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B1B3401215A7C1500A0C4D2 /* KKNavigationBar.xib */; };
 		4B1B341C215A7C1600A0C4D2 /* KKNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B3403215A7C1500A0C4D2 /* KKNavigationBar.m */; };
 		4B1B34E5215A84DC00A0C4D2 /* HomePupularModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B34E4215A84DC00A0C4D2 /* HomePupularModel.m */; };
@@ -193,11 +188,6 @@
 		4B1B3372215A791F00A0C4D2 /* NSString+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Encryption.h"; sourceTree = "<group>"; };
 		4B1B3375215A791F00A0C4D2 /* UITableView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Extension.m"; sourceTree = "<group>"; };
 		4B1B3376215A791F00A0C4D2 /* UITableView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Extension.h"; sourceTree = "<group>"; };
-		4B1B3378215A791F00A0C4D2 /* UIView+UIConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIConfig.h"; sourceTree = "<group>"; };
-		4B1B3379215A791F00A0C4D2 /* ThemeConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeConst.m; sourceTree = "<group>"; };
-		4B1B337A215A791F00A0C4D2 /* ThemeConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ThemeConfig.plist; sourceTree = "<group>"; };
-		4B1B337B215A791F00A0C4D2 /* UIView+UIConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIConfig.m"; sourceTree = "<group>"; };
-		4B1B337C215A791F00A0C4D2 /* ThemeConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeConst.h; sourceTree = "<group>"; };
 		4B1B337E215A791F00A0C4D2 /* CALayer+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Extension.h"; sourceTree = "<group>"; };
 		4B1B337F215A791F00A0C4D2 /* CALayer+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Extension.m"; sourceTree = "<group>"; };
 		4B1B33C2215A79EF00A0C4D2 /* HomeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeController.h; sourceTree = "<group>"; };
@@ -243,9 +233,6 @@
 		4B1B33F9215A7C1500A0C4D2 /* SheetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SheetModel.m; sourceTree = "<group>"; };
 		4B1B33FA215A7C1500A0C4D2 /* SongModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongModel.h; sourceTree = "<group>"; };
 		4B1B33FB215A7C1500A0C4D2 /* Single.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Single.h; sourceTree = "<group>"; };
-		4B1B33FD215A7C1500A0C4D2 /* LogTextField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogTextField.xib; sourceTree = "<group>"; };
-		4B1B33FE215A7C1500A0C4D2 /* LogTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogTextField.h; sourceTree = "<group>"; };
-		4B1B33FF215A7C1500A0C4D2 /* LogTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogTextField.m; sourceTree = "<group>"; };
 		4B1B3401215A7C1500A0C4D2 /* KKNavigationBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KKNavigationBar.xib; sourceTree = "<group>"; };
 		4B1B3402215A7C1500A0C4D2 /* KKNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKNavigationBar.h; sourceTree = "<group>"; };
 		4B1B3403215A7C1500A0C4D2 /* KKNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKNavigationBar.m; sourceTree = "<group>"; };
@@ -525,7 +512,6 @@
 				4B1B336E215A791F00A0C4D2 /* NSString */,
 				4B1B3373215A791F00A0C4D2 /* UINavigationController */,
 				4B1B3374215A791F00A0C4D2 /* UITableView */,
-				4B1B3377215A791F00A0C4D2 /* Theme */,
 				4B1B337D215A791F00A0C4D2 /* CALayer */,
 			);
 			path = Categorys;
@@ -561,14 +547,14 @@
 		4B1B335A215A791F00A0C4D2 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				4B1B335B215A791F00A0C4D2 /* UIView+BorderLine.h */,
 				4B1B335C215A791F00A0C4D2 /* UIView+Extension.h */,
-				4B1B335D215A791F00A0C4D2 /* UIView+Visuals.h */,
-				4B1B335E215A791F00A0C4D2 /* UIView+BlockGesture.m */,
-				4B1B335F215A791F00A0C4D2 /* UIView+BorderLine.m */,
-				4B1B3360215A791F00A0C4D2 /* UIView+BlockGesture.h */,
-				4B1B3361215A791F00A0C4D2 /* UIView+Visuals.m */,
 				4B1B3362215A791F00A0C4D2 /* UIView+Extension.m */,
+				4B1B335D215A791F00A0C4D2 /* UIView+Visuals.h */,
+				4B1B3361215A791F00A0C4D2 /* UIView+Visuals.m */,
+				4B1B3360215A791F00A0C4D2 /* UIView+BlockGesture.h */,
+				4B1B335E215A791F00A0C4D2 /* UIView+BlockGesture.m */,
+				4B1B335B215A791F00A0C4D2 /* UIView+BorderLine.h */,
+				4B1B335F215A791F00A0C4D2 /* UIView+BorderLine.m */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -629,18 +615,6 @@
 				4B1B3376215A791F00A0C4D2 /* UITableView+Extension.h */,
 			);
 			path = UITableView;
-			sourceTree = "<group>";
-		};
-		4B1B3377215A791F00A0C4D2 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				4B1B3378215A791F00A0C4D2 /* UIView+UIConfig.h */,
-				4B1B3379215A791F00A0C4D2 /* ThemeConst.m */,
-				4B1B337A215A791F00A0C4D2 /* ThemeConfig.plist */,
-				4B1B337B215A791F00A0C4D2 /* UIView+UIConfig.m */,
-				4B1B337C215A791F00A0C4D2 /* ThemeConst.h */,
-			);
-			path = Theme;
 			sourceTree = "<group>";
 		};
 		4B1B337D215A791F00A0C4D2 /* CALayer */ = {
@@ -780,7 +754,6 @@
 				4B1B33F3215A7C1500A0C4D2 /* EmptyView */,
 				4B1B33F6215A7C1500A0C4D2 /* Model */,
 				4B1B33FB215A7C1500A0C4D2 /* Single.h */,
-				4B1B33FC215A7C1500A0C4D2 /* LogTextField */,
 				4B1B3400215A7C1500A0C4D2 /* KKNavigationBar */,
 			);
 			path = Utils;
@@ -902,16 +875,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		4B1B33FC215A7C1500A0C4D2 /* LogTextField */ = {
-			isa = PBXGroup;
-			children = (
-				4B1B33FD215A7C1500A0C4D2 /* LogTextField.xib */,
-				4B1B33FE215A7C1500A0C4D2 /* LogTextField.h */,
-				4B1B33FF215A7C1500A0C4D2 /* LogTextField.m */,
-			);
-			path = LogTextField;
-			sourceTree = "<group>";
-		};
 		4B1B3400215A7C1500A0C4D2 /* KKNavigationBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1022,11 +985,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B1B33B2215A791F00A0C4D2 /* ThemeConfig.plist in Resources */,
 				4B1B3404215A7C1600A0C4D2 /* KKSheet.xib in Resources */,
 				4B1B3409215A7C1600A0C4D2 /* KKSheetContent.xib in Resources */,
 				4B1B341B215A7C1600A0C4D2 /* KKNavigationBar.xib in Resources */,
-				4B1B3419215A7C1600A0C4D2 /* LogTextField.xib in Resources */,
 				4B43B939215921B3002F8567 /* LaunchScreen.storyboard in Resources */,
 				4B1B340D215A7C1600A0C4D2 /* KKShareContent.xib in Resources */,
 				4B1B3413215A7C1600A0C4D2 /* ThirdLogView.xib in Resources */,
@@ -1115,12 +1076,10 @@
 				4B1B33AD215A791F00A0C4D2 /* UICollectionReusableView+Extension.m in Sources */,
 				4B1B33CA215A7A2B00A0C4D2 /* MineController.m in Sources */,
 				4B1B3410215A7C1600A0C4D2 /* GradientButton.m in Sources */,
-				4B1B341A215A7C1600A0C4D2 /* LogTextField.m in Sources */,
 				4B1B339D215A791F00A0C4D2 /* BaseService.m in Sources */,
 				4B1B3398215A791F00A0C4D2 /* BaseViewController.m in Sources */,
 				4B1B33A8215A791F00A0C4D2 /* UIView+Visuals.m in Sources */,
 				4B1B3418215A7C1600A0C4D2 /* SheetModel.m in Sources */,
-				4B1B33B1215A791F00A0C4D2 /* ThemeConst.m in Sources */,
 				4B1B33A4215A791F00A0C4D2 /* UIButton+BarButtonItem.m in Sources */,
 				4B1B3380215A791F00A0C4D2 /* UMSocialManager+Extension.m in Sources */,
 				4B1B3387215A791F00A0C4D2 /* SGPageContentView.m in Sources */,
@@ -1168,7 +1127,6 @@
 				0488BD5E215B24C70006805F /* NSAttributedString+Extension.m in Sources */,
 				4B1B3385215A791F00A0C4D2 /* UIView+SGPagingView.m in Sources */,
 				4B1B339E215A791F00A0C4D2 /* BaseTableCell.m in Sources */,
-				4B1B33B3215A791F00A0C4D2 /* UIView+UIConfig.m in Sources */,
 				4B1B3397215A791F00A0C4D2 /* BaseItem.m in Sources */,
 				4B1B341C215A7C1600A0C4D2 /* KKNavigationBar.m in Sources */,
 				4B1B33C7215A7A1100A0C4D2 /* SheetController.m in Sources */,

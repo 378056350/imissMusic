@@ -53,17 +53,6 @@
     [self views];
 }
 
-- (void)themeChanged {
-    // 白天模式
-    if (self.isNight == NO) {
-        [self setShadowLine:kColor_BG];
-    }
-    // 夜间模式
-    else {
-        [self setShadowLine:kColor_Night_Back_Big];
-    }
-}
-
 #pragma mark - set
 - (void)setShadowLine:(UIColor *)color {
     // 改变tabbar 线条颜色
@@ -110,7 +99,6 @@
                     CGRectMake(left, 0, width, 49);
                 })];
                 [item addSubview:icon];
-                [item setAllowNight:YES];
                 item;
             });
             [self addSubview:item];
@@ -118,17 +106,9 @@
             
             [item addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
                 for (int y=0; y<self.views.count; y++) {
-                    UIColor *normal = i == y ? MainColor : kColor_Text_Black;
-                    UIColor *select = i == y ? MainColor : kColor_Text_Light;
-                    
                     UIView *subview = self.views[y];
                     UIImageView *subicon = [subview viewWithTag:10];
-                    UILabel *subname = [subview viewWithTag:11];
                     subicon.image = [UIImage imageNamed:y == i ? image[2][y] : image[1][y]];
-                    subname.themeMap = @{
-                                         kThemeKeyLightTitleNormalColor: normal,
-                                         kThemeKeyNightTitleNormalColor: select
-                                         };
                     
                 }
                 if (_click) {

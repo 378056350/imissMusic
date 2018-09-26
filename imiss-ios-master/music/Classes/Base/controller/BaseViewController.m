@@ -33,8 +33,6 @@ typedef NS_ENUM(NSInteger, BarButtonItemState) {
     [self.navigationController.interactivePopGestureRecognizer setDelegate:self];
     [self.view setBackgroundColor:kColor_White];
     [self initUI];
-    [self themeChanged];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(themeChanged) name:kThemeDidChangeNotification object:nil];
 }
 - (void)initUI {
     [self setLeftBtn];
@@ -58,18 +56,6 @@ typedef NS_ENUM(NSInteger, BarButtonItemState) {
 - (void)loadView {
     self.view = [[BaseView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     self.content = (BaseView *)self.view;
-}
-
-// 主题改变
-- (void)themeChanged {
-    // 白天模式
-    if (self.view.isNight == NO) {
-        [self setJz_navigationBarTintColor:MainColor];
-    }
-    // 夜间模式
-    else {
-        [self setJz_navigationBarTintColor:kColor_Night_Back_Big];
-    }
 }
 
 #pragma mark - 点击

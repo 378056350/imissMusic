@@ -29,9 +29,6 @@
     [self.cancleBtn setTitleColor:kColor_Text_Black forState:UIControlStateHighlighted];
     [self.cancleBtn borderForColor:[kColor_Text_Gary colorWithAlphaComponent:0.2] borderWidth:1.f / [UIScreen mainScreen].scale borderType:UIBorderSideTypeTop];
     [self setRoundedCorners:UIRectCornerTopLeft | UIRectCornerTopRight radius:10];
-    
-    self.scroll.allowNight = YES;
-    self.cancleBtn.allowNight = YES;
 }
 
 - (void)createScrollItem {
@@ -76,7 +73,6 @@
         [lab setFont:[UIFont systemFontOfSize:AdjustFont(10)]];
         [lab setTextColor:kColor_Text_Gary];
         [lab setText:arr[1][i]];
-        [lab setAllowNight:YES];
         [view addSubview:lab];
         
         __weak typeof(self) weak = self;

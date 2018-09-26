@@ -39,11 +39,7 @@
     return self;
 }
 - (void)initUI {
-//    [self content];
-    [self setThemeMap:@{
-                        kThemeKeyLightBackNormalColor: kColor_White,
-                        kThemeKeyNightBackNormalColor: kColor_Night_Back_Small
-                        }];
+    [self setBackgroundColor:kColor_White];
     [self icon];
     [self name];
     [self desc];
@@ -165,10 +161,6 @@
         _name.font = NORMAL_FONT(16);
         _name.textColor = kColor_Text_Black;
         _name.textAlignment = NSTextAlignmentCenter;
-        _name.themeMap = @{
-                           kThemeKeyLightTitleNormalColor: kColor_Text_Black,
-                           kThemeKeyNightTitleNormalColor: kColor_Text_Gary
-                           };
         [self addSubview:_name];
     }
     return _name;
@@ -179,10 +171,6 @@
         _desc.userInteractionEnabled = NO;
         _desc.font = NORMAL_FONT(12);
         _desc.textColor = kColor_Text_Gary;
-        _desc.themeMap = @{
-                           kThemeKeyLightTitleNormalColor: kColor_Text_Gary,
-                           kThemeKeyNightTitleNormalColor: kColor_Text_Light
-                           };
         _desc.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_desc];
     }
