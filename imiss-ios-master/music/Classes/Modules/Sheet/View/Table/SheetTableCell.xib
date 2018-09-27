@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,25 +21,25 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ays-qO-FPY">
-                        <rect key="frame" x="10" y="0.0" width="41.5" height="41.5"/>
+                        <rect key="frame" x="10" y="0.0" width="36.5" height="36.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="ays-qO-FPY" secondAttribute="height" multiplier="1:1" id="2P5-Bl-fKb"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIp-eF-hCZ">
-                        <rect key="frame" x="61.5" y="0.0" width="42" height="21"/>
+                        <rect key="frame" x="56.5" y="0.0" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqk-eZ-gcN">
-                        <rect key="frame" x="61.5" y="19.5" width="35.5" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqk-eZ-gcN">
+                        <rect key="frame" x="56.5" y="14.5" width="210.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGc-16-KbB">
-                        <rect key="frame" x="286" y="0.0" width="42" height="41.5"/>
+                        <rect key="frame" x="286" y="0.0" width="42" height="36.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -48,7 +49,7 @@
                     <constraint firstItem="UIp-eF-hCZ" firstAttribute="leading" secondItem="ays-qO-FPY" secondAttribute="trailing" constant="10" id="7xi-f7-phd"/>
                     <constraint firstItem="UIp-eF-hCZ" firstAttribute="leading" secondItem="Fqk-eZ-gcN" secondAttribute="leading" id="MWb-Fh-Inm"/>
                     <constraint firstItem="Fqk-eZ-gcN" firstAttribute="bottom" secondItem="ays-qO-FPY" secondAttribute="bottom" constant="-5" id="NJd-6L-sJa"/>
-                    <constraint firstAttribute="bottom" secondItem="ays-qO-FPY" secondAttribute="bottom" constant="5" id="SH6-sl-i2V"/>
+                    <constraint firstAttribute="bottom" secondItem="ays-qO-FPY" secondAttribute="bottom" constant="10" id="SH6-sl-i2V"/>
                     <constraint firstItem="ays-qO-FPY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ZBa-8p-68M"/>
                     <constraint firstItem="ays-qO-FPY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eed-aZ-M0w"/>
                     <constraint firstAttribute="trailing" secondItem="XGc-16-KbB" secondAttribute="trailing" constant="15" id="fwz-bH-4pQ"/>
@@ -61,10 +62,11 @@
             <connections>
                 <outlet property="detail" destination="Fqk-eZ-gcN" id="cQr-8U-KIi"/>
                 <outlet property="icon" destination="ays-qO-FPY" id="Io2-Ev-sXM"/>
+                <outlet property="iconConstraintL" destination="ZBa-8p-68M" id="TP9-vr-FJn"/>
                 <outlet property="name" destination="UIp-eF-hCZ" id="Bt2-Up-WzB"/>
                 <outlet property="time" destination="XGc-16-KbB" id="Rps-RW-u0l"/>
             </connections>
-            <point key="canvasLocation" x="-117.59999999999999" y="72.413793103448285"/>
+            <point key="canvasLocation" x="76" y="-38"/>
         </tableViewCell>
     </objects>
 </document>

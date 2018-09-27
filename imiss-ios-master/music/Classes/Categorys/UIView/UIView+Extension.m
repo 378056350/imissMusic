@@ -235,7 +235,7 @@
     return nil;
 }
 
-- (UIImage *)imageFromView{
+- (UIImage *)imageFromView {
     CGSize size = self.size;
     UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];

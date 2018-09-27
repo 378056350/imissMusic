@@ -10,4 +10,6 @@
 
 @interface HomeCollectionCell : BaseCollectionCell
 
+@property (weak, nonatomic) IBOutlet UIView *content;
+
 @end

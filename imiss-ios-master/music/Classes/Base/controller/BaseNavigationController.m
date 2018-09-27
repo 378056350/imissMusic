@@ -23,13 +23,16 @@
     return nav;
 }
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    BaseTabBarController *tab = (BaseTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     if ([viewController isKindOfClass:[HomeController class]] ||
         [viewController isKindOfClass:[SheetController class]] ||
         [viewController isKindOfClass:[MineController class]]) {
-        viewController.hidesBottomBarWhenPushed = NO;
+//        viewController.hidesBottomBarWhenPushed = NO;
+//        [tab hideTabbar:NO];
     }
     else {
-        viewController.hidesBottomBarWhenPushed = YES;
+//        viewController.hidesBottomBarWhenPushed = YES;
+//        [tab hideTabbar:YES];
     }
     [super pushViewController:viewController animated:animated];
 }

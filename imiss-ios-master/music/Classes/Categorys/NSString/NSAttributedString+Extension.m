@@ -29,7 +29,7 @@
     
     // 参数
     NSDictionary *param = @{NSShadowAttributeName: shadow,
-                            NSFontAttributeName: [UIFont fontWithName:@"Chalkboard SE" size:[UIFont adjustFontSize:14]],
+                            NSFontAttributeName: MathFont(fontSize),
                             NSParagraphStyleAttributeName: style,
                             NSForegroundColorAttributeName: color
                             };

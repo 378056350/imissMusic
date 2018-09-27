@@ -40,11 +40,13 @@
     return cell;
 }
 
-//#pragma mark - UICollectionViewDelegate
-//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-//    CGFloat top = ((self.height - (SCREEN_WIDTH - 80) / 2 * 3) / 2);
-//    return UIEdgeInsetsMake(-top, 40, 0, 40);
-//}
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(homeCollection:didSelectItemAtIndexPath:cell:)]) {
+        HomeCollectionCell *cell = (HomeCollectionCell *)[collectionView cellForItemAtIndexPath:indexPath];
+        [self.delegate homeCollection:self didSelectItemAtIndexPath:indexPath cell:cell];
+    }
+}
 
 #pragma mark - get
 - (UILabel *)nameLab {
@@ -53,8 +55,25 @@
         _nameLab.font = [UIFont systemFontOfSize:AdjustFont(14)];
         _nameLab.textAlignment = NSTextAlignmentCenter;
         _nameLab.attributedText = ({
-            NSAttributedString *attm = [NSAttributedString shadowAttrString:@"497 Popular Music" color:kColor_Text_Gary fontSize:14 alignment:NSTextAlignmentCenter];
-            attm;
+            // 居中样式
+            NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+            style.alignment = NSTextAlignmentCenter;
+            
+            // 阴影
+            NSShadow *shadow = [[NSShadow alloc] init];
+            shadow.shadowBlurRadius = 1.5;
+            shadow.shadowOffset = CGSizeMake(0, 0);
+            shadow.shadowColor = kColor_Text_Gary;
+            
+            
+            NSString *str = @"497 Popular Music";
+            NSMutableAttributedString *attrm = [[NSMutableAttributedString alloc] initWithString:str];
+            [attrm addAttribute:NSFontAttributeName value:MathFont(14) range:NSMakeRange(0, str.length)];
+            [attrm addAttribute:NSForegroundColorAttributeName value:kColor_Text_Gary range:NSMakeRange(0, 3)];
+            [attrm addAttribute:NSForegroundColorAttributeName value:[kColor_Text_Gary colorWithAlphaComponent:0.5] range:NSMakeRange(3, str.length - 3)];
+            [attrm addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, str.length)];
+            [attrm addAttribute:NSShadowAttributeName value:shadow range:NSMakeRange(0, str.length)];
+            attrm;
         });
         [self addSubview:_nameLab];
     }

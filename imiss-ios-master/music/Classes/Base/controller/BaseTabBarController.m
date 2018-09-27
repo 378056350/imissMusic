@@ -26,7 +26,14 @@
     MineController *mine = [[MineController alloc] init];
     [self addChildViewController:mine title:@"我的" image:@"cm4_btm_icn_music_new" selImage:@"cm4_btm_icn_music_new_prs"];
     
-    [self setSelectedIndex:1];
+}
+
+- (void)hideTabbar:(BOOL)hidden {
+    [UIView animateWithDuration:.3f delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.tabBar.top = SCREEN_HEIGHT - (hidden == YES ? 0 : TabbarHeight);
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 - (void)addChildViewController:(BaseViewController *)childVc title:(NSString *)title image:(NSString *)image selImage:(NSString *)selImage {
