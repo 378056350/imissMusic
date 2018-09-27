@@ -13,7 +13,7 @@
 // 创建带阴影的富文本
 + (NSAttributedString *)shadowAttrString:(NSString *)string
                                    color:(UIColor *)color
-                                    font:(UIFont *)font
+                                fontSize:(NSInteger)fontSize
                                alignment:(NSTextAlignment)alignment {
     // 居中样式
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
@@ -25,9 +25,11 @@
     shadow.shadowOffset = CGSizeMake(0, 0);
     shadow.shadowColor = color;
     
+    
+    
     // 参数
     NSDictionary *param = @{NSShadowAttributeName: shadow,
-                            NSFontAttributeName: font,
+                            NSFontAttributeName: [UIFont fontWithName:@"Chalkboard SE" size:[UIFont adjustFontSize:14]],
                             NSParagraphStyleAttributeName: style,
                             NSForegroundColorAttributeName: color
                             };

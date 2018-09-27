@@ -35,7 +35,7 @@
 }
 
 - (void)setupUI {
-    [self setShadowLine:kColor_BG];
+    [self setShadowLine:[kColor_Text_Gary colorWithAlphaComponent:0.1]];
 }
 
 - (void)layoutSubviews {

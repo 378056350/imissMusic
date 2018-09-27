@@ -40,11 +40,11 @@
     return cell;
 }
 
-#pragma mark - UICollectionViewDelegate
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    CGFloat top = ((self.height - (SCREEN_WIDTH - 80) / 2 * 3) / 2);
-    return UIEdgeInsetsMake(-top, 40, 0, 40);
-}
+//#pragma mark - UICollectionViewDelegate
+//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+//    CGFloat top = ((self.height - (SCREEN_WIDTH - 80) / 2 * 3) / 2);
+//    return UIEdgeInsetsMake(-top, 40, 0, 40);
+//}
 
 #pragma mark - get
 - (UILabel *)nameLab {
@@ -53,7 +53,7 @@
         _nameLab.font = [UIFont systemFontOfSize:AdjustFont(14)];
         _nameLab.textAlignment = NSTextAlignmentCenter;
         _nameLab.attributedText = ({
-            NSAttributedString *attm = [NSAttributedString shadowAttrString:@"497 Popular Music" color:kColor_Text_Gary font:_nameLab.font alignment:NSTextAlignmentCenter];
+            NSAttributedString *attm = [NSAttributedString shadowAttrString:@"497 Popular Music" color:kColor_Text_Gary fontSize:14 alignment:NSTextAlignmentCenter];
             attm;
         });
         [self addSubview:_nameLab];
@@ -63,9 +63,12 @@
 - (UICollectionView *)collection {
     if (!_collection) {
         _collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:({
+            CGFloat width = SCREEN_WIDTH - 80 + 10;
             HomeCollectionLayout *flow = [[HomeCollectionLayout alloc] init];
+            flow.itemSize = CGSizeMake(width, 5 + width / 2 * 3 + 20);
             flow;
         })];
+        [_collection setPagingEnabled:NO];
         [_collection setShowsHorizontalScrollIndicator:NO];
         [_collection setDelegate:self];
         [_collection setDataSource:self];

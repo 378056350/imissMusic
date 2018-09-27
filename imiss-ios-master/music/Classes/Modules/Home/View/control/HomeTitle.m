@@ -8,8 +8,6 @@
 
 #import "HomeTitle.h"
 
-#define LAB_FONT [UIFont fontWithName:@"ArialMT" size:20]
-
 #pragma mark - 声明
 @interface HomeTitle()
 
@@ -47,7 +45,7 @@
             CGFloat top = (self.height - 20) / 2;
             CGRectMake(left, top, width, height);
         })];
-        [lab setAttributedText:[NSAttributedString shadowAttrString:titles[i] color:color font:LAB_FONT alignment:NSTextAlignmentCenter]];
+        [lab setAttributedText:[NSAttributedString shadowAttrString:titles[i] color:color fontSize:14 alignment:NSTextAlignmentCenter]];
         [lab addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
             if (weak.delegate) {
                 [weak.delegate homeTitle:weak selectedIndex:i];
@@ -82,7 +80,7 @@
         CGFloat labW = lab.centerX;
         CGFloat value = 1 - ABS(left - labW) / width + 0.3;
         UIColor *color = [kColor_Text_Gary colorWithAlphaComponent:value];
-        lab.attributedText = [NSAttributedString shadowAttrString:lab.attributedText.string color:color font:LAB_FONT alignment:NSTextAlignmentCenter];
+        lab.attributedText = [NSAttributedString shadowAttrString:lab.attributedText.string color:color fontSize:14 alignment:NSTextAlignmentCenter];
 //        lab.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:value];
     }
 }

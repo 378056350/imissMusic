@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcu-Jd-0dc">
                         <rect key="frame" x="5" y="5" width="198" height="295"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nJy-8H-Rvi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_icn1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="nJy-8H-Rvi">
                                 <rect key="frame" x="0.0" y="0.0" width="198" height="198"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nJy-8H-Rvi" secondAttribute="height" multiplier="1:1" id="WcP-xs-KxA"/>
@@ -38,20 +37,20 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbt-n8-KjK">
                                 <rect key="frame" x="143" y="177.5" width="40" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.16876094059999999" blue="0.11974024599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Cbt-n8-KjK" secondAttribute="height" multiplier="1:1" id="5GB-mI-XXA"/>
                                     <constraint firstAttribute="width" constant="40" id="lAy-6W-djz"/>
                                 </constraints>
+                                <state key="normal" image="home_play.png"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Figgy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSy-jZ-8CC">
-                                <rect key="frame" x="10" y="234" width="31" height="14.5"/>
+                                <rect key="frame" x="10" y="244" width="31" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take It Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROk-Iv-6ho">
-                                <rect key="frame" x="10" y="208" width="92" height="21"/>
+                                <rect key="frame" x="10" y="213" width="92" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="5ut-Tz-D4a"/>
                                 </constraints>
@@ -87,7 +86,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrT-yg-P5Q">
-                                <rect key="frame" x="76.5" y="260" width="46" height="30"/>
+                                <rect key="frame" x="76" y="260" width="46" height="30"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="music_icn_small.png" translatesAutoresizingMaskIntoConstraints="NO" id="f9l-Oq-5gd">
                                         <rect key="frame" x="0.0" y="7.5" width="15" height="15"/>
@@ -148,12 +147,12 @@
                             <constraint firstItem="WSy-jZ-8CC" firstAttribute="leading" secondItem="ROk-Iv-6ho" secondAttribute="leading" id="BgX-kw-iVP"/>
                             <constraint firstAttribute="bottom" secondItem="e91-ko-KHZ" secondAttribute="bottom" constant="5" id="CCX-WU-lE8"/>
                             <constraint firstItem="mrT-yg-P5Q" firstAttribute="centerX" secondItem="kcu-Jd-0dc" secondAttribute="centerX" id="DIn-ax-2Yk"/>
-                            <constraint firstItem="WSy-jZ-8CC" firstAttribute="top" secondItem="ROk-Iv-6ho" secondAttribute="bottom" constant="5" id="EdH-GF-2ZR"/>
+                            <constraint firstItem="WSy-jZ-8CC" firstAttribute="top" secondItem="ROk-Iv-6ho" secondAttribute="bottom" constant="10" id="EdH-GF-2ZR"/>
                             <constraint firstItem="nJy-8H-Rvi" firstAttribute="top" secondItem="kcu-Jd-0dc" secondAttribute="top" id="M2O-wQ-Nbg"/>
                             <constraint firstItem="7es-m8-M7C" firstAttribute="centerY" secondItem="mrT-yg-P5Q" secondAttribute="centerY" id="Mf6-8q-3YH"/>
                             <constraint firstItem="e91-ko-KHZ" firstAttribute="leading" secondItem="WSy-jZ-8CC" secondAttribute="leading" id="Num-0b-V0I"/>
                             <constraint firstItem="mrT-yg-P5Q" firstAttribute="centerY" secondItem="e91-ko-KHZ" secondAttribute="centerY" id="Qjz-TG-0se"/>
-                            <constraint firstItem="ROk-Iv-6ho" firstAttribute="top" secondItem="nJy-8H-Rvi" secondAttribute="bottom" constant="10" id="RIA-TP-l1G"/>
+                            <constraint firstItem="ROk-Iv-6ho" firstAttribute="top" secondItem="nJy-8H-Rvi" secondAttribute="bottom" constant="15" id="RIA-TP-l1G"/>
                             <constraint firstAttribute="trailing" secondItem="nJy-8H-Rvi" secondAttribute="trailing" id="XJR-Oc-STk"/>
                             <constraint firstItem="nJy-8H-Rvi" firstAttribute="leading" secondItem="kcu-Jd-0dc" secondAttribute="leading" id="guB-ZF-Yhf"/>
                             <constraint firstItem="45Y-mE-5WX" firstAttribute="bottom" secondItem="nJy-8H-Rvi" secondAttribute="bottom" id="hPX-zy-Wqj"/>
@@ -191,6 +190,8 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="home_icn1.jpeg" width="300" height="300"/>
+        <image name="home_play.png" width="200" height="200"/>
         <image name="like_icn_small.png" width="64" height="64"/>
         <image name="list_icn_small.png" width="64" height="64"/>
         <image name="music_icn_small.png" width="64" height="64"/>

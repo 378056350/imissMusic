@@ -45,7 +45,7 @@
 - (HomeConfig *)config {
     if (!_config) {
         _config = [HomeConfig shareConfig];
-        _config.titles = @[@"asdad", @"zxczczxczxczxc"];
+        _config.titles = @[@"PUPULAR", @"RECOMMEND"];
         _config.views = @[self.collection, [UIView new]];
     }
     return _config;

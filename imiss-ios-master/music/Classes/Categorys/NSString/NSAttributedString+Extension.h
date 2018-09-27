@@ -13,7 +13,7 @@
 // 创建带阴影的富文本
 + (NSAttributedString *)shadowAttrString:(NSString *)string
                                    color:(UIColor *)color
-                                    font:(UIFont *)font
+                                fontSize:(NSInteger)fontSize
                                alignment:(NSTextAlignment)alignment;
 
 @end

@@ -1,0 +1,42 @@
+//
+//  SheetTable.m
+//  music
+//
+//  Created by zhongke on 2018/9/27.
+//  Copyright © 2018年 kk. All rights reserved.
+//
+
+#import "SheetTable.h"
+#import "SheetTableCell.h"
+
+#pragma mark - 声明
+@interface SheetTable()<UITableViewDelegate, UITableViewDataSource>
+
+@end
+
+#pragma mark - 实现
+@implementation SheetTable
+
++ (instancetype)initWithFrame:(CGRect)frame {
+    SheetTable *table = [[SheetTable alloc] initWithFrame:frame style:UITableViewStylePlain];
+    table.delegate = table;
+    table.dataSource = table;
+    table.separatorStyle = UITableViewCellSeparatorStyleNone;
+    return table;
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 5;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SheetTableCell *cell = [SheetTableCell loadFirstNib:tableView];
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return countcoordinatesX(44);
+}
+
+@end

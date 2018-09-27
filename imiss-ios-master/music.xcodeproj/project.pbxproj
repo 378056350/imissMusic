@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0488BD5E215B24C70006805F /* NSAttributedString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0488BD5D215B24C70006805F /* NSAttributedString+Extension.m */; };
+		321EA0CE215CCBE200BF7975 /* MineHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EA0CD215CCBE200BF7975 /* MineHeader.m */; };
+		321EA0D1215CCE4400BF7975 /* SheetCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EA0D0215CCE4400BF7975 /* SheetCollection.m */; };
+		321EA0D5215CCF4000BF7975 /* SheetCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EA0D3215CCF4000BF7975 /* SheetCollectionCell.m */; };
+		321EA0D6215CCF4000BF7975 /* SheetCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 321EA0D4215CCF4000BF7975 /* SheetCollectionCell.xib */; };
+		321EA0DB215CD1E200BF7975 /* SheetTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EA0DA215CD1E200BF7975 /* SheetTable.m */; };
+		321EA0DF215CD2C200BF7975 /* SheetTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EA0DD215CD2C200BF7975 /* SheetTableCell.m */; };
+		321EA0E0215CD2C200BF7975 /* SheetTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 321EA0DE215CD2C200BF7975 /* SheetTableCell.xib */; };
+		3252FF6A215C7EB20019591E /* home_icn1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3252FF69215C7EB20019591E /* home_icn1.jpeg */; };
+		3252FF6C215C7F830019591E /* home_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 3252FF6B215C7F830019591E /* home_play.png */; };
+		3252FF70215C9C4B0019591E /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3252FF6E215C9C4B0019591E /* MineCell.m */; };
+		3252FF71215C9C4B0019591E /* MineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3252FF6F215C9C4B0019591E /* MineCell.xib */; };
 		4B1B32F5215A770C00A0C4D2 /* AppDelegate+UMengShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B32F4215A770C00A0C4D2 /* AppDelegate+UMengShare.m */; };
 		4B1B3380215A791F00A0C4D2 /* UMSocialManager+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B32F9215A791F00A0C4D2 /* UMSocialManager+Extension.m */; };
 		4B1B3381215A791F00A0C4D2 /* KMTagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B32FB215A791F00A0C4D2 /* KMTagListView.m */; };
@@ -103,6 +114,23 @@
 		0488BD5C215B24C70006805F /* NSAttributedString+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Extension.h"; sourceTree = "<group>"; };
 		0488BD5D215B24C70006805F /* NSAttributedString+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Extension.m"; sourceTree = "<group>"; };
 		0FCFD17E32D1C1596277FFFE /* Pods_music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		321EA0CC215CCBE200BF7975 /* MineHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineHeader.h; sourceTree = "<group>"; };
+		321EA0CD215CCBE200BF7975 /* MineHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineHeader.m; sourceTree = "<group>"; };
+		321EA0CF215CCE4400BF7975 /* SheetCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SheetCollection.h; sourceTree = "<group>"; };
+		321EA0D0215CCE4400BF7975 /* SheetCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SheetCollection.m; sourceTree = "<group>"; };
+		321EA0D2215CCF4000BF7975 /* SheetCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SheetCollectionCell.h; sourceTree = "<group>"; };
+		321EA0D3215CCF4000BF7975 /* SheetCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SheetCollectionCell.m; sourceTree = "<group>"; };
+		321EA0D4215CCF4000BF7975 /* SheetCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SheetCollectionCell.xib; sourceTree = "<group>"; };
+		321EA0D9215CD1E200BF7975 /* SheetTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SheetTable.h; sourceTree = "<group>"; };
+		321EA0DA215CD1E200BF7975 /* SheetTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SheetTable.m; sourceTree = "<group>"; };
+		321EA0DC215CD2C200BF7975 /* SheetTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SheetTableCell.h; sourceTree = "<group>"; };
+		321EA0DD215CD2C200BF7975 /* SheetTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SheetTableCell.m; sourceTree = "<group>"; };
+		321EA0DE215CD2C200BF7975 /* SheetTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SheetTableCell.xib; sourceTree = "<group>"; };
+		3252FF69215C7EB20019591E /* home_icn1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = home_icn1.jpeg; sourceTree = "<group>"; };
+		3252FF6B215C7F830019591E /* home_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_play.png; sourceTree = "<group>"; };
+		3252FF6D215C9C4B0019591E /* MineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineCell.h; sourceTree = "<group>"; };
+		3252FF6E215C9C4B0019591E /* MineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineCell.m; sourceTree = "<group>"; };
+		3252FF6F215C9C4B0019591E /* MineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCell.xib; sourceTree = "<group>"; };
 		36BD8BCB3E8FCA4F14CFE208 /* Pods-music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-music.debug.xcconfig"; path = "Pods/Target Support Files/Pods-music/Pods-music.debug.xcconfig"; sourceTree = "<group>"; };
 		4B1B32F0215A76B500A0C4D2 /* KKPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKPrefixHeader.pch; sourceTree = "<group>"; };
 		4B1B32F1215A76C000A0C4D2 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
@@ -292,6 +320,30 @@
 				0FCFD17E32D1C1596277FFFE /* Pods_music.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		321EA0D7215CD1CC00BF7975 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				321EA0CF215CCE4400BF7975 /* SheetCollection.h */,
+				321EA0D0215CCE4400BF7975 /* SheetCollection.m */,
+				321EA0D2215CCF4000BF7975 /* SheetCollectionCell.h */,
+				321EA0D3215CCF4000BF7975 /* SheetCollectionCell.m */,
+				321EA0D4215CCF4000BF7975 /* SheetCollectionCell.xib */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		321EA0D8215CD1CC00BF7975 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				321EA0D9215CD1E200BF7975 /* SheetTable.h */,
+				321EA0DA215CD1E200BF7975 /* SheetTable.m */,
+				321EA0DC215CD2C200BF7975 /* SheetTableCell.h */,
+				321EA0DD215CD2C200BF7975 /* SheetTableCell.m */,
+				321EA0DE215CD2C200BF7975 /* SheetTableCell.xib */,
+			);
+			path = Table;
 			sourceTree = "<group>";
 		};
 		4B1B32EF215A76AA00A0C4D2 /* Classes */ = {
@@ -646,6 +698,8 @@
 		4B1B33B5215A794000A0C4D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3252FF6B215C7F830019591E /* home_play.png */,
+				3252FF69215C7EB20019591E /* home_icn1.jpeg */,
 				4BAF6CAB215BDD18004D7FBB /* like_icn_small.png */,
 				4BAF6CAC215BDD18004D7FBB /* list_icn_small.png */,
 				4BAF6CAA215BDD18004D7FBB /* music_icn_small.png */,
@@ -721,6 +775,8 @@
 		4B1B33BD215A79DB00A0C4D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				321EA0D7215CD1CC00BF7975 /* Collection */,
+				321EA0D8215CD1CC00BF7975 /* Table */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -754,6 +810,11 @@
 		4B1B33C1215A79DB00A0C4D2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				321EA0CC215CCBE200BF7975 /* MineHeader.h */,
+				321EA0CD215CCBE200BF7975 /* MineHeader.m */,
+				3252FF6D215C9C4B0019591E /* MineCell.h */,
+				3252FF6E215C9C4B0019591E /* MineCell.m */,
+				3252FF6F215C9C4B0019591E /* MineCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1037,10 +1098,15 @@
 				4BAF6CAF215BDD18004D7FBB /* list_icn_small.png in Resources */,
 				4B1B340D215A7C1600A0C4D2 /* KKShareContent.xib in Resources */,
 				4BAF6CA0215BC4BF004D7FBB /* HomeCollectionCell.xib in Resources */,
+				3252FF71215C9C4B0019591E /* MineCell.xib in Resources */,
 				4B1B3413215A7C1600A0C4D2 /* ThirdLogView.xib in Resources */,
+				321EA0D6215CCF4000BF7975 /* SheetCollectionCell.xib in Resources */,
+				3252FF6A215C7EB20019591E /* home_icn1.jpeg in Resources */,
 				4B1B3408215A7C1600A0C4D2 /* KKSheetCell.xib in Resources */,
+				321EA0E0215CD2C200BF7975 /* SheetTableCell.xib in Resources */,
 				4B1B340C215A7C1600A0C4D2 /* KKShare.xib in Resources */,
 				4B43B936215921B3002F8567 /* Assets.xcassets in Resources */,
+				3252FF6C215C7F830019591E /* home_play.png in Resources */,
 				4B43B934215921B3002F8567 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1106,11 +1172,13 @@
 				4B1B3396215A791F00A0C4D2 /* AFNManager.m in Sources */,
 				4B1B34F1215A852200A0C4D2 /* HomeTitle.m in Sources */,
 				4B1B33C4215A79EF00A0C4D2 /* HomeController.m in Sources */,
+				321EA0DF215CD2C200BF7975 /* SheetTableCell.m in Sources */,
 				4B1B3415215A7C1600A0C4D2 /* MusicItemConst.m in Sources */,
 				4B1B340F215A7C1600A0C4D2 /* CountDown.m in Sources */,
 				4B1B340B215A7C1600A0C4D2 /* KKShareContent.m in Sources */,
 				4B1B33A2215A791F00A0C4D2 /* BaseCollectionReusableView.m in Sources */,
 				4B1B3388215A791F00A0C4D2 /* SGPageTitleView.m in Sources */,
+				321EA0DB215CD1E200BF7975 /* SheetTable.m in Sources */,
 				4B1B33AC215A791F00A0C4D2 /* UIFont+Extension.m in Sources */,
 				4BAF6C95215BBD1A004D7FBB /* HomeCollection.m in Sources */,
 				4B1B339A215A791F00A0C4D2 /* BaseTabBarController.m in Sources */,
@@ -1118,6 +1186,7 @@
 				4B1B3412215A7C1600A0C4D2 /* ThirdLogView.m in Sources */,
 				4B1B33AB215A791F00A0C4D2 /* MJRefreshBackNormalFooter+Extension.m in Sources */,
 				4B1B34F4215A852D00A0C4D2 /* HomeContent.m in Sources */,
+				321EA0D1215CCE4400BF7975 /* SheetCollection.m in Sources */,
 				4B1B3405215A7C1600A0C4D2 /* KKSheet.m in Sources */,
 				4B1B33AD215A791F00A0C4D2 /* UICollectionReusableView+Extension.m in Sources */,
 				4B1B33CA215A7A2B00A0C4D2 /* MineController.m in Sources */,
@@ -1141,6 +1210,7 @@
 				4B1B34E5215A84DC00A0C4D2 /* HomePupularModel.m in Sources */,
 				4B1B3399215A791F00A0C4D2 /* BaseNavigationController.m in Sources */,
 				4B1B33A6215A791F00A0C4D2 /* UIView+BlockGesture.m in Sources */,
+				321EA0D5215CCF4000BF7975 /* SheetCollectionCell.m in Sources */,
 				4B1B338C215A791F00A0C4D2 /* UIView+MBProgressHUD.m in Sources */,
 				4B1B340A215A7C1600A0C4D2 /* KKShare.m in Sources */,
 				4B1B3386215A791F00A0C4D2 /* SGPageContentScrollView.m in Sources */,
@@ -1153,6 +1223,7 @@
 				4BAF6CA9215BCC08004D7FBB /* HomeCollectionLayout.m in Sources */,
 				4B1B3406215A7C1600A0C4D2 /* KKSheetContent.m in Sources */,
 				4B1B3416215A7C1600A0C4D2 /* EmptyView.m in Sources */,
+				3252FF70215C9C4B0019591E /* MineCell.m in Sources */,
 				4B1B338B215A791F00A0C4D2 /* UIWindow+MBProgressHUD.m in Sources */,
 				4B1B3384215A791F00A0C4D2 /* LinkageConfig.m in Sources */,
 				4B1B33B4215A791F00A0C4D2 /* CALayer+Extension.m in Sources */,
@@ -1171,6 +1242,7 @@
 				4B1B3417215A7C1600A0C4D2 /* SongModel.m in Sources */,
 				4B1B33AA215A791F00A0C4D2 /* MJRefreshNormalHeader+Extension.m in Sources */,
 				4B1B33A9215A791F00A0C4D2 /* UIView+Extension.m in Sources */,
+				321EA0CE215CCBE200BF7975 /* MineHeader.m in Sources */,
 				0488BD5E215B24C70006805F /* NSAttributedString+Extension.m in Sources */,
 				4BAF6C9F215BC4BF004D7FBB /* HomeCollectionCell.m in Sources */,
 				4B1B3385215A791F00A0C4D2 /* UIView+SGPagingView.m in Sources */,
