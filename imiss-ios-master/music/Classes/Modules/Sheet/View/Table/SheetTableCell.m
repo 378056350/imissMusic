@@ -23,6 +23,7 @@
 
 - (void)initUI {
     self.backgroundColor = [UIColor clearColor];
+    self.icon.backgroundColor = [UIColor redColor];
     self.name.font = [UIFont systemFontOfSize:AdjustFont(16)];
     self.detail.font = [UIFont systemFontOfSize:AdjustFont(14)];
     self.time.font = [UIFont systemFontOfSize:AdjustFont(14)];
