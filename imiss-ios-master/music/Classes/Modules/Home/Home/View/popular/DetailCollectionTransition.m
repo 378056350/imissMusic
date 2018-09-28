@@ -171,6 +171,7 @@
         // 转场成功
         else {
             [homeVC.selectCell setHidden:NO];
+            [homeVC viewDidAppear:YES];
 //            [cell removeFromSuperview];
 //            [detailVC.contentV setAlpha:1];
 //            [detailVC.view bringSubviewToFront:cell];

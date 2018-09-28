@@ -7,9 +7,7 @@
 //
 
 #import "HomeController.h"
-#import "HomeTitle.h"
 #import "HomeContent.h"
-#import "HomeCollection.h"
 #import "DetailController.h"
 #import "MusicController.h"
 
@@ -17,9 +15,7 @@
 @interface HomeController()<HomeTitleDelegate, HomeContentDelegate, HomeCollectionDelegate>
 
 @property (nonatomic, strong) HomeConfig *config;
-@property (nonatomic, strong) HomeTitle *header;
 @property (nonatomic, strong) HomeContent *scroll;
-@property (nonatomic, strong) HomeCollection *collection;
 
 @end
 
@@ -96,5 +92,7 @@
     }
     return _collection;
 }
+
+
 
 @end

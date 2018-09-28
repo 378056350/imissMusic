@@ -23,6 +23,7 @@
 @interface HomeCollection : BaseView
 
 @property (nonatomic, weak  ) id<HomeCollectionDelegate> delegate;
+@property (nonatomic, strong) UILabel *nameLab;
 
 + (instancetype)initWithFrame:(CGRect)frame;
 

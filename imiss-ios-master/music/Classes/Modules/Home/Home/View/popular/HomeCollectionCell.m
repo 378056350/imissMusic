@@ -12,11 +12,6 @@
 #pragma mark - 声明
 @interface HomeCollectionCell()
 
-@property (weak, nonatomic) IBOutlet UIImageView *icon;
-@property (weak, nonatomic) IBOutlet UILabel *nameLab;
-@property (weak, nonatomic) IBOutlet UILabel *detailLab;
-@property (weak, nonatomic) IBOutlet UIButton *playBtn;
-
 // 喜欢
 @property (weak, nonatomic) IBOutlet UIView *likeV;
 @property (weak, nonatomic) IBOutlet UIImageView *likeIcon;
@@ -63,6 +58,9 @@
 }
 // 播放
 - (IBAction)playClick:(UIButton *)sender {
+    HomeController *homeVC = (HomeController *)self.viewController;
+    homeVC.selectCell = self;
+    
     MusicController *vc = [[MusicController alloc] init];
     [self.viewController presentViewController:vc animated:YES completion:nil];
 }

@@ -8,9 +8,13 @@
 
 #import "BaseViewController.h"
 #import "HomeCollectionCell.h"
+#import "HomeTitle.h"
+#import "HomeCollection.h"
 
 @interface HomeController : BaseViewController
 
 @property (nonatomic, strong) HomeCollectionCell *selectCell;
+@property (nonatomic, strong) HomeTitle *header;
+@property (nonatomic, strong) HomeCollection *collection;
 
 @end

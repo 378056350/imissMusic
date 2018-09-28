@@ -12,7 +12,6 @@
 #pragma mark - 声明
 @interface HomeCollection()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic, strong) UILabel *nameLab;
 @property (nonatomic, strong) UICollectionView *collection;
 
 @end

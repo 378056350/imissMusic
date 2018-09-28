@@ -7,10 +7,20 @@
 //
 
 #import "BaseViewController.h"
+#import "MusicNavigation.h"
+#import "MusicCD.h"
+#import "MusicBottom.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MusicController : BaseViewController
+
+@property (nonatomic, strong) MusicNavigation *navigation;
+@property (nonatomic, strong) MusicCD *cd;
+@property (nonatomic, strong) MusicBottom *bottom;
+
+- (void)show;
+- (void)hide;
 
 @end
 
