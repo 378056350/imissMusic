@@ -7,6 +7,7 @@
 //
 
 #import "HomeCollectionCell.h"
+#import "MusicController.h"
 
 #pragma mark - 声明
 @interface HomeCollectionCell()
@@ -59,6 +60,11 @@
     self.likeLab.textColor = kColor_Text_Gary;
     self.musicLab.textColor = kColor_Text_Gary;
     self.listLab.textColor = kColor_Text_Gary;
+}
+// 播放
+- (IBAction)playClick:(UIButton *)sender {
+    MusicController *vc = [[MusicController alloc] init];
+    [self.viewController presentViewController:vc animated:YES completion:nil];
 }
 
 @end

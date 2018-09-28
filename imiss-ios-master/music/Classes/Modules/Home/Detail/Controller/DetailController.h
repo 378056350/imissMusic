@@ -10,4 +10,9 @@
 
 @interface DetailController : BaseViewController
 
+@property (nonatomic, strong) UIView *contentV;
+
+- (void)show;
+- (void)hide;
+
 @end

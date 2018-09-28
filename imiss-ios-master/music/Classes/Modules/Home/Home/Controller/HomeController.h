@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "HomeCollectionCell.h"
 
 @interface HomeController : BaseViewController
+
+@property (nonatomic, strong) HomeCollectionCell *selectCell;
 
 @end
