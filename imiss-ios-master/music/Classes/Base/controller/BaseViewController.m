@@ -146,6 +146,18 @@ typedef NS_ENUM(NSInteger, BarButtonItemState) {
     [super viewWillAppear:animated];
     [self hideNavigationBarLine];
 }
+- (void)viewDidAppear:(BOOL)animated {
+    BaseTabBarController *tab = (BaseTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    [super viewDidAppear:animated];
+    if ([self isKindOfClass:[HomeController class]] ||
+        [self isKindOfClass:[SheetController class]] ||
+        [self isKindOfClass:[MineController class]]) {
+        [tab hideTabbar:NO];
+    }
+    else {
+        [tab hideTabbar:YES];
+    }
+}
 
 @end
 

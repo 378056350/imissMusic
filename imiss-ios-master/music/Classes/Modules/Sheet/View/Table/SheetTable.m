@@ -22,6 +22,7 @@
     table.delegate = table;
     table.dataSource = table;
     table.separatorStyle = UITableViewCellSeparatorStyleNone;
+    table.backgroundColor = [UIColor clearColor];
     return table;
 }
 
@@ -37,6 +38,9 @@
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return countcoordinatesX(44);
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

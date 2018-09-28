@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *detail;
 @property (weak, nonatomic) IBOutlet UILabel *time;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *iconConstraintL;
 
 @end
 
@@ -24,13 +25,15 @@
 - (void)initUI {
     self.backgroundColor = [UIColor clearColor];
     self.icon.backgroundColor = [UIColor redColor];
-    self.name.font = [UIFont systemFontOfSize:AdjustFont(16)];
-    self.detail.font = [UIFont systemFontOfSize:AdjustFont(14)];
-    self.time.font = [UIFont systemFontOfSize:AdjustFont(14)];
+    self.name.font = [UIFont systemFontOfSize:AdjustFont(14)];
+    self.detail.font = [UIFont systemFontOfSize:AdjustFont(12)];
+    self.time.font = [UIFont systemFontOfSize:AdjustFont(12)];
     
     self.name.textColor = kColor_Text_Black;
     self.detail.textColor = kColor_Text_Gary;
     self.time.textColor = kColor_Text_Gary;
+    self.iconConstraintL.constant = countcoordinatesX(10);
+    
     
 }
 

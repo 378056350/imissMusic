@@ -10,9 +10,10 @@
 #import "HomeTitle.h"
 #import "HomeContent.h"
 #import "HomeCollection.h"
+#import "DetailController.h"
 
 #pragma mark - 声明
-@interface HomeController()<HomeTitleDelegate, HomeContentDelegate>
+@interface HomeController()<HomeTitleDelegate, HomeContentDelegate, HomeCollectionDelegate>
 
 @property (nonatomic, strong) HomeConfig *config;
 @property (nonatomic, strong) HomeTitle *header;
@@ -29,6 +30,18 @@
     [self setJz_wantsNavigationBarVisible:NO];
     [self header];
     [self scroll];
+}
+
+#pragma mark - HomeCollectionDelegate
+- (void)homeCollection:(HomeCollection *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath cell:(HomeCollectionCell *)cell {
+    DetailController *vc = [[DetailController alloc] init];
+    [self presentViewController:vc animated:YES completion:nil];
+    
+//    // 添加截图
+//    UIImage *image = [cell.content imageFromView];
+//    UIImageView *view = [[UIImageView alloc] initWithFrame:[cell.content convertRectWithWindow]];
+//    [view setImage:image];
+//    [self.view addSubview:view];
 }
 
 #pragma mark - HomeTitleDelegate
@@ -79,6 +92,7 @@
             CGFloat height = SCREEN_HEIGHT - TabbarHeight - top;
             CGRectMake(0, 0, SCREEN_WIDTH, height);
         })];
+        _collection.delegate = self;
     }
     return _collection;
 }

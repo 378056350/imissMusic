@@ -71,6 +71,8 @@
 //======================================================================//
 //                                 字体
 //======================================================================//
+// 数字
+#define MathFont(A) [UIFont fontWithName:@"Chalkboard SE" size:[UIFont adjustFontSize:A]]
 // 字体
 #define AdjustFont(A) [UIFont adjustFontSize:A]
 // 粗体

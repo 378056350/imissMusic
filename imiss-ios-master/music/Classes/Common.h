@@ -42,6 +42,7 @@
 #import "UMSocialManager+Extension.h"
 #import "UIImage+Extension.h"
 #import "KKShare.h"
+#import "KKHeaderView.h"
 
 //================================= Util =====================================//
 #import "Single.h"

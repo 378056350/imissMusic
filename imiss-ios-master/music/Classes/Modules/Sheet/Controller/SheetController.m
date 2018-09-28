@@ -13,7 +13,7 @@
 #pragma mark - 声明
 @interface SheetController()
 
-@property (nonatomic, strong) UILabel *name;
+@property (nonatomic, strong) KKHeaderView *header;
 @property (nonatomic, strong) SheetCollection *collection;
 @property (nonatomic, strong) SheetTable *table;
 
@@ -24,23 +24,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self name];
+    [self header];
     [self collection];
     [self table];
 }
 
 #pragma mark - get
-- (UILabel *)name {
-    if (!_name) {
-        _name = [[UILabel alloc] initWithFrame:CGRectMake(countcoordinatesX(15), StatusBarHeight, SCREEN_WIDTH, countcoordinatesX(60))];
-        _name.attributedText = [NSAttributedString shadowAttrString:@"Sheet" color:kColor_Text_Gary fontSize:16 alignment:NSTextAlignmentLeft];
-        [self.view addSubview:_name];
+- (KKHeaderView *)header {
+    if (!_header) {
+        _header = [KKHeaderView loadCode:CGRectZero];
+        _header.name = @"Sheet";
+        [self.view addSubview:_header];
     }
-    return _name;
+    return _header;
 }
 - (SheetCollection *)collection {
     if (!_collection) {
-        _collection = [SheetCollection initWithFrame:CGRectMake(0, CGRectGetMaxY(_name.frame), SCREEN_WIDTH, countcoordinatesX(140))];
+        _collection = [SheetCollection initWithFrame:CGRectMake(0, CGRectGetMaxY(_header.frame), SCREEN_WIDTH, countcoordinatesX(140))];
         [self.view addSubview:_collection];
     }
     return _collection;
