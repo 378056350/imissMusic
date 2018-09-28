@@ -254,10 +254,11 @@
         vc;
     });
     MusicController *musicVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIView *containerView = [transitionContext containerView];
     
     
     // 首页文字
-    [UIView animateWithDuration:.3f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:.5f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         homeVC.header.top += 10;
         homeVC.collection.nameLab.top -= 20;
     } completion:^(BOOL finished) {
@@ -265,6 +266,96 @@
     }];
     
     
+    
+    //==================================== 专辑 ====================================
+    UIImageView *icon = ({
+        UIImageView *icon = [[UIImageView alloc] initWithFrame:[musicVC.cd.icon convertRectWithWindow]];
+        icon.image = musicVC.cd.icon.image;
+        icon;
+    });
+    [musicVC.cd.icon setHidden:YES];
+    [containerView addSubview:icon];
+    
+    
+    // 专辑 - 位置
+    POPBasicAnimation *iconBasic = ({
+        CGRect rect = [homeVC.selectCell.icon convertRectWithWindow];
+        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
+        basic.duration = 0.3;
+        basic.beginTime = CACurrentMediaTime();
+        basic.toValue = @(CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)));
+        basic;
+    });
+    [icon pop_addAnimation:iconBasic forKey:@"iconBasic"];
+    
+    
+    // 专辑 - 比例
+    CABasicAnimation *anim = ({
+        CGFloat scale = homeVC.selectCell.icon.height / icon.height;
+        
+        CATransform3D transform = CATransform3DIdentity;
+        transform.m34 = -1.f / 1000.f;
+        transform = CATransform3DScale(transform, scale, scale, 1);
+        
+        CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform"];
+        anim.duration     = 0.3;
+        anim.beginTime    = CACurrentMediaTime();
+        anim.autoreverses = NO;
+        anim.toValue      = [NSValue valueWithCATransform3D:transform];
+        anim.fillMode     = kCAFillModeForwards;
+        anim.removedOnCompletion = NO;
+        anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+        anim;
+    });
+    [icon.layer addAnimation:anim forKey:nil];
+    
+    
+    //==================================== 歌名 ====================================
+    UIView *nameLab = ({
+        UIView *nameLab = [musicVC.cd.nameLab snapshotViewAfterScreenUpdates:NO];
+        [nameLab setFrame:[musicVC.cd.nameLab convertRectWithWindow]];
+        nameLab;
+    });
+    [musicVC.cd.nameLab setHidden:YES];
+    [containerView addSubview:nameLab];
+    
+    // 歌名 - 位置
+    POPBasicAnimation *nameBasic = ({
+        CGRect rect = [homeVC.selectCell.nameLab convertRectWithWindow];
+        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
+        basic.duration = 0.3;
+        basic.beginTime = CACurrentMediaTime();
+        basic.toValue = @(CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)));
+        basic;
+    });
+    [nameLab pop_addAnimation:nameBasic forKey:@"nameBasic"];
+    
+    
+    
+    
+    //==================================== 歌手 ====================================
+    UIView *detailLab = ({
+        UIView *detailLab = [musicVC.cd.detailLab snapshotViewAfterScreenUpdates:NO];
+        [detailLab setFrame:[musicVC.cd.detailLab convertRectWithWindow]];
+        detailLab;
+    });
+    [musicVC.cd.detailLab setHidden:YES];
+    [containerView addSubview:detailLab];
+    
+    // 歌手 - 位置
+    POPBasicAnimation *detailBasic = ({
+        CGRect rect = [homeVC.selectCell.detailLab convertRectWithWindow];
+        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
+        basic.duration = 0.3;
+        basic.beginTime = CACurrentMediaTime();
+        basic.toValue = @(CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)));
+        basic;
+    });
+    [detailLab pop_addAnimation:detailBasic forKey:@"detailBasic"];
+    
+    
+    
+
     
     
     
@@ -277,12 +368,25 @@
     
     
     
-    
-    
-    
-    
-    // [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-    
+    // 动画完成
+    [iconBasic setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
+        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+        // 转场失败
+        if ([transitionContext transitionWasCancelled]) {
+            [icon removeFromSuperview];
+            [nameLab removeFromSuperview];
+            [detailLab removeFromSuperview];
+        }
+        // 转场成功
+        else {
+            [homeVC.selectCell.icon setHidden:NO];
+            [homeVC.selectCell.nameLab setHidden:NO];
+            [homeVC.selectCell.detailLab setHidden:NO];
+            [icon removeFromSuperview];
+            [nameLab removeFromSuperview];
+            [detailLab removeFromSuperview];
+        }
+    }];
 }
 
 @end

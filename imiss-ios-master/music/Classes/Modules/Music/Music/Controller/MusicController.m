@@ -73,6 +73,7 @@
 - (MusicBottom *)bottom {
     if (!_bottom) {
         _bottom = [MusicBottom loadFirstNib:CGRectMake(0, SCREEN_HEIGHT - 160, SCREEN_WIDTH, 170)];
+        [_bottom setBackgroundColor:kColor_BG];
         [_bottom setAlpha:0];
         [self.view addSubview:_bottom];
     }
