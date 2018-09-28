@@ -14,10 +14,15 @@
 		321EA0DB215CD1E200BF7975 /* SheetTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EA0DA215CD1E200BF7975 /* SheetTable.m */; };
 		321EA0DF215CD2C200BF7975 /* SheetTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EA0DD215CD2C200BF7975 /* SheetTableCell.m */; };
 		321EA0E0215CD2C200BF7975 /* SheetTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 321EA0DE215CD2C200BF7975 /* SheetTableCell.xib */; };
+		3245C88E215DB0EB004938C3 /* DetailCollectionTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3245C88D215DB0EB004938C3 /* DetailCollectionTransition.m */; };
 		3252FF6A215C7EB20019591E /* home_icn1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3252FF69215C7EB20019591E /* home_icn1.jpeg */; };
 		3252FF6C215C7F830019591E /* home_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 3252FF6B215C7F830019591E /* home_play.png */; };
 		3252FF70215C9C4B0019591E /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3252FF6E215C9C4B0019591E /* MineCell.m */; };
 		3252FF71215C9C4B0019591E /* MineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3252FF6F215C9C4B0019591E /* MineCell.xib */; };
+		32C84AC6215E279C00888D90 /* MusicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C84AC5215E279C00888D90 /* MusicController.m */; };
+		32C84AC9215E283100888D90 /* MusicCollectionTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C84AC8215E283100888D90 /* MusicCollectionTransition.m */; };
+		32C84ACC215E2B0D00888D90 /* MusicBottom.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C84ACB215E2B0D00888D90 /* MusicBottom.m */; };
+		32C84ACE215E2B1900888D90 /* MusicBottom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32C84ACD215E2B1900888D90 /* MusicBottom.xib */; };
 		4B1B32F5215A770C00A0C4D2 /* AppDelegate+UMengShare.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B32F4215A770C00A0C4D2 /* AppDelegate+UMengShare.m */; };
 		4B1B3380215A791F00A0C4D2 /* UMSocialManager+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B32F9215A791F00A0C4D2 /* UMSocialManager+Extension.m */; };
 		4B1B3381215A791F00A0C4D2 /* KMTagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B32FB215A791F00A0C4D2 /* KMTagListView.m */; };
@@ -128,11 +133,20 @@
 		321EA0DC215CD2C200BF7975 /* SheetTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SheetTableCell.h; sourceTree = "<group>"; };
 		321EA0DD215CD2C200BF7975 /* SheetTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SheetTableCell.m; sourceTree = "<group>"; };
 		321EA0DE215CD2C200BF7975 /* SheetTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SheetTableCell.xib; sourceTree = "<group>"; };
+		3245C88C215DB0EB004938C3 /* DetailCollectionTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailCollectionTransition.h; sourceTree = "<group>"; };
+		3245C88D215DB0EB004938C3 /* DetailCollectionTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailCollectionTransition.m; sourceTree = "<group>"; };
 		3252FF69215C7EB20019591E /* home_icn1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = home_icn1.jpeg; sourceTree = "<group>"; };
 		3252FF6B215C7F830019591E /* home_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_play.png; sourceTree = "<group>"; };
 		3252FF6D215C9C4B0019591E /* MineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineCell.h; sourceTree = "<group>"; };
 		3252FF6E215C9C4B0019591E /* MineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineCell.m; sourceTree = "<group>"; };
 		3252FF6F215C9C4B0019591E /* MineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineCell.xib; sourceTree = "<group>"; };
+		32C84AC4215E279C00888D90 /* MusicController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicController.h; sourceTree = "<group>"; };
+		32C84AC5215E279C00888D90 /* MusicController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicController.m; sourceTree = "<group>"; };
+		32C84AC7215E283100888D90 /* MusicCollectionTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicCollectionTransition.h; sourceTree = "<group>"; };
+		32C84AC8215E283100888D90 /* MusicCollectionTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicCollectionTransition.m; sourceTree = "<group>"; };
+		32C84ACA215E2B0D00888D90 /* MusicBottom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicBottom.h; sourceTree = "<group>"; };
+		32C84ACB215E2B0D00888D90 /* MusicBottom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicBottom.m; sourceTree = "<group>"; };
+		32C84ACD215E2B1900888D90 /* MusicBottom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicBottom.xib; sourceTree = "<group>"; };
 		36BD8BCB3E8FCA4F14CFE208 /* Pods-music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-music.debug.xcconfig"; path = "Pods/Target Support Files/Pods-music/Pods-music.debug.xcconfig"; sourceTree = "<group>"; };
 		4B1B32F0215A76B500A0C4D2 /* KKPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKPrefixHeader.pch; sourceTree = "<group>"; };
 		4B1B32F1215A76C000A0C4D2 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
@@ -359,6 +373,50 @@
 			path = Table;
 			sourceTree = "<group>";
 		};
+		32C84ABF215E276C00888D90 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				32C84AC0215E278500888D90 /* Music */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		32C84AC0215E278500888D90 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				32C84AC1215E278500888D90 /* Controller */,
+				32C84AC2215E278500888D90 /* Model */,
+				32C84AC3215E278500888D90 /* View */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		32C84AC1215E278500888D90 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				32C84AC4215E279C00888D90 /* MusicController.h */,
+				32C84AC5215E279C00888D90 /* MusicController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		32C84AC2215E278500888D90 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		32C84AC3215E278500888D90 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32C84ACA215E2B0D00888D90 /* MusicBottom.h */,
+				32C84ACB215E2B0D00888D90 /* MusicBottom.m */,
+				32C84ACD215E2B1900888D90 /* MusicBottom.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4B1B32EF215A76AA00A0C4D2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,6 +567,7 @@
 				4B1B33B6215A79DB00A0C4D2 /* Home */,
 				4B1B33BA215A79DB00A0C4D2 /* Sheet */,
 				4B1B33BE215A79DB00A0C4D2 /* Mine */,
+				32C84ABF215E276C00888D90 /* Music */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1115,6 +1174,10 @@
 		4BAF6CA6215BC9EA004D7FBB /* popular */ = {
 			isa = PBXGroup;
 			children = (
+				3245C88C215DB0EB004938C3 /* DetailCollectionTransition.h */,
+				3245C88D215DB0EB004938C3 /* DetailCollectionTransition.m */,
+				32C84AC7215E283100888D90 /* MusicCollectionTransition.h */,
+				32C84AC8215E283100888D90 /* MusicCollectionTransition.m */,
 				4BAF6C93215BBD1A004D7FBB /* HomeCollection.h */,
 				4BAF6C94215BBD1A004D7FBB /* HomeCollection.m */,
 				4BAF6C9C215BC4BF004D7FBB /* HomeCollectionCell.h */,
@@ -1204,6 +1267,7 @@
 				4B43B939215921B3002F8567 /* LaunchScreen.storyboard in Resources */,
 				4BAF6CAF215BDD18004D7FBB /* list_icn_small.png in Resources */,
 				4B1B340D215A7C1600A0C4D2 /* KKShareContent.xib in Resources */,
+				32C84ACE215E2B1900888D90 /* MusicBottom.xib in Resources */,
 				4BAF6CA0215BC4BF004D7FBB /* HomeCollectionCell.xib in Resources */,
 				3252FF71215C9C4B0019591E /* MineCell.xib in Resources */,
 				4B1B3413215A7C1600A0C4D2 /* ThirdLogView.xib in Resources */,
@@ -1253,6 +1317,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1263,6 +1328,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1305,6 +1371,8 @@
 				4B1B33A8215A791F00A0C4D2 /* UIView+Visuals.m in Sources */,
 				4B1B3418215A7C1600A0C4D2 /* SheetModel.m in Sources */,
 				4B1B33A4215A791F00A0C4D2 /* UIButton+BarButtonItem.m in Sources */,
+				3245C88E215DB0EB004938C3 /* DetailCollectionTransition.m in Sources */,
+				32C84ACC215E2B0D00888D90 /* MusicBottom.m in Sources */,
 				4B1B3380215A791F00A0C4D2 /* UMSocialManager+Extension.m in Sources */,
 				4B1B3387215A791F00A0C4D2 /* SGPageContentView.m in Sources */,
 				4B1B3382215A791F00A0C4D2 /* KMTag.m in Sources */,
@@ -1337,11 +1405,13 @@
 				4B1B338B215A791F00A0C4D2 /* UIWindow+MBProgressHUD.m in Sources */,
 				4B1B3384215A791F00A0C4D2 /* LinkageConfig.m in Sources */,
 				4B1B33B4215A791F00A0C4D2 /* CALayer+Extension.m in Sources */,
+				32C84AC9215E283100888D90 /* MusicCollectionTransition.m in Sources */,
 				4B1B3407215A7C1600A0C4D2 /* KKSheetCell.m in Sources */,
 				4B1B33A5215A791F00A0C4D2 /* UIColor+HEX.m in Sources */,
 				4B1B3394215A791F00A0C4D2 /* NSString+API.m in Sources */,
 				4B1B338A215A791F00A0C4D2 /* SGAdvertScrollView.m in Sources */,
 				4B1B3414215A7C1600A0C4D2 /* MusicItem.m in Sources */,
+				32C84AC6215E279C00888D90 /* MusicController.m in Sources */,
 				4B1B33B0215A791F00A0C4D2 /* UITableView+Extension.m in Sources */,
 				4B1B3383215A791F00A0C4D2 /* LinkageView.m in Sources */,
 				4B1B338D215A791F00A0C4D2 /* UIViewController+MBProgressHUD.m in Sources */,

@@ -42,6 +42,9 @@
                                     <constraint firstAttribute="width" constant="40" id="lAy-6W-djz"/>
                                 </constraints>
                                 <state key="normal" image="home_play.png"/>
+                                <connections>
+                                    <action selector="playClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ZIa-a2-IsP"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Figgy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSy-jZ-8CC">
                                 <rect key="frame" x="10" y="244" width="31" height="14.5"/>
@@ -186,7 +189,7 @@
                 <outlet property="nameLab" destination="ROk-Iv-6ho" id="Cdg-uv-fXE"/>
                 <outlet property="playBtn" destination="Cbt-n8-KjK" id="t4H-kw-A48"/>
             </connections>
-            <point key="canvasLocation" x="-62" y="-1"/>
+            <point key="canvasLocation" x="-341" y="22"/>
         </collectionViewCell>
     </objects>
     <resources>

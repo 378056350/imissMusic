@@ -11,6 +11,7 @@
 #import "HomeContent.h"
 #import "HomeCollection.h"
 #import "DetailController.h"
+#import "MusicController.h"
 
 #pragma mark - 声明
 @interface HomeController()<HomeTitleDelegate, HomeContentDelegate, HomeCollectionDelegate>
@@ -30,18 +31,17 @@
     [self setJz_wantsNavigationBarVisible:NO];
     [self header];
     [self scroll];
+    
 }
 
 #pragma mark - HomeCollectionDelegate
+// 点击Cell
 - (void)homeCollection:(HomeCollection *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath cell:(HomeCollectionCell *)cell {
+    // 选中
+    _selectCell = cell;
+    // 跳转
     DetailController *vc = [[DetailController alloc] init];
     [self presentViewController:vc animated:YES completion:nil];
-    
-//    // 添加截图
-//    UIImage *image = [cell.content imageFromView];
-//    UIImageView *view = [[UIImageView alloc] initWithFrame:[cell.content convertRectWithWindow]];
-//    [view setImage:image];
-//    [self.view addSubview:view];
 }
 
 #pragma mark - HomeTitleDelegate
