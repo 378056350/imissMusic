@@ -128,6 +128,8 @@
     
     
     
+    
+    
     // 动画完成
     [basic4 setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
@@ -137,6 +139,8 @@
         }
         // 转场成功
         else {
+            [cell removeFromSuperview];
+            
             // Push完成, Home会消失, 所以截屏Home, 添加为背景
             UIImageView *bg = ({
                 UIImageView *bg = [[UIImageView alloc] initWithFrame:SCREEN_BOUNDS];
@@ -149,7 +153,7 @@
             [detailVC.view addSubview:bg];
             [detailVC.view insertSubview:bg belowSubview:detailVC.contentV];
             
-            [cell removeFromSuperview];
+            [detailVC.contentV show];
             [detailVC.contentV setAlpha:1];
             [detailVC.view bringSubviewToFront:cell];
         }

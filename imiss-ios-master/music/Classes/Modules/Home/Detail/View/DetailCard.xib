@@ -11,12 +11,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="ks0-J2-abM" customClass="DetailCard">
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="ks0-J2-abM" customClass="DetailCard">
             <rect key="frame" x="0.0" y="0.0" width="358" height="497"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q3J-NX-mPE">
                     <rect key="frame" x="15" y="20" width="70" height="70"/>
+                    <color key="backgroundColor" red="1" green="0.56984772689999996" blue="0.30044455710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="q3J-NX-mPE" secondAttribute="height" multiplier="1:1" id="89H-ar-9jf"/>
                         <constraint firstAttribute="width" constant="70" id="I0f-XI-DXN"/>
@@ -24,12 +25,14 @@
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SxW-tW-UnH">
                     <rect key="frame" x="95" y="20" width="42" height="21"/>
+                    <color key="backgroundColor" red="1" green="0.56984772689999996" blue="0.30044455710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asw-YD-gff">
                     <rect key="frame" x="95" y="46" width="248" height="41"/>
+                    <color key="backgroundColor" red="1" green="0.56984772689999996" blue="0.30044455710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -76,7 +79,7 @@
                 <outlet property="icon" destination="q3J-NX-mPE" id="YWK-xh-njG"/>
                 <outlet property="nameLab" destination="SxW-tW-UnH" id="8le-y0-fbm"/>
             </connections>
-            <point key="canvasLocation" x="-301" y="-438"/>
+            <point key="canvasLocation" x="-446" y="-423"/>
         </view>
     </objects>
 </document>

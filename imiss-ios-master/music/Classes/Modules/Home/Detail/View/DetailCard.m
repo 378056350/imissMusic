@@ -41,7 +41,38 @@
 
 #pragma mark - 动画
 - (void)show {
-    []
+    self.icon.top += 10;
+    self.nameLab.top += 10;
+    self.detailLab.top += 10;
+    self.contentDescLab.top += 10;
+    [UIView animateWithDuration:0.5f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.icon.alpha = 1;
+        self.nameLab.alpha = 1;
+        self.detailLab.alpha = 1;
+        self.contentDescLab.alpha = 1;
+        self.contentLab.alpha = 1;
+        self.icon.top -= 10;
+        self.nameLab.top -= 10;
+        self.detailLab.top -= 10;
+        self.contentDescLab.top -= 10;
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    
+    // 专辑 - 位置
+    POPBasicAnimation *contentBasic = ({
+        CGRect rect = self.contentLab.frame;
+        self.contentLab.top += self.contentLab.height;
+        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
+        basic.duration = 1.0f;
+        basic.beginTime = CACurrentMediaTime();
+        basic.toValue = @(CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)));
+        basic;
+    });
+    [self.contentLab pop_addAnimation:contentBasic forKey:@"contentBasic"];
+    
+    
 }
 - (void)hide {
     

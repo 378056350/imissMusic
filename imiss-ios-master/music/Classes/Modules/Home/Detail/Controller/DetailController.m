@@ -27,7 +27,6 @@
     [self.view setBackgroundColor:[UIColor clearColor]];
     [self contentV];
     [self btns];
-    [self.contentV show];
 }
 
 #pragma mark - 动画
