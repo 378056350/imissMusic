@@ -19,6 +19,9 @@
     return [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: font, NSParagraphStyleAttributeName: paragraphStyle} context:nil].size;
 }
 
+
+
+
 //- (CGSize)sizeWithMaxSize:(CGFloat)lineSpeace withFont:(UIFont*)font withWidth:(CGFloat)width {
 //    NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
 //    paraStyle.lineSpacing = lineSpeace;

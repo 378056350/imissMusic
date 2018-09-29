@@ -169,16 +169,38 @@
     
     
     UIView *cell = ({
-        UIView *cell = detailVC.contentV;
-        cell.frame = [detailVC.contentV convertRectWithWindow];
+        UIView *cell = [detailVC.contentV snapshotViewAfterScreenUpdates:NO];
+        [cell setFrame:[detailVC.contentV convertRectWithWindow]];
+//        [cell shadowWithColor:kColor_Text_Gary offset:CGSizeMake(0, 5) opacity:1 radius:5];
+        
+        UIImageView *icon = [[UIImageView alloc] initWithFrame:cell.bounds];
+        [cell addSubview:icon];
+        [icon setTag:10];
+        [icon setAlpha:0];
         cell;
     });
+    [detailVC.contentV setHidden:YES];
+    [cell.layer setZPosition:9999];
     [containerView addSubview:cell];
+    [containerView bringSubviewToFront:cell];
     [homeVC.selectCell setAlpha:0];
     
     
     // 时间
     NSTimeInterval time = [self transitionDuration:transitionContext];
+    
+    
+    // 背景色
+    POPBasicAnimation *bgBasic = ({
+        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+        basic.duration  = time;
+        basic.beginTime = CACurrentMediaTime();
+        basic.toValue   = @(0);
+        basic;
+    });
+    [detailVC.view pop_addAnimation:bgBasic forKey:@"bgBasic"];
+    
+    
     
     // 圆角
     POPBasicAnimation *cornerBasic = ({
@@ -189,23 +211,73 @@
         basic;
     });
     [cell.layer pop_addAnimation:cornerBasic forKey:@"cornerBasic"];
+
     
-    // 位置
+//    // 阴影
+//    POPBasicAnimation *shadowBasic = ({
+//        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerShadowColor];
+//        basic.duration  = time;
+//        basic.beginTime = CACurrentMediaTime();
+//        basic.toValue   = CFBridgingRelease([UIColor redColor].CGColor);
+//        basic;
+//    });
+//    [cell.layer pop_addAnimation:shadowBasic forKey:@"shadowBasic"];
+    
+    
+    // 中心
     POPBasicAnimation *frameBasic = ({
-        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewFrame];
+        CGRect rect = [homeVC.selectCell.content convertRectWithWindow];
+        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
         basic.duration  = time;
         basic.beginTime = CACurrentMediaTime();
-        basic.toValue   = @([homeVC.selectCell.content convertRectWithWindow]);
+        basic.toValue   = @(CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)));
         basic;
     });
     [cell pop_addAnimation:frameBasic forKey:@"frameBasic"];
+    
+    
+    
+    
+    // 比例
+    CATransform3D transform3D = ({
+        CGFloat scale = homeVC.selectCell.content.height / detailVC.contentV.height;
+        CATransform3D transform3D = CATransform3DIdentity;
+        transform3D.m34 = -1 / 1000.f;
+        transform3D = CATransform3DRotate(transform3D, M_PI, 0, -1, 0);
+        transform3D = CATransform3DScale(transform3D, scale, scale, 1);
+        transform3D;
+    });
+    
+    CABasicAnimation *animation = ({
+        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform"];
+        animation.duration     = time / 2;
+        animation.beginTime    = CACurrentMediaTime();
+        animation.autoreverses = NO;
+        animation.toValue      = [NSValue valueWithCATransform3D:transform3D];
+        animation.fillMode     = kCAFillModeForwards;
+        animation.removedOnCompletion = NO;
+        animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+        animation;
+    });
+    [cell.layer addAnimation:animation forKey:nil];
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time / 2 / 2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [cell.maskView removeFromSuperview];
+        
+        UIImageView *icon = [cell viewWithTag:10];
+        icon.image = [homeVC.selectCell.content imageFromView];
+        icon.layer.transform = CATransform3DMakeRotation(M_PI, 0, 1, 0);
+        icon.alpha = 1;
+    });
+    
     
     
     // 按钮
     [detailVC hide];
     
     // 动画完成
-    [frameBasic setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
+    [cornerBasic setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         // 转场失败
         if ([transitionContext transitionWasCancelled]) {

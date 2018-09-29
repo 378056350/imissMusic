@@ -96,12 +96,42 @@
 - (void)buttonAction:(LEECoolButton *)sender {
     // 分享
     if (sender.tag == 0) {
-        
+        KKShare *share = [KKShare init];
+        [share show];
     }
     // 关闭
     else if (sender.tag == 1) {
+//        POPBasicAnimation *centerBasic = ({
+//            CGRect rect = self.contentV.bounds;
+//            POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
+//            basic.duration  = 0.5f;
+//            basic.beginTime = CACurrentMediaTime();
+//            basic.toValue   = @(CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect) - 80));
+//            basic;
+//        });
+//        [self.contentV.scroll pop_addAnimation:centerBasic forKey:@"centerBasic"];
+//
+//
+//        POPBasicAnimation *alphaBasic = ({
+//            POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+//            basic.duration  = 0.5f;
+//            basic.beginTime = CACurrentMediaTime();
+//            basic.toValue   = @(0);
+//            basic;
+//        });
+//        [self.contentV.scroll pop_addAnimation:alphaBasic forKey:@"alphaBasic"];
+//
+//
+//
+//        centerBasic.completionBlock = ^(POPAnimation *anim, BOOL finished) {
+//
+//        };
+        
         [self.navigationController popViewControllerAnimated:YES];
-//        [self dismissViewControllerAnimated:YES completion:nil];
+        
+        
+//        self.contentV.maskView.top = 130;
+//        [self.navigationController popViewControllerAnimated:YES];
     }
     // 喜欢
     else if (sender.tag == 2) {
