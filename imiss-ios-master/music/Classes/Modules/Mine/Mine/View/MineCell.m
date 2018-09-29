@@ -43,12 +43,6 @@
     _index = index;
     
     if (index.section == 0) {
-        // 账号和绑定设置
-        if (index.row == 0) {
-            self.status = MineCellStatusNext;
-        }
-    }
-    else if (index.section == 1) {
         // 锁屏歌词
         if (index.row == 0) {
             self.status = MineCellStatusSwitch;
@@ -58,7 +52,7 @@
             self.status = MineCellStatusSwitch;
         }
     }
-    else if (index.section == 2) {
+    else if (index.section == 1) {
         // 截屏后提示分享
         if (index.row == 0) {
             self.status = MineCellStatusSwitch;

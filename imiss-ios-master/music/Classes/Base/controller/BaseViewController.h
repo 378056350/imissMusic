@@ -17,6 +17,8 @@
 @property (nonatomic, assign, getter=isAllowBack) BOOL allowPanBack;
 // 内容
 @property (nonatomic, weak  ) BaseView *content;
+// 请求进度
+@property (nonatomic, assign) CGFloat progress;
 // 按钮
 @property (nonatomic, strong) UIButton *leftButton;
 @property (nonatomic, strong) UIButton *rightButton;
@@ -35,15 +37,15 @@
 
 - (void)initUI;
 
-//==================================== 空白 ====================================//
-/// 初始化空视图
-- (void)showEmptyView:(EmptyState)state eventBlock:(EmptyViewEventBlock)eventBlock;
-/// 初始化空视图
-- (void)showEmptyView:(EmptyState)state backButton:(BOOL)backButton eventBlock:(EmptyViewEventBlock)eventBlock;
-/// 初始化空视图
-- (void)showEmptyView:(EmptyState)state inView:(UIView *)inview eventBlock:(EmptyViewEventBlock)eventBlock;
-/// 隐藏视图
-- (void)hideEmptyView;
+////==================================== 空白 ====================================//
+///// 初始化空视图
+//- (void)showEmptyView:(EmptyState)state eventBlock:(EmptyViewEventBlock)eventBlock;
+///// 初始化空视图
+//- (void)showEmptyView:(EmptyState)state backButton:(BOOL)backButton eventBlock:(EmptyViewEventBlock)eventBlock;
+///// 初始化空视图
+//- (void)showEmptyView:(EmptyState)state inView:(UIView *)inview eventBlock:(EmptyViewEventBlock)eventBlock;
+///// 隐藏视图
+//- (void)hideEmptyView;
 
 
 

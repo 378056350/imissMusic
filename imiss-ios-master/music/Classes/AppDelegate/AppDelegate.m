@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AppDelegate+UMengShare.h"
+#import "AppDelegate+ScreenShot.h"
 
 #pragma mark - 声明
 @interface AppDelegate ()
@@ -23,6 +24,9 @@
     [self makeRootController];
     // 友盟分享
     [self configUSharePlatforms];
+    // 截屏事件
+    [self screenshotNotification];
+    
     return YES;
 }
 // 根控制器
@@ -43,8 +47,6 @@
     }
     return result;
 }
-
-
 
 
 @end

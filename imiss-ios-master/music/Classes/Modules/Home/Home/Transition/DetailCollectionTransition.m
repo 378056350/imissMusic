@@ -100,7 +100,7 @@
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time / 2 / 2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         cell.image = nil;
-        cell.backgroundColor = [UIColor redColor];
+        cell.backgroundColor = [UIColor whiteColor];
     });
     
     // 圆角
@@ -138,8 +138,14 @@
         // 转场成功
         else {
             // Push完成, Home会消失, 所以截屏Home, 添加为背景
-            UIImageView *bg = [[UIImageView alloc] initWithFrame:SCREEN_BOUNDS];
-            [bg setImage:[homeVC.view imageFromView]];
+            UIImageView *bg = ({
+                UIImageView *bg = [[UIImageView alloc] initWithFrame:SCREEN_BOUNDS];
+                [bg setImage:[homeVC.view imageFromView]];
+                UIView *view = [[UIView alloc] initWithFrame:bg.bounds];
+                [view setBackgroundColor:[kColor_Text_Black colorWithAlphaComponent:0.2]];
+                [bg addSubview:view];
+                bg;
+            });
             [detailVC.view addSubview:bg];
             [detailVC.view insertSubview:bg belowSubview:detailVC.contentV];
             

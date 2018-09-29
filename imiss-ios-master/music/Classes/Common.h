@@ -44,6 +44,7 @@
 #import "UIImage+Extension.h"
 #import "KKShare.h"
 #import "KKHeaderView.h"
+#import "KKScreenShot.h"
 
 //================================= Util =====================================//
 #import "Single.h"
@@ -54,9 +55,10 @@
 #import "NSString+API.h"
 #import "APPResult.h"
 #import "AFNManager.h"
+#import "AppProgressView.h"
 
 //================================= Base =====================================//
-#import "EmptyView.h"
+#import "KKEmptyView.h"
 #import "BaseView.h"
 #import "BaseNavigationController.h"
 #import "BaseItem.h"

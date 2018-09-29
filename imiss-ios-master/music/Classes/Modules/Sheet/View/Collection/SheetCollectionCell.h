@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SheetCollectionCell : BaseCollectionCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
+@property (weak, nonatomic) IBOutlet UIImageView *cd;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cdConstraintL;
+
+- (void)show:(BOOL)animation;
+- (void)hide:(BOOL)animation;
 
 @end
 

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SheetCollection.h"
 
 #pragma mark - 代理
 @class SheetCollectionLayout;
@@ -20,5 +21,6 @@
 @interface SheetCollectionLayout : UICollectionViewFlowLayout
 
 @property (nonatomic, weak  ) id<SheetCollectionLayoutDelegate> delegate;
+@property (nonatomic, strong) SheetCollection *collection;
 
 @end

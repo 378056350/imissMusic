@@ -7,10 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import "DetailCard.h"
 
 @interface DetailController : BaseViewController
 
-@property (nonatomic, strong) UIView *contentV;
+@property (nonatomic, strong) DetailCard *contentV;
 
 - (void)show;
 - (void)hide;

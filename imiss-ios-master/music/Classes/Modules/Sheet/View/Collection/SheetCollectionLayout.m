@@ -7,12 +7,15 @@
 //
 
 #import "SheetCollectionLayout.h"
+#import "SheetCollectionCell.h"
 
 #define CELLW 80
 #define INSET countcoordinatesX(10)
 
 #pragma mark - 声明
-@interface SheetCollectionLayout()
+@interface SheetCollectionLayout() {
+    SheetCollectionCell *_selectCell;
+}
 
 @end
 
@@ -37,6 +40,8 @@
     // 计算collectionView最中心的X值
     CGFloat collectionCenterX = self.collectionView.contentOffset.x + INSET + CELLW / 2;
     // 在原有布局的基础上，进行微调
+    NSIndexPath *_currentIndex;
+    CGFloat maxScale = 0.8;
     for (UICollectionViewLayoutAttributes *attrs in array) {
         // 计算cell中心点X值
         CGFloat cellX = attrs.center.x;
@@ -47,19 +52,25 @@
         if (scale < 0.8) {
             scale = 0.8;
         }
+        // 找到当前显示的Item
+        if (maxScale < scale) {
+            maxScale = scale;
+            _currentIndex = attrs.indexPath;
+        }
         // 设置缩放比例
-        CATransform3D transform3D = ({
-            CATransform3D transform3D = CATransform3DIdentity;
-            transform3D.m34 = -1.f / 1000.f;
-            transform3D = CATransform3DRotate(transform3D, (M_PI_4 / 0.2f) * scale, 0, -1, 0);
-            transform3D = CATransform3DScale(transform3D, scale, scale, 1);
-            transform3D;
-        });
-        
-        attrs.transform3D = transform3D;
-        
-//        attrs.transform = CGAffineTransformMakeScale(scale, scale);
+        attrs.transform3D = CATransform3DMakeScale(scale, scale, 1);
     }
+    
+    // 找到当前显示Item
+    if (_currentIndex) {
+        if (_selectCell) {
+            [_selectCell hide:YES];
+        }
+        SheetCollectionCell *cell = (SheetCollectionCell *)[_collection cellForItemAtIndexPath:_currentIndex];
+        [cell show:YES];
+        _selectCell = cell;
+    }
+    
     return array;
     
 }
@@ -84,7 +95,7 @@
             minDelta = attrs.center.x-collectionCenterX;
         }
     }
-    //修改原有的偏移量
+    // 修改原有的偏移量
     proposedContentOffset.x += minDelta;
 
 

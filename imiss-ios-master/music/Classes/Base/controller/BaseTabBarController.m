@@ -26,6 +26,7 @@
     MineController *mine = [[MineController alloc] init];
     [self addChildViewController:mine title:@"我的" image:@"cm4_btm_icn_music_new" selImage:@"cm4_btm_icn_music_new_prs"];
     
+//    [self setSelectedIndex:1];
 }
 
 - (void)hideTabbar:(BOOL)hidden {

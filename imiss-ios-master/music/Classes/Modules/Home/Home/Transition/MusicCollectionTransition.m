@@ -273,6 +273,57 @@
     }];
     
     
+    //==================================== 导航栏 ====================================
+    UIImageView *navigation = ({
+        UIView *navigation = [musicVC.navigation snapshotViewAfterScreenUpdates:NO];
+        navigation.frame = [musicVC.navigation convertRectWithWindow];
+        navigation;
+    });
+    [musicVC.navigation setHidden:YES];
+    [containerView addSubview:navigation];
+    // 专辑 - 透明度
+    POPBasicAnimation *alphaBasic = ({
+        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+        basic.duration = 0.3f;
+        basic.beginTime = CACurrentMediaTime();
+        basic.toValue = @(0);
+        basic;
+    });
+    [navigation pop_addAnimation:alphaBasic forKey:@"alphaBasic"];
+    
+    // 专辑 - 位置
+    POPBasicAnimation *naviCenterBasic = ({
+        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
+        basic.duration = 0.3f;
+        basic.beginTime = CACurrentMediaTime();
+        basic.toValue = @(CGPointMake(SCREEN_WIDTH / 2, navigation.centerY - 20));
+        basic;
+    });
+    [navigation pop_addAnimation:naviCenterBasic forKey:@"naviCenterBasic"];
+    
+    
+    
+    
+    //==================================== 背景 ====================================
+    UIView *musicBg = ({
+        UIView *musicBg = [[UIView alloc] initWithFrame:musicVC.view.frame];
+        musicBg.backgroundColor = kColor_BG;
+        musicBg;
+    });
+    [containerView addSubview:musicBg];
+    // 专辑 - 位置
+    POPBasicAnimation *backAlphaBasic = ({
+        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+        basic.duration = time;
+        basic.beginTime = CACurrentMediaTime();
+        basic.toValue = @(0);
+        basic;
+    });
+    [musicBg pop_addAnimation:backAlphaBasic forKey:@"backAlphaBasic"];
+    
+    
+    
+    
     
     //==================================== 专辑 ====================================
     UIImageView *icon = ({
@@ -423,6 +474,7 @@
             [detailLab removeFromSuperview];
             [playBtn removeFromSuperview];
             [bottomView removeFromSuperview];
+            [musicBg removeFromSuperview];
         }
         // 转场成功
         else {
@@ -435,6 +487,7 @@
             [detailLab removeFromSuperview];
             [playBtn removeFromSuperview];
             [bottomView removeFromSuperview];
+            [musicBg removeFromSuperview];
         }
     }];
 }

@@ -14,7 +14,9 @@
 #define INSERT countcoordinatesX(10)
 
 #pragma mark - 声明
-@interface SheetCollection()<UICollectionViewDelegate, UICollectionViewDataSource, SheetCollectionLayoutDelegate>
+@interface SheetCollection()<UICollectionViewDelegate, UICollectionViewDataSource, SheetCollectionLayoutDelegate> {
+    SheetCollectionCell *_selectCell;
+}
 
 @end
 
@@ -31,6 +33,7 @@
     
     SheetCollection *collection = [[SheetCollection alloc] initWithFrame:frame collectionViewLayout:flow];
     [flow setDelegate:collection];
+    [flow setCollection:collection];
     [collection setShowsHorizontalScrollIndicator:NO];
     [collection setBackgroundColor:[UIColor clearColor]];
     [collection setDelegate:collection];
@@ -46,8 +49,13 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    SheetCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SheetCollectionCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
+    SheetCollectionCell *cell = [SheetCollectionCell loadItem:collectionView index:indexPath];
+    if ([cell isEqual:_selectCell]) {
+        [cell show:NO];
+    }
+    else {
+        [cell hide:NO];
+    }
     return cell;
 }
 
@@ -57,6 +65,17 @@
     // 滚动
     CGFloat offsetX = indexPath.row * (INSERT + CELLW);
     [collectionView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+//    // 动画
+//    SheetCollectionCell *cell = (SheetCollectionCell *)[collectionView cellForItemAtIndexPath:indexPath];
+//    // 选中新的Cell
+//    if (![cell isEqual:_selectCell]) {
+//        [cell show:YES];
+//    }
+//    // 隐藏之前的
+//    if (_selectCell && ![cell isEqual:_selectCell]) {
+//        [_selectCell hide:YES];
+//    }
+//    _selectCell = cell;
     // 回调
     if (self.sheetDelegate && [self.sheetDelegate respondsToSelector:@selector(sheetCollection:didSelectOrSwipeItemAtIndex:click:)]) {
         [self.sheetDelegate sheetCollection:self didSelectOrSwipeItemAtIndex:indexPath.row click:YES];
@@ -66,10 +85,26 @@
 #pragma mark - SheetCollectionLayoutDelegate
 // 滑动到某个Cell
 - (void)collectionLayout:(SheetCollectionLayout *)layout didSelectItemWithIndex:(NSInteger)index {
+//    // 动画
+//    SheetCollectionCell *cell = (SheetCollectionCell *)[self cellForItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+//    // 选中新的Cell
+//    if (![cell isEqual:_selectCell]) {
+//        [cell show:YES];
+//    }
+//    // 隐藏之前的
+//    if (_selectCell && ![cell isEqual:_selectCell]) {
+//        [_selectCell hide:YES];
+//    }
+//    _selectCell = cell;
     // 回调
     if (self.sheetDelegate && [self.sheetDelegate respondsToSelector:@selector(sheetCollection:didSelectOrSwipeItemAtIndex:click:)]) {
         [self.sheetDelegate sheetCollection:self didSelectOrSwipeItemAtIndex:index click:NO];
     }
+}
+
+#pragma mark - UISCrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    NSLog(@"%.2f", scrollView.contentOffset.x);
 }
 
 

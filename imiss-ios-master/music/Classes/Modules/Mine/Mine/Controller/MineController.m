@@ -50,12 +50,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0) {
-        // 账号和绑定设置
-        if (indexPath.row == 0) {
-            
-        }
-    }
-    else if (indexPath.section == 1) {
         // 锁屏歌词
         if (indexPath.row == 0) {
             
@@ -65,7 +59,7 @@
             
         }
     }
-    else if (indexPath.section == 2) {
+    else if (indexPath.section == 1) {
         // 截屏后提示分享
         if (indexPath.row == 0) {
             
@@ -122,7 +116,6 @@
 - (NSArray<NSArray<NSString *> *> *)contents {
     if (!_contents) {
         _contents = @[
-                      @[@"账号和绑定设置"],
                       @[@"锁屏歌词",@"夜间模式"],
                       @[@"截屏后提示分享",@"寻找并邀请好友",@"分享imiss",@"关于"]
                       ];

@@ -8,6 +8,13 @@
 
 #import "BaseView.h"
 
+#pragma mark - 声明
+@interface BaseView()
+
+@property (nonatomic, strong) AppProgressView *progressView;
+
+@end
+
 #pragma mark - 实现
 @implementation BaseView
 
@@ -47,52 +54,68 @@
 
 // 初始化UI
 - (void)initUI {
-    [self emptyView];
+//    [self emptyView];
+//    [self progressView];
 }
 
-#pragma mark - 占位页
-- (EmptyView *)emptyView {
-    if (!_emptyView) {
-        _emptyView = [[EmptyView alloc] init];
-        [self addSubview:_emptyView];
+#pragma mark - 请求进度
+- (AppProgressView *)progressView {
+    if (!_progressView) {
+        _progressView = [AppProgressView init];
+        [_progressView setFrame:CGRectMake(0, 0, 0, 2)];
+        [_progressView setBackgroundColor:MainColor];
+        [self addSubview:_progressView];
     }
-    else {
-        _emptyView.frame = self.bounds;
-    }
-    return _emptyView;
+    return _progressView;
 }
 
-/// 初始化空视图
-- (void)showEmptyView:(EmptyState)state eventBlock:(EmptyViewEventBlock)eventBlock {
-    [self.emptyView hide];
-    _emptyView = [[EmptyView alloc] init];
-    [self addSubview:_emptyView];
-    [self.emptyView setState:state];
-    [self.emptyView setEvent:eventBlock];
-    [self.emptyView show];
+- (void)setProgress:(CGFloat)progress {
+    _progress = progress;
+    self.progressView.progress = progress;
 }
-/// 初始化空视图
-- (void)showEmptyView:(EmptyState)state backButton:(BOOL)backButton eventBlock:(EmptyViewEventBlock)eventBlock {
-    [self.emptyView hide];
-    _emptyView = [[EmptyView alloc] init];
-    [self addSubview:_emptyView];
-    [self.emptyView setState:state];
-    [self.emptyView setEvent:eventBlock];
-    [self.emptyView show];
-}
-/// 初始化空视图
-- (void)showEmptyView:(EmptyState)state inView:(UIView *)inview eventBlock:(EmptyViewEventBlock)eventBlock {
-    [self.emptyView hide];
-    _emptyView = [[EmptyView alloc] init];
-    [self addSubview:_emptyView];
-    [self.emptyView setState:state];
-    [self.emptyView setEvent:eventBlock];
-    [self.emptyView show];
-}
-/// 隐藏视图
-- (void)hideEmptyView {
-    [self.emptyView hide];
-}
+
+//- (EmptyView *)emptyView {
+//    if (!_emptyView) {
+//        _emptyView = [[EmptyView alloc] init];
+//        [self addSubview:_emptyView];
+//    }
+//    else {
+//        _emptyView.frame = self.bounds;
+//    }
+//    return _emptyView;
+//}
+
+///// 初始化空视图
+//- (void)showEmptyView:(EmptyState)state eventBlock:(EmptyViewEventBlock)eventBlock {
+//    [self.emptyView hide];
+//    _emptyView = [[EmptyView alloc] init];
+//    [self addSubview:_emptyView];
+//    [self.emptyView setState:state];
+//    [self.emptyView setEvent:eventBlock];
+//    [self.emptyView show];
+//}
+///// 初始化空视图
+//- (void)showEmptyView:(EmptyState)state backButton:(BOOL)backButton eventBlock:(EmptyViewEventBlock)eventBlock {
+//    [self.emptyView hide];
+//    _emptyView = [[EmptyView alloc] init];
+//    [self addSubview:_emptyView];
+//    [self.emptyView setState:state];
+//    [self.emptyView setEvent:eventBlock];
+//    [self.emptyView show];
+//}
+///// 初始化空视图
+//- (void)showEmptyView:(EmptyState)state inView:(UIView *)inview eventBlock:(EmptyViewEventBlock)eventBlock {
+//    [self.emptyView hide];
+//    _emptyView = [[EmptyView alloc] init];
+//    [self addSubview:_emptyView];
+//    [self.emptyView setState:state];
+//    [self.emptyView setEvent:eventBlock];
+//    [self.emptyView show];
+//}
+///// 隐藏视图
+//- (void)hideEmptyView {
+//    [self.emptyView hide];
+//}
 
 @end
 

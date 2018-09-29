@@ -11,16 +11,32 @@
 #pragma mark - 声明
 @interface SheetCollectionCell()
 
-@property (weak, nonatomic) IBOutlet UIImageView *icon;
-
 @end
 
 #pragma mark - 实现
 @implementation SheetCollectionCell
 
 - (void)initUI {
-    self.icon.backgroundColor = [UIColor redColor];
-    self.layer.anchorPoint = CGPointMake(0, 0.5);
+    self.clipsToBounds = NO;
+    self.cd.backgroundColor = [UIColor orangeColor];
+    self.cd.layer.cornerRadius = 80 / 2.f;
+    self.cd.layer.masksToBounds = YES;
+}
+- (void)show:(BOOL)animation {
+    NSTimeInterval time = animation == YES ? 0.3f : 0;
+    [UIView animateWithDuration:time delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.cd.left = 10;
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+- (void)hide:(BOOL)animation {
+    NSTimeInterval time = animation == YES ? 0.3f : 0;
+    [UIView animateWithDuration:time delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.cd.left = 0;
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 @end

@@ -23,6 +23,7 @@
     [self navigation];
     [self cd];
     [self bottom];
+    [self.view bringSubviewToFront:self.navigation];
 }
 
 #pragma mark - 动画
@@ -38,6 +39,7 @@
 }
 - (void)hide {
     [UIView animateWithDuration:0.5f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.navigation.top = -20;
         self.view.backgroundColor = [UIColor clearColor];
     } completion:^(BOOL finished) {
         
@@ -66,7 +68,6 @@
     if (!_bottom) {
         _bottom = [MusicBottom loadFirstNib:CGRectMake(0, SCREEN_HEIGHT - 170, SCREEN_WIDTH, 170)];
         [_bottom setBackgroundColor:kColor_BG];
-//        [_bottom setBackgroundColor:[UIColor orangeColor]];
         [_bottom setAlpha:0];
         [self.view addSubview:_bottom];
     }

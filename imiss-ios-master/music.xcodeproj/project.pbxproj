@@ -14,7 +14,18 @@
 		321EA0DB215CD1E200BF7975 /* SheetTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EA0DA215CD1E200BF7975 /* SheetTable.m */; };
 		321EA0DF215CD2C200BF7975 /* SheetTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 321EA0DD215CD2C200BF7975 /* SheetTableCell.m */; };
 		321EA0E0215CD2C200BF7975 /* SheetTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 321EA0DE215CD2C200BF7975 /* SheetTableCell.xib */; };
+		3239DD73215F495F003C4AB2 /* AppProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3239DD72215F495F003C4AB2 /* AppProgressView.m */; };
+		3239DD76215F54DE003C4AB2 /* AppDelegate+ScreenShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3239DD75215F54DE003C4AB2 /* AppDelegate+ScreenShot.m */; };
+		3239DD7A215F564B003C4AB2 /* KKScreenShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 3239DD79215F564B003C4AB2 /* KKScreenShot.m */; };
+		3239DD7D215F5663003C4AB2 /* KKScreenShotContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3239DD7C215F5663003C4AB2 /* KKScreenShotContent.m */; };
+		3239DD7F215F56A5003C4AB2 /* KKScreenShotContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3239DD7E215F56A5003C4AB2 /* KKScreenShotContent.xib */; };
+		3239DD81215F56AB003C4AB2 /* KKScreenShot.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3239DD80215F56AB003C4AB2 /* KKScreenShot.xib */; };
+		3239DD83215F59C0003C4AB2 /* share_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 3239DD82215F59C0003C4AB2 /* share_close.png */; };
+		3239DD86215F6781003C4AB2 /* DetailCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3239DD85215F6781003C4AB2 /* DetailCard.m */; };
+		3239DD88215F6B30003C4AB2 /* DetailCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3239DD87215F6B30003C4AB2 /* DetailCard.xib */; };
 		3245C88E215DB0EB004938C3 /* DetailCollectionTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3245C88D215DB0EB004938C3 /* DetailCollectionTransition.m */; };
+		32508E07215F414000BF2BA7 /* KKEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32508E06215F414000BF2BA7 /* KKEmptyView.m */; };
+		32508E0A215F439A00BF2BA7 /* UIView+KKEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32508E09215F439A00BF2BA7 /* UIView+KKEmptyView.m */; };
 		3252FF6A215C7EB20019591E /* home_icn1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 3252FF69215C7EB20019591E /* home_icn1.jpeg */; };
 		3252FF6C215C7F830019591E /* home_play.png in Resources */ = {isa = PBXBuildFile; fileRef = 3252FF6B215C7F830019591E /* home_play.png */; };
 		3252FF70215C9C4B0019591E /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3252FF6E215C9C4B0019591E /* MineCell.m */; };
@@ -143,8 +154,26 @@
 		321EA0DC215CD2C200BF7975 /* SheetTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SheetTableCell.h; sourceTree = "<group>"; };
 		321EA0DD215CD2C200BF7975 /* SheetTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SheetTableCell.m; sourceTree = "<group>"; };
 		321EA0DE215CD2C200BF7975 /* SheetTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SheetTableCell.xib; sourceTree = "<group>"; };
+		3239DD71215F495F003C4AB2 /* AppProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppProgressView.h; sourceTree = "<group>"; };
+		3239DD72215F495F003C4AB2 /* AppProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppProgressView.m; sourceTree = "<group>"; };
+		3239DD74215F54DE003C4AB2 /* AppDelegate+ScreenShot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ScreenShot.h"; sourceTree = "<group>"; };
+		3239DD75215F54DE003C4AB2 /* AppDelegate+ScreenShot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ScreenShot.m"; sourceTree = "<group>"; };
+		3239DD78215F564B003C4AB2 /* KKScreenShot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKScreenShot.h; sourceTree = "<group>"; };
+		3239DD79215F564B003C4AB2 /* KKScreenShot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKScreenShot.m; sourceTree = "<group>"; };
+		3239DD7B215F5663003C4AB2 /* KKScreenShotContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKScreenShotContent.h; sourceTree = "<group>"; };
+		3239DD7C215F5663003C4AB2 /* KKScreenShotContent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKScreenShotContent.m; sourceTree = "<group>"; };
+		3239DD7E215F56A5003C4AB2 /* KKScreenShotContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KKScreenShotContent.xib; sourceTree = "<group>"; };
+		3239DD80215F56AB003C4AB2 /* KKScreenShot.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KKScreenShot.xib; sourceTree = "<group>"; };
+		3239DD82215F59C0003C4AB2 /* share_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_close.png; sourceTree = "<group>"; };
+		3239DD84215F6781003C4AB2 /* DetailCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailCard.h; sourceTree = "<group>"; };
+		3239DD85215F6781003C4AB2 /* DetailCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailCard.m; sourceTree = "<group>"; };
+		3239DD87215F6B30003C4AB2 /* DetailCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCard.xib; sourceTree = "<group>"; };
 		3245C88C215DB0EB004938C3 /* DetailCollectionTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailCollectionTransition.h; sourceTree = "<group>"; };
 		3245C88D215DB0EB004938C3 /* DetailCollectionTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailCollectionTransition.m; sourceTree = "<group>"; };
+		32508E05215F414000BF2BA7 /* KKEmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKEmptyView.h; sourceTree = "<group>"; };
+		32508E06215F414000BF2BA7 /* KKEmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKEmptyView.m; sourceTree = "<group>"; };
+		32508E08215F439A00BF2BA7 /* UIView+KKEmptyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+KKEmptyView.h"; sourceTree = "<group>"; };
+		32508E09215F439A00BF2BA7 /* UIView+KKEmptyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+KKEmptyView.m"; sourceTree = "<group>"; };
 		3252FF69215C7EB20019591E /* home_icn1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = home_icn1.jpeg; sourceTree = "<group>"; };
 		3252FF6B215C7F830019591E /* home_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_play.png; sourceTree = "<group>"; };
 		3252FF6D215C9C4B0019591E /* MineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineCell.h; sourceTree = "<group>"; };
@@ -396,6 +425,19 @@
 			path = Table;
 			sourceTree = "<group>";
 		};
+		3239DD77215F562A003C4AB2 /* KKScreenShot */ = {
+			isa = PBXGroup;
+			children = (
+				3239DD78215F564B003C4AB2 /* KKScreenShot.h */,
+				3239DD79215F564B003C4AB2 /* KKScreenShot.m */,
+				3239DD80215F56AB003C4AB2 /* KKScreenShot.xib */,
+				3239DD7B215F5663003C4AB2 /* KKScreenShotContent.h */,
+				3239DD7C215F5663003C4AB2 /* KKScreenShotContent.m */,
+				3239DD7E215F56A5003C4AB2 /* KKScreenShotContent.xib */,
+			);
+			path = KKScreenShot;
+			sourceTree = "<group>";
+		};
 		32508E01215F0CFE00BF2BA7 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,6 +520,8 @@
 			children = (
 				4B43B92C215921B3002F8567 /* AppDelegate.h */,
 				4B43B92D215921B3002F8567 /* AppDelegate.m */,
+				3239DD74215F54DE003C4AB2 /* AppDelegate+ScreenShot.h */,
+				3239DD75215F54DE003C4AB2 /* AppDelegate+ScreenShot.m */,
 				4B1B32F3215A770C00A0C4D2 /* AppDelegate+UMengShare.h */,
 				4B1B32F4215A770C00A0C4D2 /* AppDelegate+UMengShare.m */,
 			);
@@ -615,12 +659,14 @@
 		4B1B332D215A791F00A0C4D2 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
-				4B1B332E215A791F00A0C4D2 /* NSString+API.m */,
-				4B1B332F215A791F00A0C4D2 /* APPResult.m */,
-				4B1B3330215A791F00A0C4D2 /* AFNManager.m */,
 				4B1B3331215A791F00A0C4D2 /* NSString+API.h */,
+				4B1B332E215A791F00A0C4D2 /* NSString+API.m */,
 				4B1B3332215A791F00A0C4D2 /* APPResult.h */,
+				4B1B332F215A791F00A0C4D2 /* APPResult.m */,
 				4B1B3333215A791F00A0C4D2 /* AFNManager.h */,
+				4B1B3330215A791F00A0C4D2 /* AFNManager.m */,
+				3239DD71215F495F003C4AB2 /* AppProgressView.h */,
+				3239DD72215F495F003C4AB2 /* AppProgressView.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -691,7 +737,6 @@
 				4B1B3368215A791F00A0C4D2 /* UIFont */,
 				4B1B336B215A791F00A0C4D2 /* UICollectionView */,
 				4B1B336E215A791F00A0C4D2 /* NSString */,
-				4B1B3373215A791F00A0C4D2 /* UINavigationController */,
 				4B1B3374215A791F00A0C4D2 /* UITableView */,
 				4B1B337D215A791F00A0C4D2 /* CALayer */,
 			);
@@ -782,18 +827,11 @@
 			path = NSString;
 			sourceTree = "<group>";
 		};
-		4B1B3373215A791F00A0C4D2 /* UINavigationController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UINavigationController;
-			sourceTree = "<group>";
-		};
 		4B1B3374215A791F00A0C4D2 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
-				4B1B3375215A791F00A0C4D2 /* UITableView+Extension.m */,
 				4B1B3376215A791F00A0C4D2 /* UITableView+Extension.h */,
+				4B1B3375215A791F00A0C4D2 /* UITableView+Extension.m */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -810,6 +848,7 @@
 		4B1B33B5215A794000A0C4D2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3239DD82215F59C0003C4AB2 /* share_close.png */,
 				4B1F716B215E56B80071CF87 /* music_down.png */,
 				4B1F716C215E56B80071CF87 /* music_list.png */,
 				4BDFFD84215E460C00CC8331 /* home_close.png */,
@@ -937,6 +976,7 @@
 		4B1B33CB215A7C1500A0C4D2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4B1B33FB215A7C1500A0C4D2 /* Single.h */,
 				4B6283C2215D217700F02A8C /* KKHeader */,
 				4B1B33CC215A7C1500A0C4D2 /* Popup */,
 				4B1B33E1215A7C1500A0C4D2 /* CountDown */,
@@ -946,7 +986,6 @@
 				4B1B33EE215A7C1500A0C4D2 /* MusicItem */,
 				4B1B33F3215A7C1500A0C4D2 /* EmptyView */,
 				4B1B33F6215A7C1500A0C4D2 /* Model */,
-				4B1B33FB215A7C1500A0C4D2 /* Single.h */,
 				4B1B3400215A7C1500A0C4D2 /* KKNavigationBar */,
 			);
 			path = Utils;
@@ -955,6 +994,7 @@
 		4B1B33CC215A7C1500A0C4D2 /* Popup */ = {
 			isa = PBXGroup;
 			children = (
+				3239DD77215F562A003C4AB2 /* KKScreenShot */,
 				4B1B33CD215A7C1500A0C4D2 /* KKSheet */,
 				4B1B33D7215A7C1500A0C4D2 /* KKShare */,
 				4B1B33DE215A7C1500A0C4D2 /* KKPopup */,
@@ -965,14 +1005,14 @@
 		4B1B33CD215A7C1500A0C4D2 /* KKSheet */ = {
 			isa = PBXGroup;
 			children = (
+				4B1B33D3215A7C1500A0C4D2 /* KKSheet.h */,
+				4B1B33D0215A7C1500A0C4D2 /* KKSheet.m */,
 				4B1B33CE215A7C1500A0C4D2 /* KKSheet.xib */,
 				4B1B33CF215A7C1500A0C4D2 /* KKSheetCell.h */,
-				4B1B33D0215A7C1500A0C4D2 /* KKSheet.m */,
-				4B1B33D1215A7C1500A0C4D2 /* KKSheetContent.m */,
 				4B1B33D2215A7C1500A0C4D2 /* KKSheetCell.m */,
-				4B1B33D3215A7C1500A0C4D2 /* KKSheet.h */,
 				4B1B33D4215A7C1500A0C4D2 /* KKSheetCell.xib */,
 				4B1B33D5215A7C1500A0C4D2 /* KKSheetContent.h */,
+				4B1B33D1215A7C1500A0C4D2 /* KKSheetContent.m */,
 				4B1B33D6215A7C1500A0C4D2 /* KKSheetContent.xib */,
 			);
 			path = KKSheet;
@@ -981,11 +1021,11 @@
 		4B1B33D7215A7C1500A0C4D2 /* KKShare */ = {
 			isa = PBXGroup;
 			children = (
-				4B1B33D8215A7C1500A0C4D2 /* KKShare.m */,
-				4B1B33D9215A7C1500A0C4D2 /* KKShareContent.h */,
 				4B1B33DA215A7C1500A0C4D2 /* KKShare.h */,
-				4B1B33DB215A7C1500A0C4D2 /* KKShareContent.m */,
+				4B1B33D8215A7C1500A0C4D2 /* KKShare.m */,
 				4B1B33DC215A7C1500A0C4D2 /* KKShare.xib */,
+				4B1B33D9215A7C1500A0C4D2 /* KKShareContent.h */,
+				4B1B33DB215A7C1500A0C4D2 /* KKShareContent.m */,
 				4B1B33DD215A7C1500A0C4D2 /* KKShareContent.xib */,
 			);
 			path = KKShare;
@@ -994,8 +1034,8 @@
 		4B1B33DE215A7C1500A0C4D2 /* KKPopup */ = {
 			isa = PBXGroup;
 			children = (
-				4B1B33DF215A7C1500A0C4D2 /* KKPopupView.m */,
 				4B1B33E0215A7C1500A0C4D2 /* KKPopupView.h */,
+				4B1B33DF215A7C1500A0C4D2 /* KKPopupView.m */,
 			);
 			path = KKPopup;
 			sourceTree = "<group>";
@@ -1041,8 +1081,8 @@
 			isa = PBXGroup;
 			children = (
 				4B1B33EF215A7C1500A0C4D2 /* MusicItem.h */,
-				4B1B33F0215A7C1500A0C4D2 /* MusicItemConst.h */,
 				4B1B33F1215A7C1500A0C4D2 /* MusicItem.m */,
+				4B1B33F0215A7C1500A0C4D2 /* MusicItemConst.h */,
 				4B1B33F2215A7C1500A0C4D2 /* MusicItemConst.m */,
 			);
 			path = MusicItem;
@@ -1053,6 +1093,10 @@
 			children = (
 				4B1B33F4215A7C1500A0C4D2 /* EmptyView.h */,
 				4B1B33F5215A7C1500A0C4D2 /* EmptyView.m */,
+				32508E05215F414000BF2BA7 /* KKEmptyView.h */,
+				32508E06215F414000BF2BA7 /* KKEmptyView.m */,
+				32508E08215F439A00BF2BA7 /* UIView+KKEmptyView.h */,
+				32508E09215F439A00BF2BA7 /* UIView+KKEmptyView.m */,
 			);
 			path = EmptyView;
 			sourceTree = "<group>";
@@ -1071,9 +1115,9 @@
 		4B1B3400215A7C1500A0C4D2 /* KKNavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				4B1B3401215A7C1500A0C4D2 /* KKNavigationBar.xib */,
 				4B1B3402215A7C1500A0C4D2 /* KKNavigationBar.h */,
 				4B1B3403215A7C1500A0C4D2 /* KKNavigationBar.m */,
+				4B1B3401215A7C1500A0C4D2 /* KKNavigationBar.xib */,
 			);
 			path = KKNavigationBar;
 			sourceTree = "<group>";
@@ -1192,6 +1236,9 @@
 		4B6283C9215D29E200F02A8C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3239DD84215F6781003C4AB2 /* DetailCard.h */,
+				3239DD85215F6781003C4AB2 /* DetailCard.m */,
+				3239DD87215F6B30003C4AB2 /* DetailCard.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1319,8 +1366,10 @@
 				4B1B341B215A7C1600A0C4D2 /* KKNavigationBar.xib in Resources */,
 				4B1F716D215E56B80071CF87 /* music_down.png in Resources */,
 				4B43B939215921B3002F8567 /* LaunchScreen.storyboard in Resources */,
+				3239DD81215F56AB003C4AB2 /* KKScreenShot.xib in Resources */,
 				4BAF6CAF215BDD18004D7FBB /* list_icn_small.png in Resources */,
 				4B1B340D215A7C1600A0C4D2 /* KKShareContent.xib in Resources */,
+				3239DD88215F6B30003C4AB2 /* DetailCard.xib in Resources */,
 				32C84ACE215E2B1900888D90 /* MusicBottom.xib in Resources */,
 				4BDFFD88215E460C00CC8331 /* home_close.png in Resources */,
 				4BAF6CA0215BC4BF004D7FBB /* HomeCollectionCell.xib in Resources */,
@@ -1336,6 +1385,8 @@
 				4BDFFD8A215E460C00CC8331 /* home_like_select.png in Resources */,
 				3252FF6C215C7F830019591E /* home_play.png in Resources */,
 				4B1F7170215E572A0071CF87 /* MusicNavigation.xib in Resources */,
+				3239DD7F215F56A5003C4AB2 /* KKScreenShotContent.xib in Resources */,
+				3239DD83215F59C0003C4AB2 /* share_close.png in Resources */,
 				4BDFFD87215E460C00CC8331 /* home_like_normal.png in Resources */,
 				4B43B934215921B3002F8567 /* Main.storyboard in Resources */,
 			);
@@ -1409,6 +1460,7 @@
 				4B6283B7215D03AB00F02A8C /* SheetCollectionLayout.m in Sources */,
 				4B1B340F215A7C1600A0C4D2 /* CountDown.m in Sources */,
 				4B6283C5215D218200F02A8C /* KKHeaderView.m in Sources */,
+				3239DD86215F6781003C4AB2 /* DetailCard.m in Sources */,
 				4B1B340B215A7C1600A0C4D2 /* KKShareContent.m in Sources */,
 				4B1B33A2215A791F00A0C4D2 /* BaseCollectionReusableView.m in Sources */,
 				4B1B3388215A791F00A0C4D2 /* SGPageTitleView.m in Sources */,
@@ -1429,6 +1481,7 @@
 				4B1B3398215A791F00A0C4D2 /* BaseViewController.m in Sources */,
 				4B1B33A8215A791F00A0C4D2 /* UIView+Visuals.m in Sources */,
 				4B1B3418215A7C1600A0C4D2 /* SheetModel.m in Sources */,
+				3239DD7D215F5663003C4AB2 /* KKScreenShotContent.m in Sources */,
 				4B1B33A4215A791F00A0C4D2 /* UIButton+BarButtonItem.m in Sources */,
 				3245C88E215DB0EB004938C3 /* DetailCollectionTransition.m in Sources */,
 				32C84ACC215E2B0D00888D90 /* MusicBottom.m in Sources */,
@@ -1457,9 +1510,12 @@
 				4B1B33A0215A791F00A0C4D2 /* BaseTabBar.m in Sources */,
 				4BDFFD82215E457200CC8331 /* LEECoolButton.m in Sources */,
 				4B1B339F215A791F00A0C4D2 /* BaseCollectionView.m in Sources */,
+				32508E07215F414000BF2BA7 /* KKEmptyView.m in Sources */,
 				4B1B33A1215A791F00A0C4D2 /* BaseCollectionCell.m in Sources */,
 				4BAF6CA9215BCC08004D7FBB /* HomeCollectionLayout.m in Sources */,
+				3239DD73215F495F003C4AB2 /* AppProgressView.m in Sources */,
 				4B1B3406215A7C1600A0C4D2 /* KKSheetContent.m in Sources */,
+				3239DD7A215F564B003C4AB2 /* KKScreenShot.m in Sources */,
 				4B1B3416215A7C1600A0C4D2 /* EmptyView.m in Sources */,
 				3252FF70215C9C4B0019591E /* MineCell.m in Sources */,
 				4B1B338B215A791F00A0C4D2 /* UIWindow+MBProgressHUD.m in Sources */,
@@ -1487,11 +1543,13 @@
 				0488BD5E215B24C70006805F /* NSAttributedString+Extension.m in Sources */,
 				4BAF6C9F215BC4BF004D7FBB /* HomeCollectionCell.m in Sources */,
 				4B1B3385215A791F00A0C4D2 /* UIView+SGPagingView.m in Sources */,
+				32508E0A215F439A00BF2BA7 /* UIView+KKEmptyView.m in Sources */,
 				4B1B339E215A791F00A0C4D2 /* BaseTableCell.m in Sources */,
 				4B6283CD215D29F600F02A8C /* DetailController.m in Sources */,
 				4B1B3397215A791F00A0C4D2 /* BaseItem.m in Sources */,
 				4B1B341C215A7C1600A0C4D2 /* KKNavigationBar.m in Sources */,
 				4B1B33C7215A7A1100A0C4D2 /* SheetController.m in Sources */,
+				3239DD76215F54DE003C4AB2 /* AppDelegate+ScreenShot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

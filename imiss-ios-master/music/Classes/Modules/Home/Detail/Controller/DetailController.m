@@ -25,9 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor clearColor]];
-//    [self.view setBackgroundColor:[kColor_Text_Black colorWithAlphaComponent:0.2]];
     [self contentV];
     [self btns];
+    [self.contentV show];
 }
 
 #pragma mark - 动画
@@ -92,10 +92,41 @@
     [self.view pop_addAnimation:basic1 forKey:@"basic1"];
 }
 
+#pragma mark - 点击
+// 按钮点击
+- (void)buttonAction:(LEECoolButton *)sender {
+    // 分享
+    if (sender.tag == 0) {
+        
+    }
+    // 关闭
+    else if (sender.tag == 1) {
+        [self.navigationController popViewControllerAnimated:YES];
+//        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    // 喜欢
+    else if (sender.tag == 2) {
+        if (sender.selected) {
+            [sender deselect];
+        } else {
+            [sender select];
+        }
+    }
+}
+
+#pragma mark - UINavigationControllerDelegate
+// 转场动画
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+    if (operation == UINavigationControllerOperationPop) {
+        return [DetailCollectionTransition transitionWithTransitionType:DetailCollectionTransitionTypePop];
+    }
+    return nil;
+}
+
 #pragma mark - get
-- (UIView *)contentV {
+- (DetailCard *)contentV {
     if (!_contentV) {
-        _contentV = [[UIView alloc] initWithFrame:({
+        _contentV = [DetailCard loadFirstNib:({
             CGFloat cellW = SCREEN_WIDTH - 80 + 10;
             CGFloat cellH = 5 + cellW / 2 * 3 + 20;
             cellW = cellW - 10;
@@ -108,7 +139,7 @@
             CGRectMake(left, top, width, height);
         })];
         [_contentV setAlpha:0];
-        [_contentV setBackgroundColor:[UIColor orangeColor]];
+        [_contentV setBackgroundColor:[UIColor whiteColor]];
         [_contentV shadowWithColor:[kColor_Text_Gary colorWithAlphaComponent:0.2] offset:CGSizeMake(0, 5) opacity:1 radius:5];
         [_contentV.layer setCornerRadius:5];
         [self.view addSubview:_contentV];
@@ -144,45 +175,13 @@
             [btn.layer setShadowOffset:CGSizeMake(0, 3)];
             [btn.layer setShadowOpacity:1];
             [btn.layer setShadowRadius:5];
-            [btn addTarget:self action:@selector(heartButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+            [btn addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview:btn];
             [_btns addObject:btn];
         }
     }
     return _btns;
 }
-
-- (void)heartButtonAction:(LEECoolButton *)sender {
-    // 分享
-    if (sender.tag == 0) {
-        
-    }
-    // 关闭
-    else if (sender.tag == 1) {
-        [self.navigationController popViewControllerAnimated:YES];
-//        [self dismissViewControllerAnimated:YES completion:nil];
-    }
-    // 喜欢
-    else if (sender.tag == 2) {
-        if (sender.selected) {
-            [sender deselect];
-        } else {
-            [sender select];
-        }
-    }
-}
-
-
-
-#pragma mark - UINavigationControllerDelegate
-// 转场动画
-- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
-    if (operation == UINavigationControllerOperationPop) {
-        return [DetailCollectionTransition transitionWithTransitionType:DetailCollectionTransitionTypePop];
-    }
-    return nil;
-}
-
 
 #pragma mark - 系统
 - (void)viewDidAppear:(BOOL)animated {

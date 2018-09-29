@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EmptyView.h"
+#import "KKEmptyView.h"
 
 @interface BaseView : UIView
 
-@property (nonatomic, strong) EmptyView *emptyView;
+/// 占位图
+@property (nonatomic, strong) KKEmptyView *emptyView;
+/// 请求进度
+@property (nonatomic, assign) CGFloat progress;
 
 //==================================== 加载 ====================================//
 /// 加载第一个nib
@@ -30,14 +33,14 @@
 - (void)initUI;
 
 
-//==================================== 空白 ====================================//
-/// 初始化空视图
-- (void)showEmptyView:(EmptyState)state eventBlock:(EmptyViewEventBlock)eventBlock;
-/// 初始化空视图
-- (void)showEmptyView:(EmptyState)state backButton:(BOOL)backButton eventBlock:(EmptyViewEventBlock)eventBlock;
-/// 初始化空视图
-- (void)showEmptyView:(EmptyState)state inView:(UIView *)inview eventBlock:(EmptyViewEventBlock)eventBlock;
-/// 隐藏视图
-- (void)hideEmptyView;
+////==================================== 空白 ====================================//
+///// 初始化空视图
+//- (void)showEmptyView:(EmptyState)state eventBlock:(EmptyViewEventBlock)eventBlock;
+///// 初始化空视图
+//- (void)showEmptyView:(EmptyState)state backButton:(BOOL)backButton eventBlock:(EmptyViewEventBlock)eventBlock;
+///// 初始化空视图
+//- (void)showEmptyView:(EmptyState)state inView:(UIView *)inview eventBlock:(EmptyViewEventBlock)eventBlock;
+///// 隐藏视图
+//- (void)hideEmptyView;
 
 @end

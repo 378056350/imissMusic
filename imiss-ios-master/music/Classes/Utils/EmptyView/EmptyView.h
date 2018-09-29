@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger, EmptyState) {
     EmptyStateCollectionNone,        // 无收藏歌曲
     EmptyStateLoading,               // 正在加载
 };
-typedef void (^EmptyViewEventBlock)();
+typedef void (^EmptyViewEventBlock)(void);
 
 #pragma mark - 声明
 @interface EmptyView : UIView
