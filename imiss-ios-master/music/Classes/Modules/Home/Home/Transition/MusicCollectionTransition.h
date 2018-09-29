@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - enum
 typedef NS_ENUM(NSUInteger, MusicCollectionTransitionType) {
-    MusicCollectionTransitionPresent = 0,
-    MusicCollectionTransitionDismiss
+    MusicCollectionTransitionPush = 0,
+    MusicCollectionTransitionPop
 };
 
 #pragma mark - 声明

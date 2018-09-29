@@ -10,7 +10,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#pragma mark - 代理
+@class SheetCollection;
+@protocol SheetCollectionDelegate<NSObject>
+@optional
+// 点击/滑动到某个Item
+- (void)sheetCollection:(SheetCollection *)collection didSelectOrSwipeItemAtIndex:(NSInteger)index click:(BOOL)isClick;
+
+@end
+
+#pragma mark - 声明
 @interface SheetCollection : BaseCollectionView
+
+@property (nonatomic, weak  ) id<SheetCollectionDelegate> sheetDelegate;
 
 + (instancetype)initWithFrame:(CGRect)frame;
 

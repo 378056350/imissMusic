@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *rightBtn;    // 下一首
 @property (weak, nonatomic) IBOutlet UIButton *randomBtn;   // 随机
 @property (weak, nonatomic) IBOutlet UIButton *listBtn;     // 列表
+@property (weak, nonatomic) IBOutlet UIImageView *controlImg;   // 控制图片
 
 @end
 

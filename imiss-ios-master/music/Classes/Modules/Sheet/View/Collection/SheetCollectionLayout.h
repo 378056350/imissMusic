@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+#pragma mark - 代理
+@class SheetCollectionLayout;
+@protocol SheetCollectionLayoutDelegate<NSObject>
+@optional
+- (void)collectionLayout:(SheetCollectionLayout *)layout didSelectItemWithIndex:(NSInteger)index;
+
+@end
+
+#pragma mark - 声明
 @interface SheetCollectionLayout : UICollectionViewFlowLayout
 
-+ (instancetype)init;
+@property (nonatomic, weak  ) id<SheetCollectionLayoutDelegate> delegate;
 
 @end

@@ -19,12 +19,6 @@
 #pragma mark - 实现
 @implementation SheetCollectionLayout
 
-- (instancetype)init {
-    if (self = [super init]) {
-        
-    }
-    return self;
-}
 - (void)prepareLayout {
     [super prepareLayout];
     [self setScrollDirection:UICollectionViewScrollDirectionHorizontal];
@@ -54,7 +48,17 @@
             scale = 0.8;
         }
         // 设置缩放比例
-        attrs.transform = CGAffineTransformMakeScale(scale, scale);
+        CATransform3D transform3D = ({
+            CATransform3D transform3D = CATransform3DIdentity;
+            transform3D.m34 = -1.f / 1000.f;
+            transform3D = CATransform3DRotate(transform3D, (M_PI_4 / 0.2f) * scale, 0, -1, 0);
+            transform3D = CATransform3DScale(transform3D, scale, scale, 1);
+            transform3D;
+        });
+        
+        attrs.transform3D = transform3D;
+        
+//        attrs.transform = CGAffineTransformMakeScale(scale, scale);
     }
     return array;
     
@@ -62,13 +66,6 @@
 
 // 这个方法的返回值，决定了colletionView停止滚动时的偏移量
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity {
-//    proposedContentOffset.x = (proposedContentOffset.x + CELLW * 0.4) / CELLW;
-//    proposedContentOffset.x -= INSET;
-//    NSInteger index = proposedContentOffset.x / (CELLW + INSET);
-//    NSLog(@"index:  %ld", index);
-//
-//    return proposedContentOffset;
-    
     
     // 计算出最终显示的矩形框
     CGRect rect;
@@ -93,9 +90,13 @@
 
     CGFloat left = proposedContentOffset.x;
     NSInteger index = (left + (CELLW + INSET) * 0.4) / (CELLW + INSET);
-//    proposedContentOffset.x = INSET;
     proposedContentOffset.x = index * (CELLW + INSET);
 
+    // 回调
+    if (self.delegate && [self.delegate respondsToSelector:@selector(collectionLayout:didSelectItemWithIndex:)]) {
+        [self.delegate collectionLayout:self didSelectItemWithIndex:index];
+    }
+    
     return proposedContentOffset;
 }
 

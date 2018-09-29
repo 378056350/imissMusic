@@ -11,7 +11,7 @@
 #import "SheetTable.h"
 
 #pragma mark - 声明
-@interface SheetController()
+@interface SheetController()<SheetCollectionDelegate>
 
 @property (nonatomic, strong) KKHeaderView *header;
 @property (nonatomic, strong) SheetCollection *collection;
@@ -29,6 +29,12 @@
     [self table];
 }
 
+#pragma mark - SheetCollectionDelegate
+// 点击/滑动到某个Item
+- (void)sheetCollection:(SheetCollection *)collection didSelectOrSwipeItemAtIndex:(NSInteger)index click:(BOOL)isClick {
+    NSLog(@"操作方式: %@,  Item: %ld", isClick == YES ? @"点击" : @"滑动", index);
+}
+
 #pragma mark - get
 - (KKHeaderView *)header {
     if (!_header) {
@@ -41,6 +47,7 @@
 - (SheetCollection *)collection {
     if (!_collection) {
         _collection = [SheetCollection initWithFrame:CGRectMake(0, CGRectGetMaxY(_header.frame), SCREEN_WIDTH, countcoordinatesX(140))];
+        _collection.sheetDelegate = self;
         [self.view addSubview:_collection];
     }
     return _collection;

@@ -25,10 +25,10 @@
     [self setBackgroundColor:kColor_BG];
     [self createScrollItem];
     [self.cancleBtn.titleLabel setFont:[UIFont systemFontOfSize:AdjustFont(12)]];
-    [self.cancleBtn setTitleColor:kColor_Text_Black forState:UIControlStateNormal];
-    [self.cancleBtn setTitleColor:kColor_Text_Black forState:UIControlStateHighlighted];
+    [self.cancleBtn setTitleColor:kColor_Text_Gary forState:UIControlStateNormal];
+    [self.cancleBtn setTitleColor:kColor_Text_Gary forState:UIControlStateHighlighted];
     [self.cancleBtn borderForColor:[kColor_Text_Gary colorWithAlphaComponent:0.2] borderWidth:1.f / [UIScreen mainScreen].scale borderType:UIBorderSideTypeTop];
-    [self setRoundedCorners:UIRectCornerTopLeft | UIRectCornerTopRight radius:10];
+    [self setRoundedCorners:UIRectCornerTopLeft | UIRectCornerTopRight radius:5];
 }
 
 - (void)createScrollItem {

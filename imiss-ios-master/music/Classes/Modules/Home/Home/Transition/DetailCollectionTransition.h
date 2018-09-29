@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - enum
 typedef NS_ENUM(NSUInteger, DetailCollectionTransitionType) {
-    DetailCollectionTransitionTypePresent = 0,
-    DetailCollectionTransitionTypeDismiss
+    DetailCollectionTransitionTypePush = 0,
+    DetailCollectionTransitionTypePop
 };
 
 #pragma mark - 声明

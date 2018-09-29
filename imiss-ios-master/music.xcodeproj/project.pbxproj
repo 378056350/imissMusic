@@ -396,6 +396,17 @@
 			path = Table;
 			sourceTree = "<group>";
 		};
+		32508E01215F0CFE00BF2BA7 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				3245C88C215DB0EB004938C3 /* DetailCollectionTransition.h */,
+				3245C88D215DB0EB004938C3 /* DetailCollectionTransition.m */,
+				32C84AC7215E283100888D90 /* MusicCollectionTransition.h */,
+				32C84AC8215E283100888D90 /* MusicCollectionTransition.m */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		32C84ABF215E276C00888D90 /* Music */ = {
 			isa = PBXGroup;
 			children = (
@@ -1153,6 +1164,7 @@
 		4B6283C6215D29C300F02A8C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				32508E01215F0CFE00BF2BA7 /* Transition */,
 				4B1B33B7215A79DB00A0C4D2 /* Controller */,
 				4B1B33B8215A79DB00A0C4D2 /* Model */,
 				4B1B33B9215A79DB00A0C4D2 /* View */,
@@ -1209,10 +1221,6 @@
 		4BAF6CA6215BC9EA004D7FBB /* popular */ = {
 			isa = PBXGroup;
 			children = (
-				3245C88C215DB0EB004938C3 /* DetailCollectionTransition.h */,
-				3245C88D215DB0EB004938C3 /* DetailCollectionTransition.m */,
-				32C84AC7215E283100888D90 /* MusicCollectionTransition.h */,
-				32C84AC8215E283100888D90 /* MusicCollectionTransition.m */,
 				4BAF6C93215BBD1A004D7FBB /* HomeCollection.h */,
 				4BAF6C94215BBD1A004D7FBB /* HomeCollection.m */,
 				4BAF6C9C215BC4BF004D7FBB /* HomeCollectionCell.h */,

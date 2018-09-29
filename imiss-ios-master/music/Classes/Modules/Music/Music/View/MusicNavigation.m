@@ -23,7 +23,8 @@
     
 }
 - (IBAction)leftTap:(UITapGestureRecognizer *)sender {
-    [self.viewController dismissViewControllerAnimated:YES completion:nil];
+    [self.viewController.navigationController popViewControllerAnimated:YES];
+//    [self.viewController dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)rightTap:(UITapGestureRecognizer *)sender {
     

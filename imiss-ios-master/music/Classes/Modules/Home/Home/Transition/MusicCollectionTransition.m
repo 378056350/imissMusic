@@ -34,10 +34,10 @@
 
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    if (_type == MusicCollectionTransitionPresent) {
-        return 0.8f;
+    if (_type == MusicCollectionTransitionPush) {
+        return 0.5f;
     }
-    else if (_type == MusicCollectionTransitionDismiss) {
+    else if (_type == MusicCollectionTransitionPop) {
         return 0.5f;
     }
     return 0;
@@ -46,28 +46,28 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
     // 为了将两种动画的逻辑分开，变得更加清晰，我们分开书写逻辑，
     switch (_type) {
-        case MusicCollectionTransitionPresent:
+        case MusicCollectionTransitionPush:
             [self presentAnimation:transitionContext];
             break;
             
-        case MusicCollectionTransitionDismiss:
+        case MusicCollectionTransitionPop:
             [self dismissAnimation:transitionContext];
             break;
     }
 }
 // 实现present动画逻辑代码
 - (void)presentAnimation:(id<UIViewControllerContextTransitioning>)transitionContext {
+    BaseTabBarController *tab = (BaseTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    [tab hideTabbar:YES];
     // 首页
-    HomeController *homeVC = ({
-        BaseTabBarController *tab = (BaseTabBarController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-        HomeController *vc = [(BaseNavigationController *)tab.childViewControllers[0] viewControllers][0];
-        vc;
-    });
+    HomeController *homeVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     // 音乐
     MusicController *musicVC = (MusicController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *containerView = [transitionContext containerView];
     [containerView addSubview:musicVC.view];
     
+    // 时间
+    NSTimeInterval time = [self transitionDuration:transitionContext];
     
     
     //==================================== 专辑 ====================================
@@ -75,6 +75,7 @@
         UIImageView *icon = [[UIImageView alloc] initWithFrame:[homeVC.selectCell.icon convertRectWithWindow]];
         [icon shadowWithColor:[UIColor clearColor] offset:CGSizeMake(0, 3) opacity:1 radius:5];
         [icon setImage:homeVC.selectCell.icon.image];
+        [icon setContentMode:UIViewContentModeScaleAspectFit];
         icon;
     });
     [containerView addSubview:icon];
@@ -83,7 +84,7 @@
     POPBasicAnimation *iconBasic = ({
         CGRect rect = [musicVC.cd.icon convertRectWithWindow];
         POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
-        basic.duration  = 0.5;
+        basic.duration  = time;
         basic.beginTime = CACurrentMediaTime();
         basic.toValue   = @(CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)));
         basic.completionBlock = ^(POPAnimation *anim, BOOL finished) {
@@ -97,7 +98,7 @@
     // 专辑 - 阴影
     POPBasicAnimation *shadowBasic = ({
         POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerShadowColor];
-        basic.duration  = 0.5;
+        basic.duration  = time;
         basic.beginTime = CACurrentMediaTime();
         basic.toValue   = (__bridge id)([kColor_Text_Gary colorWithAlphaComponent:0.5].CGColor);
         basic;
@@ -114,7 +115,7 @@
         transform = CATransform3DScale(transform, scale, scale, 1);
         
         CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform"];
-        anim.duration     = 0.3;
+        anim.duration     = time - 0.2;
         anim.beginTime    = CACurrentMediaTime();
         anim.autoreverses = NO;
         anim.toValue      = [NSValue valueWithCATransform3D:transform];
@@ -151,7 +152,7 @@
     POPBasicAnimation *nameBasic = ({
         CGRect rect = [musicVC.cd.nameLab convertRectWithWindow];
         POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
-        basic.duration = 0.5;
+        basic.duration = time;
         basic.beginTime = CACurrentMediaTime();
         basic.toValue = @(CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)));
         basic;
@@ -173,7 +174,7 @@
     POPBasicAnimation *detailBasic = ({
         CGRect rect = [musicVC.cd.detailLab convertRectWithWindow];
         POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
-        basic.duration = 0.5;
+        basic.duration = time;
         basic.beginTime = CACurrentMediaTime();
         basic.toValue = @(CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)));
         basic;
@@ -195,23 +196,25 @@
     POPBasicAnimation *playBasic = ({
         CGRect rect = [musicVC.bottom.controlBtn convertRectWithWindow];
         POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
-        basic.duration = 1;
+        basic.duration = time;
         basic.beginTime = CACurrentMediaTime();
         basic.toValue = @(CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)));
         basic;
     });
     [playBtn pop_addAnimation:playBasic forKey:@"playBasic"];
     
+    
     // 歌手 - 旋转
     CABasicAnimation *playAnim = ({
         CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
         anim.beginTime    = CACurrentMediaTime();
-        anim.duration     = 0.5;
+        anim.duration     = time;
         anim.autoreverses = NO;
+        anim.fromValue    = [NSNumber numberWithFloat:0];
         anim.toValue      = [NSNumber numberWithFloat:M_PI * 2];
         anim.fillMode     = kCAFillModeForwards;
         anim.removedOnCompletion = NO;
-        anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+        anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
         anim;
     });
     [playBtn.layer addAnimation:playAnim forKey:nil];
@@ -240,22 +243,26 @@
         // 转场成功
         else {
             [musicVC.cd setAlpha:1];
+            [musicVC.bottom.controlImg setAlpha:1];
             [icon removeFromSuperview];
             [nameLab removeFromSuperview];
             [detailLab removeFromSuperview];
+            [playBtn removeFromSuperview];
         }
     }];
 }
 // 实现dismiss动画逻辑代码
 - (void)dismissAnimation:(id<UIViewControllerContextTransitioning>)transitionContext {
-    HomeController *homeVC = ({
-        BaseTabBarController *tab = (BaseTabBarController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-        HomeController *vc = [(BaseNavigationController *)tab.childViewControllers[0] viewControllers][0];
-        vc;
-    });
+    // 首页
+    HomeController *homeVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    // 播放
     MusicController *musicVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIView *containerView = [transitionContext containerView];
+    [containerView addSubview:musicVC.view];
+    [containerView addSubview:homeVC.view];
     
+    // 时间
+    NSTimeInterval time = [self transitionDuration:transitionContext];
     
     // 首页文字
     [UIView animateWithDuration:.5f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
@@ -281,7 +288,7 @@
     POPBasicAnimation *iconBasic = ({
         CGRect rect = [homeVC.selectCell.icon convertRectWithWindow];
         POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
-        basic.duration = 0.3;
+        basic.duration = time;
         basic.beginTime = CACurrentMediaTime();
         basic.toValue = @(CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect)));
         basic;
@@ -355,10 +362,48 @@
     
     
     
+    //==================================== 播放 ====================================
+    UIView *playBtn = ({
+        UIView *playBtn = [musicVC.bottom.controlImg snapshotViewAfterScreenUpdates:NO];
+        playBtn.frame = [musicVC.bottom.controlImg convertRectWithWindow];
+        playBtn;
+    });
+    [containerView addSubview:playBtn];
 
     
+    // 歌手 - 位置
+    POPBasicAnimation *playBasic = ({
+        CGRect fromRect = [musicVC.bottom.controlImg convertRectWithWindow];
+        CGRect toRect = [homeVC.selectCell.playBtn convertRectWithWindow];
+        
+        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
+        basic.duration = 0.3;
+        basic.beginTime = CACurrentMediaTime();
+        basic.fromValue = @(CGPointMake(CGRectGetMidX(fromRect), CGRectGetMidY(fromRect)));
+        basic.toValue = @(CGPointMake(CGRectGetMidX(toRect), CGRectGetMidY(toRect)));
+        basic;
+    });
+    [playBtn pop_addAnimation:playBasic forKey:@"playBasic"];
     
     
+    
+    //==================================== 底部 ====================================
+    UIView *bottomView = ({
+        UIView *playBtn = musicVC.bottom;
+        playBtn.frame = [musicVC.bottom convertRectWithWindow];
+        playBtn;
+    });
+    [containerView addSubview:bottomView];
+    
+    // 歌手 - 位置
+    POPBasicAnimation *bottomBasic = ({
+        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+        basic.duration = 0.3;
+        basic.beginTime = CACurrentMediaTime();
+        basic.toValue = @(0);
+        basic;
+    });
+    [bottomView pop_addAnimation:bottomBasic forKey:@"bottomBasic"];
     
     
     
@@ -376,15 +421,20 @@
             [icon removeFromSuperview];
             [nameLab removeFromSuperview];
             [detailLab removeFromSuperview];
+            [playBtn removeFromSuperview];
+            [bottomView removeFromSuperview];
         }
         // 转场成功
         else {
             [homeVC.selectCell.icon setHidden:NO];
             [homeVC.selectCell.nameLab setHidden:NO];
             [homeVC.selectCell.detailLab setHidden:NO];
+            [homeVC.selectCell.playBtn setHidden:NO];
             [icon removeFromSuperview];
             [nameLab removeFromSuperview];
             [detailLab removeFromSuperview];
+            [playBtn removeFromSuperview];
+            [bottomView removeFromSuperview];
         }
     }];
 }

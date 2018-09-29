@@ -14,7 +14,7 @@
 #define INSERT countcoordinatesX(10)
 
 #pragma mark - 声明
-@interface SheetCollection()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface SheetCollection()<UICollectionViewDelegate, UICollectionViewDataSource, SheetCollectionLayoutDelegate>
 
 @end
 
@@ -22,12 +22,15 @@
 @implementation SheetCollection
 
 + (instancetype)initWithFrame:(CGRect)frame {
-    SheetCollection *collection = [[SheetCollection alloc] initWithFrame:frame collectionViewLayout:({
+    SheetCollectionLayout *flow = ({
         SheetCollectionLayout *flow = [[SheetCollectionLayout alloc] init];
         flow.itemSize = CGSizeMake(80, 80);
         flow.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         flow;
-    })];
+    });
+    
+    SheetCollection *collection = [[SheetCollection alloc] initWithFrame:frame collectionViewLayout:flow];
+    [flow setDelegate:collection];
     [collection setShowsHorizontalScrollIndicator:NO];
     [collection setBackgroundColor:[UIColor clearColor]];
     [collection setDelegate:collection];
@@ -49,9 +52,24 @@
 }
 
 #pragma mark - UICollectionViewDelegate
+// 点击了某个Cell
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    // 滚动
     CGFloat offsetX = indexPath.row * (INSERT + CELLW);
     [collectionView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+    // 回调
+    if (self.sheetDelegate && [self.sheetDelegate respondsToSelector:@selector(sheetCollection:didSelectOrSwipeItemAtIndex:click:)]) {
+        [self.sheetDelegate sheetCollection:self didSelectOrSwipeItemAtIndex:indexPath.row click:YES];
+    }
+}
+
+#pragma mark - SheetCollectionLayoutDelegate
+// 滑动到某个Cell
+- (void)collectionLayout:(SheetCollectionLayout *)layout didSelectItemWithIndex:(NSInteger)index {
+    // 回调
+    if (self.sheetDelegate && [self.sheetDelegate respondsToSelector:@selector(sheetCollection:didSelectOrSwipeItemAtIndex:click:)]) {
+        [self.sheetDelegate sheetCollection:self didSelectOrSwipeItemAtIndex:index click:NO];
+    }
 }
 
 

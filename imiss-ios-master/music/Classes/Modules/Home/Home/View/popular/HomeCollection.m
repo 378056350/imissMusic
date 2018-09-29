@@ -64,7 +64,6 @@
             shadow.shadowOffset = CGSizeMake(0, 0);
             shadow.shadowColor = kColor_Text_Gary;
             
-            
             NSString *str = @"497 Popular Music";
             NSMutableAttributedString *attrm = [[NSMutableAttributedString alloc] initWithString:str];
             [attrm addAttribute:NSFontAttributeName value:MathFont(14) range:NSMakeRange(0, str.length)];
@@ -86,6 +85,7 @@
             flow.itemSize = CGSizeMake(width, 5 + width / 2 * 3 + 20);
             flow;
         })];
+//        [_collection setClipsToBounds:NO];
         [_collection setPagingEnabled:NO];
         [_collection setShowsHorizontalScrollIndicator:NO];
         [_collection setDelegate:self];

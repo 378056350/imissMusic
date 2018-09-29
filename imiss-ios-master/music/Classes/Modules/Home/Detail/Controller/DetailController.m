@@ -13,7 +13,7 @@
 #define BTN_PADDING countcoordinatesX(20)
 
 #pragma mark - 声明
-@interface DetailController()<UIViewControllerTransitioningDelegate>
+@interface DetailController()<UINavigationControllerDelegate>
 
 @property (nonatomic, strong) NSMutableArray<UIButton *> *btns;
 
@@ -22,14 +22,6 @@
 #pragma mark - 实现
 @implementation DetailController
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.transitioningDelegate = self;
-        self.modalPresentationStyle = UIModalPresentationCustom;
-    }
-    return self;
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor clearColor]];
@@ -116,7 +108,7 @@
             CGRectMake(left, top, width, height);
         })];
         [_contentV setAlpha:0];
-        [_contentV setBackgroundColor:[UIColor whiteColor]];
+        [_contentV setBackgroundColor:[UIColor orangeColor]];
         [_contentV shadowWithColor:[kColor_Text_Gary colorWithAlphaComponent:0.2] offset:CGSizeMake(0, 5) opacity:1 radius:5];
         [_contentV.layer setCornerRadius:5];
         [self.view addSubview:_contentV];
@@ -167,7 +159,8 @@
     }
     // 关闭
     else if (sender.tag == 1) {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popViewControllerAnimated:YES];
+//        [self dismissViewControllerAnimated:YES completion:nil];
     }
     // 喜欢
     else if (sender.tag == 2) {
@@ -179,14 +172,22 @@
     }
 }
 
-#pragma mark - UIViewControllerTransitioningDelegate
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-    // 初始化presentType
-    return [DetailCollectionTransition transitionWithTransitionType:DetailCollectionTransitionTypePresent];
+
+
+#pragma mark - UINavigationControllerDelegate
+// 转场动画
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+    if (operation == UINavigationControllerOperationPop) {
+        return [DetailCollectionTransition transitionWithTransitionType:DetailCollectionTransitionTypePop];
+    }
+    return nil;
 }
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    // 初始化dismissType
-    return [DetailCollectionTransition transitionWithTransitionType:DetailCollectionTransitionTypeDismiss];
+
+
+#pragma mark - 系统
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.navigationController setDelegate:self];
 }
 
 @end

@@ -10,21 +10,13 @@
 #import "MusicCollectionTransition.h"
 
 #pragma mark - 声明
-@interface MusicController()<UIViewControllerTransitioningDelegate>
+@interface MusicController()<UINavigationControllerDelegate>
 
 @end
 
 #pragma mark - 实现
 @implementation MusicController
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.transitioningDelegate = self;
-        self.modalPresentationStyle = UIModalPresentationCustom;
-    }
-    return self;
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor:[UIColor clearColor]];
@@ -35,7 +27,7 @@
 
 #pragma mark - 动画
 - (void)show {
-    [UIView animateWithDuration:0.3f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:0.5f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.navigation.alpha = 1;
         self.navigation.top = 0;
         self.bottom.alpha = 1;
@@ -45,7 +37,7 @@
     }];
 }
 - (void)hide {
-    [UIView animateWithDuration:0.3f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:0.5f delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.view.backgroundColor = [UIColor clearColor];
     } completion:^(BOOL finished) {
         
@@ -72,20 +64,28 @@
 }
 - (MusicBottom *)bottom {
     if (!_bottom) {
-        _bottom = [MusicBottom loadFirstNib:CGRectMake(0, SCREEN_HEIGHT - 160, SCREEN_WIDTH, 170)];
+        _bottom = [MusicBottom loadFirstNib:CGRectMake(0, SCREEN_HEIGHT - 170, SCREEN_WIDTH, 170)];
         [_bottom setBackgroundColor:kColor_BG];
+//        [_bottom setBackgroundColor:[UIColor orangeColor]];
         [_bottom setAlpha:0];
         [self.view addSubview:_bottom];
     }
     return _bottom;
 }
 
-#pragma mark - UIViewControllerTransitioningDelegate
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
-    return [MusicCollectionTransition transitionWithTransitionType:MusicCollectionTransitionPresent];
+#pragma mark - UINavigationControllerDelegate
+// 转场动画
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+    if (operation == UINavigationControllerOperationPop) {
+        return [MusicCollectionTransition transitionWithTransitionType:MusicCollectionTransitionPop];
+    }
+    return nil;
 }
-- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
-    return [MusicCollectionTransition transitionWithTransitionType:MusicCollectionTransitionDismiss];
+
+#pragma mark - 系统
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.navigationController setDelegate:self];
 }
 
 @end

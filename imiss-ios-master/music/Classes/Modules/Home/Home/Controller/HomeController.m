@@ -10,9 +10,11 @@
 #import "HomeContent.h"
 #import "DetailController.h"
 #import "MusicController.h"
+#import "DetailCollectionTransition.h"
+#import "MusicCollectionTransition.h"
 
 #pragma mark - 声明
-@interface HomeController()<HomeTitleDelegate, HomeContentDelegate, HomeCollectionDelegate>
+@interface HomeController()<HomeTitleDelegate, HomeContentDelegate, HomeCollectionDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) HomeConfig *config;
 @property (nonatomic, strong) HomeContent *scroll;
@@ -30,6 +32,7 @@
     
 }
 
+
 #pragma mark - HomeCollectionDelegate
 // 点击Cell
 - (void)homeCollection:(HomeCollection *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath cell:(HomeCollectionCell *)cell {
@@ -37,7 +40,7 @@
     _selectCell = cell;
     // 跳转
     DetailController *vc = [[DetailController alloc] init];
-    [self presentViewController:vc animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - HomeTitleDelegate
@@ -48,6 +51,35 @@
 #pragma mark - HomeContentDelegate
 - (void)homeContent:(HomeContent *)content progress:(CGFloat)progress originalIndex:(NSInteger)originalIndex targetIndex:(NSInteger)targetIndex {
     [_header setProgress:progress originalIndex:originalIndex targetIndex:targetIndex];
+}
+
+
+#pragma mark - UINavigationControllerDelegate
+// 转场动画
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+    // Push
+    if (operation == UINavigationControllerOperationPush) {
+        // 详情页
+        if ([toVC isKindOfClass:[DetailController class]]) {
+            return [DetailCollectionTransition transitionWithTransitionType:DetailCollectionTransitionTypePush];
+        }
+        // 播放页
+        else if ([toVC isKindOfClass:[MusicController class]]) {
+            return [MusicCollectionTransition transitionWithTransitionType:MusicCollectionTransitionPush];
+        }
+    }
+    // Pop
+    else if (operation == UINavigationControllerOperationPop) {
+        // 详情页
+        if ([toVC isKindOfClass:[DetailController class]]) {
+            return [DetailCollectionTransition transitionWithTransitionType:DetailCollectionTransitionTypePop];
+        }
+        // 播放页
+        else if ([toVC isKindOfClass:[MusicController class]]) {
+            return [MusicCollectionTransition transitionWithTransitionType:MusicCollectionTransitionPop];
+        }
+    }
+    return nil;
 }
 
 #pragma mark - get
@@ -61,7 +93,7 @@
 }
 - (HomeTitle *)header {
     if (!_header) {
-        _header = [HomeTitle loadCode:CGRectMake(0, StatusBarHeight, SCREEN_WIDTH, 44)];
+        _header = [HomeTitle loadCode:CGRectMake(0, StatusBarHeight, SCREEN_WIDTH, 40)];
         _header.config = [self config];
         _header.delegate = self;
         [self.view addSubview:_header];
@@ -93,6 +125,10 @@
     return _collection;
 }
 
-
+#pragma mark - 系统
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.navigationController setDelegate:self];
+}
 
 @end

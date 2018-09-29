@@ -62,7 +62,8 @@
     homeVC.selectCell = self;
     
     MusicController *vc = [[MusicController alloc] init];
-    [self.viewController presentViewController:vc animated:YES completion:nil];
+    [self.viewController.navigationController pushViewController:vc animated:YES];
+//    [self.viewController presentViewController:vc animated:YES completion:nil];
 }
 
 @end

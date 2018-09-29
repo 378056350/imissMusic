@@ -20,6 +20,7 @@
 
 - (void)initUI {
     self.icon.backgroundColor = [UIColor redColor];
+    self.layer.anchorPoint = CGPointMake(0, 0.5);
 }
 
 @end

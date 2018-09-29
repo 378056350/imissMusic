@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -60,9 +59,17 @@
                     <color key="minimumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="maximumTrackTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 </slider>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_play.png" translatesAutoresizingMaskIntoConstraints="NO" id="f9U-1b-fcR">
+                    <rect key="frame" x="135" y="75" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="f9U-1b-fcR" secondAttribute="height" multiplier="1:1" id="0Qo-0E-HSF"/>
+                        <constraint firstAttribute="width" constant="50" id="JbV-EZ-S0v"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="f9U-1b-fcR" firstAttribute="centerX" secondItem="tUd-OF-YXX" secondAttribute="centerX" id="02i-pX-gxF"/>
                 <constraint firstItem="DjQ-5p-Bgd" firstAttribute="height" secondItem="w8r-4A-QIp" secondAttribute="height" id="3GJ-KS-JQ8"/>
                 <constraint firstItem="tUd-OF-YXX" firstAttribute="centerX" secondItem="CV5-AY-Ckd" secondAttribute="centerX" id="BSK-z2-qpN"/>
                 <constraint firstItem="igl-ed-Khr" firstAttribute="top" secondItem="tUd-OF-YXX" secondAttribute="bottom" id="GiL-8y-xfm"/>
@@ -85,6 +92,7 @@
                 <constraint firstItem="kE5-VQ-NZc" firstAttribute="height" secondItem="w8r-4A-QIp" secondAttribute="height" id="boe-9C-whi"/>
                 <constraint firstAttribute="trailing" secondItem="FPy-KF-XAp" secondAttribute="trailing" constant="15" id="bqf-W2-See"/>
                 <constraint firstItem="FPy-KF-XAp" firstAttribute="centerY" secondItem="c5L-XK-pU3" secondAttribute="centerY" id="ejg-On-9mK"/>
+                <constraint firstItem="f9U-1b-fcR" firstAttribute="centerY" secondItem="tUd-OF-YXX" secondAttribute="centerY" id="fpz-7o-Uhl"/>
                 <constraint firstAttribute="bottom" secondItem="igl-ed-Khr" secondAttribute="bottom" id="guq-Wh-Swf"/>
                 <constraint firstItem="c5L-XK-pU3" firstAttribute="leading" secondItem="O8B-KU-PqD" secondAttribute="leading" id="njx-iK-kJn"/>
                 <constraint firstItem="c5L-XK-pU3" firstAttribute="top" secondItem="O8B-KU-PqD" secondAttribute="bottom" constant="5" id="o02-4Y-glE"/>
@@ -100,6 +108,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="controlBtn" destination="tUd-OF-YXX" id="7R9-RQ-es6"/>
+                <outlet property="controlImg" destination="f9U-1b-fcR" id="EsH-HT-NDE"/>
                 <outlet property="cycleBtn" destination="w8r-4A-QIp" id="Tl6-fW-WJ3"/>
                 <outlet property="leftBtn" destination="kE5-VQ-NZc" id="oB0-rv-Ijn"/>
                 <outlet property="leftLab" destination="c5L-XK-pU3" id="c5l-Ya-fLp"/>
@@ -109,7 +118,10 @@
                 <outlet property="rightLab" destination="FPy-KF-XAp" id="BnW-1y-Gv8"/>
                 <outlet property="slider" destination="O8B-KU-PqD" id="vLT-EF-XuU"/>
             </connections>
-            <point key="canvasLocation" x="68" y="-85"/>
+            <point key="canvasLocation" x="-118.40000000000001" y="-70.164917541229386"/>
         </view>
     </objects>
+    <resources>
+        <image name="home_play.png" width="200" height="200"/>
+    </resources>
 </document>

@@ -27,6 +27,7 @@
     [self.leftLab setTextColor:kColor_Text_Gary];
     [self.rightLab setTextColor:kColor_Text_Gary];
     [self.slider setThumbImage:[UIImage new] forState:UIControlStateNormal];
+    [self.controlImg setAlpha:0];
     
 }
 
