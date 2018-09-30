@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hyN-dx-6on">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cm2_play_disc" translatesAutoresizingMaskIntoConstraints="NO" id="hyN-dx-6on">
                         <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="hyN-dx-6on" secondAttribute="height" multiplier="1:1" id="IIb-fQ-qhI"/>
@@ -48,6 +48,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="cm2_play_disc" width="238" height="238"/>
         <image name="home_icn1.jpeg" width="300" height="300"/>
     </resources>
 </document>

@@ -211,17 +211,6 @@
         basic;
     });
     [cell.layer pop_addAnimation:cornerBasic forKey:@"cornerBasic"];
-
-    
-//    // 阴影
-//    POPBasicAnimation *shadowBasic = ({
-//        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerShadowColor];
-//        basic.duration  = time;
-//        basic.beginTime = CACurrentMediaTime();
-//        basic.toValue   = CFBridgingRelease([UIColor redColor].CGColor);
-//        basic;
-//    });
-//    [cell.layer pop_addAnimation:shadowBasic forKey:@"shadowBasic"];
     
     
     // 中心

@@ -17,6 +17,7 @@
 @property (nonatomic, strong) KKHeaderView *header;
 @property (nonatomic, strong) UITableView *table;
 @property (nonatomic, strong) NSArray<NSArray<NSString *> *> *contents;
+@property (nonatomic, strong) UIView *footer;
 
 @end
 
@@ -81,13 +82,20 @@
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 0.01f;
+    return 10.f;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return [UIView new];
+    UIView *view = ({
+        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(countcoordinatesX(15), 2, SCREEN_WIDTH, 0.5)];
+        line.backgroundColor = [kColor_Text_Gary colorWithAlphaComponent:0.2];
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 5)];
+        [view addSubview:line];
+        view;
+    });
+    return view;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 20.f;
+    return 0.01f;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     return [UIView new];
@@ -109,9 +117,31 @@
         _table.delegate = self;
         _table.dataSource = self;
         _table.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _table.tableFooterView = [self footer];
         [self.view addSubview:_table];
     }
     return _table;
+}
+- (UIView *)footer {
+    if (!_footer) {
+        _footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
+        [self.view addSubview:_footer];
+        UIView *line = ({
+            UIView *line = [[UIView alloc] initWithFrame:CGRectMake(countcoordinatesX(15), 0, SCREEN_WIDTH, 0.5f)];
+            line.backgroundColor = [kColor_Text_Gary colorWithAlphaComponent:0.2];
+            line;
+        });
+        [_footer addSubview:line];
+        UILabel *lab = ({
+            UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(countcoordinatesX(15), CGRectGetMaxY(line.frame), SCREEN_WIDTH, 30)];
+            lab.font = [UIFont systemFontOfSize:AdjustFont(10)];
+            lab.text = @"V6.0 @2018 Phythmical Studio. All rights erserved.";
+            lab.textColor = kColor_Text_Gary;
+            lab;
+        });
+        [_footer addSubview:lab];
+    }
+    return _footer;
 }
 - (NSArray<NSArray<NSString *> *> *)contents {
     if (!_contents) {

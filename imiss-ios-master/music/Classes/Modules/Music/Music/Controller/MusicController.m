@@ -22,6 +22,7 @@
     [self.view setBackgroundColor:[UIColor clearColor]];
     [self navigation];
     [self cd];
+    [self lyric];
     [self bottom];
     [self.view bringSubviewToFront:self.navigation];
 }
@@ -57,12 +58,52 @@
 }
 - (MusicCD *)cd {
     if (!_cd) {
-        _cd = [MusicCD loadCode:CGRectMake(0, CGRectGetMaxY(self.navigation.frame), SCREEN_WIDTH, SCREEN_HEIGHT - self.navigation.height - self.bottom.height)];
+        __weak typeof(self) weak = self;
+        _cd = [MusicCD loadCode:CGRectMake(0, NavigationBarHeight, SCREEN_WIDTH, SCREEN_HEIGHT - CGRectGetMaxY(self.navigation.frame) - self.bottom.height)];
         [_cd setAlpha:0];
+        [_cd addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+            [weak showCD:NO];
+        }];
         [self.view addSubview:_cd];
     }
     return _cd
     ;
+}
+- (MusicLyric *)lyric {
+    if (!_lyric) {
+        __weak typeof(self) weak = self;
+        _lyric = [MusicLyric loadCode:self.cd.frame];
+        _lyric.flag.click = ^{
+//            // 行数
+//            NSInteger line = [weak.lyric getIndex];
+//            // 当前秒数
+//            NSTimeInterval second = [weak.model getSecondWithLine:line];
+//            // 设置到当前秒数
+//            [weak.modules setCurrentTime:second];
+//            // 更改状态
+//            [weak.modules setStatus:MusicLyricStatusPlay];
+//            // 隐藏flag
+//            [weak.lyric.flag setAlpha:0];
+//            // 播放
+//            [weak.modules play];
+        };
+        [_lyric addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+            [weak showCD:YES];
+        }];
+        [self.view addSubview:_lyric];
+    }
+    return _lyric;
+    
+//    if (!_lyric) {
+//        __weak typeof(self) weak = self;
+//        _lyric = [MusicLyric loadCode:self.cd.frame];
+//        [_lyric setAlpha:0];
+//        [_lyric addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
+//            [weak showCD:YES];
+//        }];
+//        [self.view addSubview:_lyric];
+//    }
+//    return _lyric;
 }
 - (MusicBottom *)bottom {
     if (!_bottom) {
@@ -72,6 +113,17 @@
         [self.view addSubview:_bottom];
     }
     return _bottom;
+}
+
+#pragma mark - 设置
+// 显示CD/歌词
+- (void)showCD:(BOOL)isShowCD {
+    [UIView animateWithDuration:.3f delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        _cd.alpha = isShowCD == YES ? 1 : 0;
+        _lyric.alpha = isShowCD == YES? 0 : 1;
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 
 #pragma mark - UINavigationControllerDelegate

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -58,28 +57,30 @@
             <rect key="frame" x="0.0" y="0.0" width="363" height="532"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y2y-yD-rT5">
-                    <rect key="frame" x="15" y="15" width="70" height="70"/>
-                    <color key="backgroundColor" red="1" green="0.56984772689999996" blue="0.30044455710000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_icn1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Y2y-yD-rT5">
+                    <rect key="frame" x="15" y="15" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="Y2y-yD-rT5" secondAttribute="height" multiplier="1:1" id="ApJ-8V-GBE"/>
-                        <constraint firstAttribute="width" constant="70" id="PSH-Nt-3BS"/>
+                        <constraint firstAttribute="height" constant="60" id="k2U-kX-T3o"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjq-T9-wC2">
-                    <rect key="frame" x="95" y="15" width="42" height="21"/>
+                    <rect key="frame" x="85" y="15" width="42" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="RmJ-er-q4J"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqc-Jr-MVq">
-                    <rect key="frame" x="95" y="46" width="253" height="41"/>
+                    <rect key="frame" x="85" y="45" width="263" height="41"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容简介" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b23-Dl-t1b">
-                    <rect key="frame" x="15" y="100" width="69.5" height="30"/>
+                    <rect key="frame" x="15" y="90" width="69.5" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Ju5-5P-bNt"/>
                     </constraints>
@@ -88,8 +89,8 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOc-Lm-pmh">
-                    <rect key="frame" x="15" y="140" width="333" height="609"/>
-                    <mutableString key="text">跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台</mutableString>
+                    <rect key="frame" x="15" y="130" width="333" height="609"/>
+                    <string key="text">跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台跑火车电台 微博地址: 新浪@跑火车电台</string>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -105,7 +106,7 @@
                 <constraint firstItem="yqc-Jr-MVq" firstAttribute="leading" secondItem="Cjq-T9-wC2" secondAttribute="leading" id="ZOc-Dz-mTg"/>
                 <constraint firstItem="gOc-Lm-pmh" firstAttribute="leading" secondItem="b23-Dl-t1b" secondAttribute="leading" id="c9P-KI-4Nn"/>
                 <constraint firstItem="Cjq-T9-wC2" firstAttribute="top" secondItem="Y2y-yD-rT5" secondAttribute="top" id="g08-Pt-yhu"/>
-                <constraint firstItem="yqc-Jr-MVq" firstAttribute="top" secondItem="Cjq-T9-wC2" secondAttribute="bottom" constant="10" id="jzZ-eT-tXN"/>
+                <constraint firstItem="yqc-Jr-MVq" firstAttribute="top" secondItem="Cjq-T9-wC2" secondAttribute="bottom" id="jzZ-eT-tXN"/>
                 <constraint firstAttribute="trailing" secondItem="yqc-Jr-MVq" secondAttribute="trailing" constant="15" id="sKV-Le-J1X"/>
                 <constraint firstItem="gOc-Lm-pmh" firstAttribute="top" secondItem="b23-Dl-t1b" secondAttribute="bottom" constant="10" id="sPt-G8-cqA"/>
                 <constraint firstItem="b23-Dl-t1b" firstAttribute="leading" secondItem="Y2y-yD-rT5" secondAttribute="leading" id="zr1-MX-0NO"/>
@@ -113,7 +114,10 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-452.5" y="-59"/>
+            <point key="canvasLocation" x="-647" y="-59"/>
         </view>
     </objects>
+    <resources>
+        <image name="home_icn1.jpeg" width="300" height="300"/>
+    </resources>
 </document>

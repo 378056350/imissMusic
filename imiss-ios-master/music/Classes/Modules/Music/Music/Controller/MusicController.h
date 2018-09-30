@@ -10,6 +10,7 @@
 #import "MusicNavigation.h"
 #import "MusicCD.h"
 #import "MusicBottom.h"
+#import "MusicLyric.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) MusicNavigation *navigation;
 @property (nonatomic, strong) MusicCD *cd;
+@property (nonatomic, strong) MusicLyric *lyric;
 @property (nonatomic, strong) MusicBottom *bottom;
 
 - (void)show;

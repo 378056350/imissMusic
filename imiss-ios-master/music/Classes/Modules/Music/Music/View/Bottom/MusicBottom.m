@@ -29,6 +29,17 @@
     [self.slider setThumbImage:[UIImage new] forState:UIControlStateNormal];
     [self.controlImg setAlpha:0];
     
+    [self.cycleBtn.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.randomBtn.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.leftBtn.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.rightBtn.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    
+    [self.cycleBtn setImageEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
+    [self.randomBtn setImageEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
+    [self.leftBtn setImageEdgeInsets:UIEdgeInsetsMake(5, 5, 5, 5)];
+    [self.rightBtn setImageEdgeInsets:UIEdgeInsetsMake(5, 5, 5, 5)];
+    [self.listBtn setImageEdgeInsets:UIEdgeInsetsMake(10, 15, 10, 15)];
+    
 }
 
 @end

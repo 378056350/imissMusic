@@ -17,30 +17,29 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igl-ed-Khr">
                     <rect key="frame" x="130" y="130" width="60" height="40"/>
-                    <color key="backgroundColor" red="1" green="0.16876094059999999" blue="0.11974024599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="music_menu.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kE5-VQ-NZc">
                     <rect key="frame" x="60" y="80" width="60" height="40"/>
-                    <color key="backgroundColor" red="1" green="0.16876094059999999" blue="0.11974024599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="music_back.png"/>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUd-OF-YXX">
                     <rect key="frame" x="120" y="70" width="80" height="60"/>
-                    <color key="backgroundColor" red="1" green="0.16876094059999999" blue="0.11974024599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjQ-5p-Bgd">
                     <rect key="frame" x="200" y="80" width="60" height="40"/>
-                    <color key="backgroundColor" red="1" green="0.16876094059999999" blue="0.11974024599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="music_forward.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwq-un-wun">
                     <rect key="frame" x="260" y="80" width="60" height="40"/>
-                    <color key="backgroundColor" red="1" green="0.16876094059999999" blue="0.11974024599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="music_random.png"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8r-4A-QIp">
                     <rect key="frame" x="0.0" y="80" width="60" height="40"/>
-                    <color key="backgroundColor" red="1" green="0.16876094059999999" blue="0.11974024599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Ebg-t8-6AW"/>
                     </constraints>
+                    <state key="normal" image="music_cycle.png"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5L-XK-pU3">
                     <rect key="frame" x="15" y="39" width="42" height="21"/>
@@ -118,10 +117,15 @@
                 <outlet property="rightLab" destination="FPy-KF-XAp" id="BnW-1y-Gv8"/>
                 <outlet property="slider" destination="O8B-KU-PqD" id="vLT-EF-XuU"/>
             </connections>
-            <point key="canvasLocation" x="-118.40000000000001" y="-70.164917541229386"/>
+            <point key="canvasLocation" x="-387" y="-68"/>
         </view>
     </objects>
     <resources>
         <image name="home_play.png" width="200" height="200"/>
+        <image name="music_back.png" width="200" height="200"/>
+        <image name="music_cycle.png" width="200" height="200"/>
+        <image name="music_forward.png" width="200" height="200"/>
+        <image name="music_menu.png" width="200" height="200"/>
+        <image name="music_random.png" width="200" height="200"/>
     </resources>
 </document>

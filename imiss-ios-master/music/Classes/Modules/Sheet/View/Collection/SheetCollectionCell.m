@@ -18,7 +18,6 @@
 
 - (void)initUI {
     self.clipsToBounds = NO;
-    self.cd.backgroundColor = [UIColor orangeColor];
     self.cd.layer.cornerRadius = 80 / 2.f;
     self.cd.layer.masksToBounds = YES;
 }
