@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeCollectionCell.h"
+#import "HomePupularModel.h"
 
 #pragma mark - 代理
 @class HomeCollection;
@@ -24,6 +25,7 @@
 
 @property (nonatomic, weak  ) id<HomeCollectionDelegate> delegate;
 @property (nonatomic, strong) UILabel *nameLab;
+@property (nonatomic, strong) HomePupularListModel *model;
 
 + (instancetype)initWithFrame:(CGRect)frame;
 

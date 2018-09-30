@@ -1,5 +1,5 @@
 //
-//  HomePupularModel.m
+//  HomeSongModel.m
 //  music
 //
 //  Created by 郑业强 on 2018/9/25.
@@ -8,6 +8,13 @@
 
 #import "HomePupularModel.h"
 
-@implementation HomePupularModel
 
+@implementation HomePupularListModel
++ (void)load {
+    [HomePupularListModel mj_setupObjectClassInArray:^NSDictionary *{
+        return @{
+                 @"song": @"HomeSongModel"
+                 };
+    }];
+}
 @end

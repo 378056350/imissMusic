@@ -6,35 +6,16 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    # # 获取首页
-    # path('getHomeRequest.action', get_home_request),
-    # # 每日推荐
-    # path('getRecommendSongRequest.action', get_recommend_song_request),
-    # # 歌单列表
-    # path('getSheetListRequest.action', get_sheet_list_request),
-    # # 歌单列表
-    # path('getSheetRequest.action', get_sheet_request),
-    # # 排行榜列表
-    # path('getRankListRequest.action', get_rank_list_request),
-    #
-    #
-    #
-    # # 查看我的歌单
-    # path('selectSheetRequest.action', get_mysheet_request),
-    # # 创建我的歌单
-    # path('createMySheetRequest.action', create_mysheet_request),
-    # # 删除我的歌单
-    # path('deleteMySheetRequest.action', delete_mysheet_request),
-    # # 编辑我的歌单
-    # path('updateSheetRequest.action', update_mysheet_request),
-    # # 添加歌曲到我的歌单
-    # path('insertMySheetSongRequest.action', add_mysheet_song_request),
-    # # 删除歌曲到我的歌单
-    # path('deleteMySheetSongRequest.action', delete_mysheet_song_request),
-    #
-    #
-    #
-    #
-    # # 音乐资源
-    # path('getResourceRequest.action', get_resource_request)
+    # 受欢迎歌曲
+    path('getPopularRequest.action', get_popular_request),
+    # 歌单列表
+    path('getSheetRequest.action', get_sheet_request),
+    # 通过歌单找歌曲
+    path('getSongsWithSheetRequest.action', get_songs_with_sheet_request),
+    # 歌曲
+    path('getSongRequest.action', get_song_request),
+    # 获取资源
+    path('getResourceRequest.action', get_resource_request),
+    # 分享成功
+    path('insertShareRequest.action', insert_share_request),
 ]

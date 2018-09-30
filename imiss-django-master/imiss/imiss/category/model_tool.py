@@ -20,3 +20,12 @@ def upload_image(f, song):
     for chrunk in f.chunks():
         fobj.write(chrunk)
     fobj.close()
+
+
+# 返回数据封装
+def response_data(status, message, data):
+    return {
+        "status": status,
+        "message": message,
+        "data": data,
+    }

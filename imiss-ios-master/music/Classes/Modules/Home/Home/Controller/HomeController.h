@@ -10,11 +10,13 @@
 #import "HomeCollectionCell.h"
 #import "HomeTitle.h"
 #import "HomeCollection.h"
+#import "HomePupularModel.h"
 
 @interface HomeController : BaseViewController
 
-@property (nonatomic, strong) HomeCollectionCell *selectCell;
-@property (nonatomic, strong) HomeTitle *header;
-@property (nonatomic, strong) HomeCollection *collection;
+@property (nonatomic, strong) HomeCollectionCell *selectCell;   // 当前选中Cell
+@property (nonatomic, strong) HomeTitle *header;                // 头视图
+@property (nonatomic, strong) HomeCollection *collection;       // 列表
+@property (nonatomic, strong) HomePupularListModel *model;      // 数据
 
 @end

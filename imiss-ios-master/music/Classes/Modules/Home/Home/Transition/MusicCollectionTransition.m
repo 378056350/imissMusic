@@ -66,6 +66,7 @@
     UIView *containerView = [transitionContext containerView];
     [containerView addSubview:musicVC.view];
     
+    
     // 时间
     NSTimeInterval time = [self transitionDuration:transitionContext];
     
@@ -244,6 +245,7 @@
         else {
             [musicVC.cd setAlpha:1];
             [musicVC.bottom.controlImg setAlpha:1];
+            [musicVC.view bringSubviewToFront:musicVC.cd];
             [icon removeFromSuperview];
             [nameLab removeFromSuperview];
             [detailLab removeFromSuperview];
@@ -482,6 +484,8 @@
             [homeVC.selectCell.nameLab setHidden:NO];
             [homeVC.selectCell.detailLab setHidden:NO];
             [homeVC.selectCell.playBtn setHidden:NO];
+            [homeVC.selectCell.playBtn setImage:musicVC.bottom.controlImg.image forState:UIControlStateNormal];
+            [homeVC.selectCell.playBtn setImage:musicVC.bottom.controlImg.image forState:UIControlStateHighlighted];
             [icon removeFromSuperview];
             [nameLab removeFromSuperview];
             [detailLab removeFromSuperview];

@@ -27,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *listIcon;
 @property (weak, nonatomic) IBOutlet UILabel *listLab;
 
+@property (nonatomic, strong) MusicModules *modules;
+
 @end
 
 #pragma mark - 实现
@@ -61,9 +63,42 @@
     HomeController *homeVC = (HomeController *)self.viewController;
     homeVC.selectCell = self;
     
+    [[MusicModules shareMusicModules] setMusicId:homeVC.selectCell.model.ID];
+    
     MusicController *vc = [[MusicController alloc] init];
+    [vc setModel:homeVC.selectCell.model];
     [self.viewController.navigationController pushViewController:vc animated:YES];
-//    [self.viewController presentViewController:vc animated:YES completion:nil];
+}
+
+#pragma mark - set
+// 数据
+- (void)setModel:(HomeSongModel *)model {
+    _model = model;
+    [_icon sd_setImageWithURL:[NSURL URLWithString:KStatic(model.big_img)]];
+    [_nameLab setText:model.name];
+    [_detailLab setText:model.author];
+    [_likeLab setText:[NSString getMeasureThousand:[model.likeNumber doubleValue]]];
+    [_musicLab setText:[NSString getMeasureThousand:[model.listenNumber doubleValue]]];
+    [_listLab setText:[NSString getMeasureThousand:[model.shareNumber doubleValue]]];
+    
+    // 播放中
+    if ([self.modules isPlaying] == YES && [self.modules.musicId isEqualToString:model.ID]) {
+        // 暂停
+        [_playBtn setImage:[UIImage imageNamed:@"home_pause"] forState:UIControlStateNormal];
+        [_playBtn setImage:[UIImage imageNamed:@"home_pause"] forState:UIControlStateHighlighted];
+    }
+    // 暂停中
+    else {
+        // 播放
+        [_playBtn setImage:[UIImage imageNamed:@"home_play"] forState:UIControlStateNormal];
+        [_playBtn setImage:[UIImage imageNamed:@"home_play"] forState:UIControlStateHighlighted];
+    }
+}
+- (MusicModules *)modules {
+    if (!_modules) {
+        _modules = [MusicModules shareMusicModules];
+    }
+    return _modules;
 }
 
 @end

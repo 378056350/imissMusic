@@ -8,7 +8,7 @@ class Song(models.Model):
     big_img = models.ImageField(upload_to=user_directory_path, verbose_name="大图", null=True, blank=True)
     small_img = models.ImageField(upload_to=user_directory_path, verbose_name="小图", null=True, blank=True)
     introduction = models.CharField(max_length=20, verbose_name="介绍")
-    detail = models.CharField(max_length=20, verbose_name="详情")
+    detail = models.CharField(max_length=1000, verbose_name="详情")
     likeNumber = models.IntegerField(verbose_name="喜欢人数")
     listenNumber = models.IntegerField(verbose_name="听歌人数")
     shareNumber = models.IntegerField(verbose_name="分享人数")
@@ -37,6 +37,9 @@ class Song_Sheet(models.Model):
     sheet = models.ForeignKey(Sheet, blank=True, null=True, on_delete=models.CASCADE, verbose_name="歌单外键")
     number = models.IntegerField(verbose_name="当前歌曲在歌单的排行")
 
+    # 输出
+    def __str__(self):
+        return "%s-%s" %(self.sheet.name, self.song.name)
     class Meta:
         db_table = 'Song_Sheet'
 
@@ -45,7 +48,7 @@ class Song_Sheet(models.Model):
 class Resource(models.Model):
     lrc = models.FileField(upload_to=user_directory_path, verbose_name="歌词")
     mp3 = models.FileField(upload_to=user_directory_path, verbose_name="音乐")
-    song = models.ForeignKey(Song, blank=True, null=True, on_delete=models.CASCADE, verbose_name="歌曲外键")
+    song = models.OneToOneField(Song, blank=True, null=True, on_delete=models.CASCADE, verbose_name="歌曲外键")
     # 输出
     def __str__(self):
         return "%s" % self.song.name

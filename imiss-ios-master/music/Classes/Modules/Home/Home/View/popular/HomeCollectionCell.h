@@ -7,6 +7,7 @@
 //
 
 #import "BaseCollectionCell.h"
+#import "HomePupularModel.h"
 
 @interface HomeCollectionCell : BaseCollectionCell
 
@@ -15,5 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLab;
 @property (weak, nonatomic) IBOutlet UILabel *detailLab;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
+
+@property (nonatomic, strong) HomeSongModel *model;
 
 @end

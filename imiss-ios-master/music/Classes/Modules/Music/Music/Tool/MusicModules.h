@@ -44,6 +44,7 @@ SingleInterface(MusicModules)
 @property (nonatomic, assign, getter=isPlaying) BOOL playing;       // 是否播放
 @property (nonatomic, strong) NSTimer *timer;                       // 定时器
 @property (nonatomic, assign) MusicLyricStatus status;              // 状态
+@property (nonatomic, copy  ) NSString *musicId;                    // 当前播放ID
 
 
 // 播放

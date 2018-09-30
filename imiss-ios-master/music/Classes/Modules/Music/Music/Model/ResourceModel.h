@@ -10,10 +10,8 @@
 
 @interface ResourceModel : BaseModel
 
-// 歌名
-@property (nonatomic, copy  ) NSString *name;
 // 歌曲id
-@property (nonatomic, copy  ) NSString *song;
+@property (nonatomic, copy  ) NSString *song_id;
 // 歌词
 @property (nonatomic, copy  ) NSString *lrc;
 // 音乐

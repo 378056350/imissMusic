@@ -24,18 +24,37 @@
 #pragma mark - 实现
 @implementation HomeController
 
+#pragma mark - 初始化
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setJz_wantsNavigationBarVisible:NO];
     [self header];
     [self scroll];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.progress = 0.3;
-    });
+    [self getPopularRequest];
 }
 
+#pragma mark - 请求
+// 受欢迎请求
+- (void)getPopularRequest {
+    __weak typeof(self) weak = self;
+    [AFNManager POST:CreatePopularRequest params:nil complete:^(APPResult *result) {
+        // 成功
+        if (result.status == ServiceStatusSuccess) {
+            HomePupularListModel *model = [HomePupularListModel mj_objectWithKeyValues:result.data];
+            [weak setModel:model];
+        }
+        // 失败
+        else {
+            NSLog(@"fail");
+        }
+    }];
+}
 
+#pragma mark - set
+- (void)setModel:(HomePupularListModel *)model {
+    _model = model;
+    _collection.model = model;
+}
 
 #pragma mark - HomeCollectionDelegate
 // 点击Cell
@@ -44,6 +63,7 @@
     _selectCell = cell;
     // 跳转
     DetailController *vc = [[DetailController alloc] init];
+    [vc setModel:self.model.song[indexPath.row]];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -56,7 +76,6 @@
 - (void)homeContent:(HomeContent *)content progress:(CGFloat)progress originalIndex:(NSInteger)originalIndex targetIndex:(NSInteger)targetIndex {
     [_header setProgress:progress originalIndex:originalIndex targetIndex:targetIndex];
 }
-
 
 #pragma mark - UINavigationControllerDelegate
 // 转场动画

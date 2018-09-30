@@ -29,6 +29,7 @@
     [self btns];
 }
 
+
 #pragma mark - 动画
 - (void)show {
     NSTimeInterval delay = 0.1;
@@ -167,6 +168,7 @@
             CGFloat top = (SCREEN_HEIGHT - BTN_PADDING - BTN_W - height) / 2;
             CGRectMake(left, top, width, height);
         })];
+        [_contentV setModel:_model];
         [_contentV setAlpha:0];
         [_contentV setBackgroundColor:[UIColor whiteColor]];
         [_contentV shadowWithColor:[kColor_Text_Gary colorWithAlphaComponent:0.2] offset:CGSizeMake(0, 5) opacity:1 radius:5];

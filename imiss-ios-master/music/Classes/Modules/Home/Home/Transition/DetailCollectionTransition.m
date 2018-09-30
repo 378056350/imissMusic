@@ -39,7 +39,7 @@
         return 0.8f;
     }
     else if (_type == DetailCollectionTransitionTypePop) {
-        return 0.5f;
+        return 0.8f;
     }
     return 0;
 }

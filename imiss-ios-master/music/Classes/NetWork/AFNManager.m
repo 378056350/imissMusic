@@ -41,8 +41,8 @@ static AFHTTPSessionManager *_manager;
         if (complete) {
             APPResult *result = [[APPResult alloc] init];
             result.data = nil;
-            result.result = ServiceTypeFail;
-            result.status = ServiceStatusNetwork;
+            result.result = ServiceTypeNetwork;
+            result.status = ServiceStatusSuccess;
             result.message = @"请求失败";
             complete(result);
         }
@@ -69,8 +69,8 @@ static AFHTTPSessionManager *_manager;
         if (complete) {
             APPResult *result = [[APPResult alloc] init];
             result.data = nil;
-            result.result = ServiceTypeFail;
-            result.status = ServiceStatusNetwork;
+            result.result = ServiceTypeNetwork;
+            result.status = ServiceStatusSuccess;
             result.message = @"请求失败";
             complete(result);
         }
@@ -122,14 +122,14 @@ static AFHTTPSessionManager *_manager;
         if (complete) {
             APPResult *result = [[APPResult alloc] init];
             result.data = responseObject;
-            result.result = ServiceTypeSuccess;
+            result.result = ServiceStatusSuccess;
             complete(result);
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (complete) {
             APPResult *result = [[APPResult alloc] init];
             result.data = nil;
-            result.result = ServiceTypeFail;
+            result.result = ServiceStatusFail;
             complete(result);
         }
     }];

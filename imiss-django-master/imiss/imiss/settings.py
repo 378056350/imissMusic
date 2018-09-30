@@ -25,7 +25,7 @@ SECRET_KEY = 'v2!-fdy+gm+3_o=8zau)d3ny=ngw)ysuowjm7xqi0nv4z5lbfo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'imiss.middleware.dataMiddleware',
 ]
 
 ROOT_URLCONF = 'imiss.urls'

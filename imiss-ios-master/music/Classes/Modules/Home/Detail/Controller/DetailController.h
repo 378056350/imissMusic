@@ -8,10 +8,12 @@
 
 #import "BaseViewController.h"
 #import "DetailCard.h"
+#import "HomeSongModel.h"
 
 @interface DetailController : BaseViewController
 
 @property (nonatomic, strong) DetailCard *contentV;
+@property (nonatomic, strong) HomeSongModel *model;
 
 - (void)show;
 - (void)hide;

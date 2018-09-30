@@ -21,17 +21,6 @@
 
 
 
-
-//- (CGSize)sizeWithMaxSize:(CGFloat)lineSpeace withFont:(UIFont*)font withWidth:(CGFloat)width {
-//    NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
-//    paraStyle.lineSpacing = lineSpeace;
-//    NSDictionary *dic = @{NSFontAttributeName: font,
-//                          NSParagraphStyleAttributeName :paraStyle,
-//                          NSKernAttributeName: @1.5f};
-//    CGSize size = [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
-//     return size;
-//}
-
 // 中文转拼音
 + (NSString *)transform:(NSString *)chinese {
     //将NSString装换成NSMutableString
@@ -49,13 +38,10 @@
     return pinyin;
     
 }
-// 10000 转 1万
+// 1000 转 1k
 + (NSString *)getMeasureThousand:(NSInteger)math {
-    if (math / 100000000 != 0) {
-        return [NSString stringWithFormat:@"%ld亿", math / 100000000];
-    }
-    else if (math / 10000 != 0) {
-        return [NSString stringWithFormat:@"%d万", math / 10000];
+    if (math / 1000 != 0) {
+        return [NSString stringWithFormat:@"%ldk", math / 1000];
     }
     return [@(math) description];
 }

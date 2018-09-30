@@ -11,6 +11,7 @@
 #import "MusicCD.h"
 #import "MusicBottom.h"
 #import "MusicLyric.h"
+#import "HomeSongModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) MusicCD *cd;
 @property (nonatomic, strong) MusicLyric *lyric;
 @property (nonatomic, strong) MusicBottom *bottom;
+
+@property (nonatomic, strong) HomeSongModel *model;
 
 - (void)show;
 - (void)hide;

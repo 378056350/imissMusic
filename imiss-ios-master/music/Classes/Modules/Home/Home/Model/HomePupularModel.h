@@ -1,5 +1,5 @@
 //
-//  HomePupularModel.h
+//  HomeSongModel.h
 //  music
 //
 //  Created by 郑业强 on 2018/9/25.
@@ -7,7 +7,14 @@
 //
 
 #import "BaseModel.h"
+#import "HomeSongModel.h"
 
-@interface HomePupularModel : BaseModel
+// 歌曲列表
+@interface HomePupularListModel : BaseModel
+
+// 歌曲列表
+@property (nonatomic, strong) NSMutableArray<HomeSongModel *> *song;
+// 受欢迎歌曲
+@property (nonatomic, strong) NSString *popular_count;
 
 @end

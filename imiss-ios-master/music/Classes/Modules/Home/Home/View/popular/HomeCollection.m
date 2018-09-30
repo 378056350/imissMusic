@@ -30,12 +30,21 @@
     return view;
 }
 
+#pragma mark - set
+// 数据
+- (void)setModel:(HomePupularListModel *)model {
+    _model = model;
+    [self setNameLabAttr:model.popular_count];
+    [_collection reloadData];
+}
+
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 4;
+    return _model.song.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HomeCollectionCell *cell = [HomeCollectionCell loadItem:collectionView index:indexPath];
+    cell.model = self.model.song[indexPath.row];
     return cell;
 }
 
@@ -53,26 +62,6 @@
         _nameLab = [[UILabel alloc] initWithFrame:CGRectZero];
         _nameLab.font = [UIFont systemFontOfSize:AdjustFont(14)];
         _nameLab.textAlignment = NSTextAlignmentCenter;
-        _nameLab.attributedText = ({
-            // 居中样式
-            NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-            style.alignment = NSTextAlignmentCenter;
-            
-            // 阴影
-            NSShadow *shadow = [[NSShadow alloc] init];
-            shadow.shadowBlurRadius = 1.5;
-            shadow.shadowOffset = CGSizeMake(0, 0);
-            shadow.shadowColor = kColor_Text_Gary;
-            
-            NSString *str = @"497 Popular Music";
-            NSMutableAttributedString *attrm = [[NSMutableAttributedString alloc] initWithString:str];
-            [attrm addAttribute:NSFontAttributeName value:MathFont(14) range:NSMakeRange(0, str.length)];
-            [attrm addAttribute:NSForegroundColorAttributeName value:kColor_Text_Gary range:NSMakeRange(0, 3)];
-            [attrm addAttribute:NSForegroundColorAttributeName value:[kColor_Text_Gary colorWithAlphaComponent:0.5] range:NSMakeRange(3, str.length - 3)];
-            [attrm addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, str.length)];
-            [attrm addAttribute:NSShadowAttributeName value:shadow range:NSMakeRange(0, str.length)];
-            attrm;
-        });
         [self addSubview:_nameLab];
     }
     return _nameLab;
@@ -95,6 +84,30 @@
         [self addSubview:_collection];
     }
     return _collection;
+}
+
+// 受欢迎文本
+- (void)setNameLabAttr:(NSString *)string {
+    _nameLab.attributedText = ({
+        // 居中样式
+        NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+        style.alignment = NSTextAlignmentCenter;
+        
+        // 阴影
+        NSShadow *shadow = [[NSShadow alloc] init];
+        shadow.shadowBlurRadius = 1.5;
+        shadow.shadowOffset = CGSizeMake(0, 0);
+        shadow.shadowColor = kColor_Text_Gary;
+        
+        NSString *str = [NSString stringWithFormat:@"%@ Popular Music", string];
+        NSMutableAttributedString *attrm = [[NSMutableAttributedString alloc] initWithString:str];
+        [attrm addAttribute:NSFontAttributeName value:MathFont(14) range:NSMakeRange(0, str.length)];
+        [attrm addAttribute:NSForegroundColorAttributeName value:kColor_Text_Gary range:NSMakeRange(0, string.length)];
+        [attrm addAttribute:NSForegroundColorAttributeName value:[kColor_Text_Gary colorWithAlphaComponent:0.5] range:NSMakeRange(string.length, str.length - string.length)];
+        [attrm addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, str.length)];
+        [attrm addAttribute:NSShadowAttributeName value:shadow range:NSMakeRange(0, str.length)];
+        attrm;
+    });
 }
 
 @end
