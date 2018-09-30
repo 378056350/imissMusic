@@ -70,8 +70,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/music/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18808778">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="38" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.21159874">
+              <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
               <folding>
                 <element signature="e#41#73#0" expanded="true" />
               </folding>
@@ -456,7 +456,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="23" width="1055" height="758" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2349457" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -537,8 +537,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/music/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18808778">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="38" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.21159874">
+          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
           <folding>
             <element signature="e#41#73#0" expanded="true" />
           </folding>
