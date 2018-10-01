@@ -7,6 +7,7 @@
 //
 
 #import "MusicNavigation.h"
+#import "MusicController.h"
 
 #pragma mark - 声明
 @interface MusicNavigation()
@@ -23,8 +24,11 @@
     
 }
 - (IBAction)leftTap:(UITapGestureRecognizer *)sender {
-    [self.viewController.navigationController popViewControllerAnimated:YES];
-//    [self.viewController dismissViewControllerAnimated:YES completion:nil];
+    MusicController *vc = (MusicController *)self.viewController;
+    [vc showCD:YES duation:0.2f completion:^(BOOL finished) {
+        [self.viewController.navigationController popViewControllerAnimated:YES];
+    }];
+    
 }
 - (IBAction)rightTap:(UITapGestureRecognizer *)sender {
     

@@ -10,7 +10,7 @@
 #import "HomeCollectionCell.h"
 #import "HomeTitle.h"
 #import "HomeCollection.h"
-#import "HomePupularModel.h"
+#import "PupularModel.h"
 
 @interface HomeController : BaseViewController
 

@@ -1,5 +1,5 @@
 //
-//  HomeSongModel.h
+//  SongModel.h
 //  music
 //
 //  Created by 郑业强 on 2018/10/1.
@@ -9,7 +9,7 @@
 #import "BaseModel.h"
 
 // 歌曲
-@interface HomeSongModel : BaseModel
+@interface SongModel : BaseModel
 
 @property (nonatomic, strong) NSString *ID;
 @property (nonatomic, strong) NSString *name;

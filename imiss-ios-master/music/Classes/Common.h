@@ -15,7 +15,7 @@
 #import <JZNavigationExtension/JZNavigationExtension.h>
 #import <SDCycleScrollView/SDCycleScrollView.h>
 #import <MJRefresh/MJRefresh.h>
-//#import <Realm/Realm.h>
+#import <Realm/Realm.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SDWebImage/UIButton+WebCache.h>
 #import <pop/pop.h>
@@ -38,8 +38,8 @@
 #import "UIView+Visuals.h"
 #import "UITableView+Extension.h"
 #import "NSAttributedString+Extension.h"
-//#import "RLMRealm+Extension.h"
-//#import "RLMObject+Extension.h"
+#import "RLMRealm+Extension.h"
+#import "RLMObject+Extension.h"
 #import "UMSocialManager+Extension.h"
 #import "UIImage+Extension.h"
 #import "KKShare.h"

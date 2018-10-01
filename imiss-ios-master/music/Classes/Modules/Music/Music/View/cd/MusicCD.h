@@ -7,7 +7,7 @@
 //
 
 #import "BaseView.h"
-#import "HomePupularModel.h"
+#import "PupularModel.h"
 
 @interface MusicCD : BaseView
 
@@ -15,6 +15,6 @@
 @property (nonatomic, strong) UILabel *nameLab;
 @property (nonatomic, strong) UILabel *detailLab;
 
-@property (nonatomic, strong) HomeSongModel *model;
+@property (nonatomic, strong) SongModel *model;
 
 @end

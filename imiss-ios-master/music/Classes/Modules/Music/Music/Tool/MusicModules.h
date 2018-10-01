@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import "MusicModulesConst.h"
+#import "ResourceModel.h"
 
 #pragma mark - NS_ENUM
 typedef NS_ENUM(NSUInteger, MusicLyricStatus) {
@@ -45,6 +46,7 @@ SingleInterface(MusicModules)
 @property (nonatomic, strong) NSTimer *timer;                       // 定时器
 @property (nonatomic, assign) MusicLyricStatus status;              // 状态
 @property (nonatomic, copy  ) NSString *musicId;                    // 当前播放ID
+@property (nonatomic, strong) ResourceModel *resourceModel;         // 资源model
 
 
 // 播放

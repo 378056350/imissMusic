@@ -9,13 +9,19 @@
 #import "SheetController.h"
 #import "SheetCollection.h"
 #import "SheetTable.h"
+#import "SheetModel.h"
 
 #pragma mark - 声明
-@interface SheetController()<SheetCollectionDelegate>
+@interface SheetController()<SheetCollectionDelegate> {
+    // 当前选中Index
+    NSInteger _selectIndex;
+}
 
 @property (nonatomic, strong) KKHeaderView *header;
 @property (nonatomic, strong) SheetCollection *collection;
 @property (nonatomic, strong) SheetTable *table;
+@property (nonatomic, strong) NSMutableArray<SheetModel *> *sheets;
+@property (nonatomic, strong) NSMutableArray<SongModel *> *songs;
 
 @end
 
@@ -27,12 +33,59 @@
     [self header];
     [self collection];
     [self table];
+    [self getSheetRequest];
+}
+
+#pragma mark - set
+// 歌单
+- (void)setSheets:(NSMutableArray<SheetModel *> *)sheets {
+    _sheets = sheets;
+    _collection.models = sheets;
+}
+// 音乐
+- (void)setSongs:(NSMutableArray<SongModel *> *)songs {
+    _songs = songs;
+    _table.models = songs;
+}
+
+#pragma mark - 请求
+// 歌单请求
+- (void)getSheetRequest {
+    __weak typeof(self) weak = self;
+    [AFNManager POST:CreateSheetRequest params:nil complete:^(APPResult *result) {
+        // 成功
+        if (result.status == ServiceStatusSuccess) {
+            NSMutableArray<SheetModel *> *array = [SheetModel mj_objectArrayWithKeyValuesArray:result.data];
+            [weak setSheets:array];
+        }
+        // 失败
+        else {
+            NSLog(@"fail");
+        }
+    }];
+}
+// 通过歌单找歌曲
+- (void)getSongWithSheetRequest {
+    __weak typeof(self) weak = self;
+    [AFNManager POST:CreateSongWithSheetRequest params:nil complete:^(APPResult *result) {
+        // 成功
+        if (result.status == ServiceStatusSuccess) {
+            NSMutableArray<SongModel *> *array = [SongModel mj_objectArrayWithKeyValuesArray:result.data];
+            [weak setSongs:array];
+        }
+        // 失败
+        else {
+            NSLog(@"fail");
+        }
+    }];
 }
 
 #pragma mark - SheetCollectionDelegate
 // 点击/滑动到某个Item
 - (void)sheetCollection:(SheetCollection *)collection didSelectOrSwipeItemAtIndex:(NSInteger)index click:(BOOL)isClick {
-    NSLog(@"操作方式: %@,  Item: %ld", isClick == YES ? @"点击" : @"滑动", index);
+    _selectIndex = index;
+    // NSLog(@"操作方式: %@,  Item: %ld", isClick == YES ? @"点击" : @"滑动", index);
+    [self getSongWithSheetRequest];
 }
 
 #pragma mark - get

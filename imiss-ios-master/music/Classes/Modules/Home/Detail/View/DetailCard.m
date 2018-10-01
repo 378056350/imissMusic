@@ -70,7 +70,7 @@
 }
 
 #pragma mark - set
-- (void)setModel:(HomeSongModel *)model {
+- (void)setModel:(SongModel *)model {
     _model = model;
     [self.iconImg sd_setImageWithURL:[NSURL URLWithString:KStatic(model.small_img)]];
     [self.nameLab setText:model.name];

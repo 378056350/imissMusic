@@ -19,6 +19,9 @@ PODS:
   - MJExtension (3.0.0)
   - MJRefresh (3.1.0)
   - pop (1.0.10)
+  - Realm (3.7.6):
+    - Realm/Headers (= 3.7.6)
+  - Realm/Headers (3.7.6)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
   - SDWebImage (4.3.3):
@@ -45,6 +48,7 @@ DEPENDENCIES:
   - MJExtension (= 3.0.0)
   - MJRefresh (= 3.1.0)
   - pop (= 1.0.10)
+  - Realm (= 3.7.6)
   - SDCycleScrollView (= 1.75)
   - UMCCommon
   - UMCSecurityPlugins
@@ -60,6 +64,7 @@ SPEC REPOS:
     - MJExtension
     - MJRefresh
     - pop
+    - Realm
     - SDCycleScrollView
     - SDWebImage
     - UMCCommon
@@ -73,12 +78,13 @@ SPEC CHECKSUMS:
   MJExtension: 5fcdbe34f623e12271895b05b11c9aa0180728a9
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   UMCCommon: 82d21f4bb9532a5472cc533bbd8ed48aff376a14
   UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
   UMCShare: f8be567946c3aa68deefd03b0ffaa0710a3b07ea
 
-PODFILE CHECKSUM: 6dd34a37359a0731e868ed46104af8a441798766
+PODFILE CHECKSUM: 5d25ace650596c38717dbfe93fb4769586a320e2
 
 COCOAPODS: 1.5.2

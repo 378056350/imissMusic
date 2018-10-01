@@ -7,7 +7,7 @@
 //
 
 #import "BaseView.h"
-#import "HomeSongModel.h"
+#import "SongModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *contentDescLab;
 @property (weak, nonatomic) IBOutlet UILabel *contentLab;
 
-@property (nonatomic, strong) HomeSongModel *model;
+@property (nonatomic, strong) SongModel *model;
 
 - (void)show;
 - (void)hide;

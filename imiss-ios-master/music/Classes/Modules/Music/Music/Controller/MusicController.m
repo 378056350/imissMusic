@@ -31,7 +31,16 @@
     [self modules];
     [self.view bringSubviewToFront:self.navigation];
     
-    [self getResourceRequest];
+    // 当前未播放
+    if (self.modules.isPlaying == NO) {
+        [self getResourceRequest];
+    }
+    // 已播放
+    else {
+        _resourceModel = self.modules.resourceModel;
+        [_lyric setModel:self.modules.resourceModel];
+        [_bottom setModel:self.modules.resourceModel];
+    }
 }
 
 #pragma mark - 请求
@@ -56,6 +65,7 @@
     _resourceModel = resourceModel;
     [_lyric setModel:resourceModel];
     [_bottom setModel:resourceModel];
+    [self.modules setResourceModel:resourceModel];
     [self.modules setMusic:KStatic(resourceModel.mp3)];
     [self.modules play];
 }
@@ -96,7 +106,7 @@
         [_cd setAlpha:0];
         [_cd setModel:_model];
         [_cd addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-            [weak showCD:NO];
+            [weak showCD:NO duation:0.3f];
         }];
         [self.view addSubview:_cd];
     }
@@ -122,7 +132,7 @@
             [weak.modules play];
         };
         [_lyric addTapActionWithBlock:^(UIGestureRecognizer *gestureRecoginzer) {
-            [weak showCD:YES];
+            [weak showCD:YES duation:0.3f];
         }];
         [self.view addSubview:_lyric];
     }
@@ -147,12 +157,17 @@
 
 #pragma mark - 设置
 // 显示CD/歌词
-- (void)showCD:(BOOL)isShowCD {
-    [UIView animateWithDuration:.3f delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+- (void)showCD:(BOOL)isShowCD duation:(NSTimeInterval)duration {
+    [self showCD:isShowCD duation:duration completion:nil];
+}
+- (void)showCD:(BOOL)isShowCD duation:(NSTimeInterval)duration completion:(void (^ __nullable)(BOOL finished))completion {
+    [UIView animateWithDuration:duration delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         _cd.alpha = isShowCD == YES ? 1 : 0;
         _lyric.alpha = isShowCD == YES? 0 : 1;
     } completion:^(BOOL finished) {
-        
+        if (completion) {
+            completion(finished);
+        }
     }];
 }
 

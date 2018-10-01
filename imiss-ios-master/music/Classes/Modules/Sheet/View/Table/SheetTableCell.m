@@ -24,7 +24,6 @@
 
 - (void)initUI {
     self.backgroundColor = [UIColor clearColor];
-    self.icon.backgroundColor = [UIColor redColor];
     self.name.font = [UIFont systemFontOfSize:AdjustFont(14)];
     self.detail.font = [UIFont systemFontOfSize:AdjustFont(12)];
     self.time.font = [UIFont systemFontOfSize:AdjustFont(12)];
@@ -33,8 +32,17 @@
     self.detail.textColor = kColor_Text_Gary;
     self.time.textColor = kColor_Text_Gary;
     self.iconConstraintL.constant = countcoordinatesX(10);
-    
-    
+}
+
+- (void)setModel:(SongModel *)model {
+    _model = model;
+    [self.icon sd_setImageWithURL:[NSURL URLWithString:KStatic(model.small_img)]];
+    [self.name setText:model.name];
+    [self.detail setText:model.introduction];
 }
 
 @end
+
+
+
+

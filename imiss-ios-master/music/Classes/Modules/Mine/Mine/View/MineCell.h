@@ -19,6 +19,7 @@ typedef NS_ENUM(NSUInteger, MineCellStatus) {
 
 @property (nonatomic, assign) MineCellStatus status;
 @property (nonatomic, strong) NSIndexPath *index;
+@property (weak, nonatomic) IBOutlet UISwitch *sw;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 
 @end

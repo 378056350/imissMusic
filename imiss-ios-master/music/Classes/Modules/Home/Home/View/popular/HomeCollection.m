@@ -10,7 +10,10 @@
 #import "HomeCollectionLayout.h"
 
 #pragma mark - 声明
-@interface HomeCollection()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface HomeCollection()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
+    // 0-1: 显示动画   2: 不显示动画
+    NSInteger _currentIndex;
+}
 
 @property (nonatomic, strong) UICollectionView *collection;
 
@@ -27,6 +30,8 @@
     [view.nameLab setFrame:CGRectMake(0, 30, SCREEN_WIDTH, 40)];
     [view.collection setFrame:CGRectMake(0, CGRectGetMaxY(view.nameLab.frame), SCREEN_WIDTH, frame.size.height - CGRectGetMaxY(view.nameLab.frame))];
     [view bringSubviewToFront:view.nameLab];
+    [view setClipsToBounds:NO];
+    [view.layer setMasksToBounds:NO];
     return view;
 }
 
@@ -36,6 +41,71 @@
     _model = model;
     [self setNameLabAttr:model.popular_count];
     [_collection reloadData];
+}
+
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(HomeCollectionCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (_currentIndex < 2) {
+        _currentIndex += 1;
+    } else {
+        return;
+    }
+    
+    
+    // 1. 隐藏Cell
+    cell.content.alpha = 0;
+    // 2. 控件
+    UIView *view = ({
+        UIView *view = [[UIView alloc] initWithFrame:cell.content.frame];
+        [view setHeight:view.height + 14];
+        [view setBackgroundColor:[UIColor whiteColor]];
+        [cell addSubview:view];
+        [cell bringSubviewToFront:view];
+        view;
+    });
+    // 3. 比例
+    POPBasicAnimation *basic1 = ({
+        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+        basic.beginTime = CACurrentMediaTime();
+        basic.fromValue = @(CGPointMake(0.0, 0.0));
+        basic.toValue   = @(CGPointMake(1.0, 1.0));
+        basic.duration  = 0.8f;
+        basic;
+    });
+    [view.layer pop_addAnimation:basic1 forKey:@"basic1"];
+    
+    // 4. 比例动画完成
+    [basic1 setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
+        [cell sendSubviewToBack:view];
+        [cell.content setTransform:CGAffineTransformMakeScale(3.0, 3.0)];
+        
+        // 5. 透明度
+        POPBasicAnimation *basic2 = ({
+            POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+            basic.beginTime = CACurrentMediaTime();
+            basic.fromValue = @(0);
+            basic.toValue   = @(1);
+            basic.duration  = 0.8f;
+            basic;
+        });
+        [cell.content pop_addAnimation:basic2 forKey:@"basic2"];
+        
+        // 6. 比例
+        POPBasicAnimation *basic3 = ({
+            POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewScaleXY];
+            basic.beginTime = CACurrentMediaTime() + 0.1f;
+            basic.fromValue = @(CGPointMake(3.0, 3.0));
+            basic.toValue   = @(CGPointMake(1.0, 1.0));
+            basic.duration  = 0.7f;
+            basic;
+        });
+        [cell.content pop_addAnimation:basic3 forKey:@"basic3"];
+        
+        [basic3 setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
+            [view removeFromSuperview];
+        }];
+    }];
+    
 }
 
 #pragma mark - UICollectionViewDataSource

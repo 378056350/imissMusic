@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SheetTable : UITableView
 
+@property (nonatomic, strong) NSMutableArray<SongModel *> *models;
+
 + (instancetype)initWithFrame:(CGRect)frame;
 
 @end

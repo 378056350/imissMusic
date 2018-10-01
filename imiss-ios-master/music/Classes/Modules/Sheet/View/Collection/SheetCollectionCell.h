@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *icon;
 @property (weak, nonatomic) IBOutlet UIImageView *cd;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cdConstraintL;
+@property (nonatomic, strong) NSIndexPath *indexPath;
 
 - (void)show:(BOOL)animation;
 - (void)hide:(BOOL)animation;

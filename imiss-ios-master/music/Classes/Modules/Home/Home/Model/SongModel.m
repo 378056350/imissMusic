@@ -1,16 +1,16 @@
 //
-//  HomeSongModel.m
+//  SongModel.m
 //  music
 //
 //  Created by 郑业强 on 2018/10/1.
 //  Copyright © 2018年 kk. All rights reserved.
 //
 
-#import "HomePupularModel.h"
+#import "PupularModel.h"
 
-@implementation HomeSongModel
+@implementation SongModel
 + (void)load {
-    [HomeSongModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+    [SongModel mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{
                  @"ID": @"id"
                  };

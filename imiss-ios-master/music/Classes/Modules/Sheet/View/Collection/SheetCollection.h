@@ -7,6 +7,7 @@
 //
 
 #import "BaseView.h"
+#import "SheetModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SheetCollection : BaseCollectionView
 
 @property (nonatomic, weak  ) id<SheetCollectionDelegate> sheetDelegate;
+@property (nonatomic, strong) NSMutableArray<SheetModel *> *models;
 
 + (instancetype)initWithFrame:(CGRect)frame;
 

@@ -43,19 +43,26 @@
     return collection;
 }
 
+#pragma mark - set
+- (void)setModels:(NSMutableArray<SheetModel *> *)models {
+    _models = models;
+    [self reloadData];
+}
+
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 6;
+    return self.models.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SheetCollectionCell *cell = [SheetCollectionCell loadItem:collectionView index:indexPath];
-    if ([cell isEqual:_selectCell]) {
-        [cell show:NO];
-    }
-    else {
-        [cell hide:NO];
-    }
+    [cell setIndexPath:indexPath];
+//    if ([cell isEqual:_selectCell]) {
+//        [cell show:NO];
+//    }
+//    else {
+//        [cell hide:NO];
+//    }
     return cell;
 }
 
@@ -65,17 +72,6 @@
     // 滚动
     CGFloat offsetX = indexPath.row * (INSERT + CELLW);
     [collectionView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
-//    // 动画
-//    SheetCollectionCell *cell = (SheetCollectionCell *)[collectionView cellForItemAtIndexPath:indexPath];
-//    // 选中新的Cell
-//    if (![cell isEqual:_selectCell]) {
-//        [cell show:YES];
-//    }
-//    // 隐藏之前的
-//    if (_selectCell && ![cell isEqual:_selectCell]) {
-//        [_selectCell hide:YES];
-//    }
-//    _selectCell = cell;
     // 回调
     if (self.sheetDelegate && [self.sheetDelegate respondsToSelector:@selector(sheetCollection:didSelectOrSwipeItemAtIndex:click:)]) {
         [self.sheetDelegate sheetCollection:self didSelectOrSwipeItemAtIndex:indexPath.row click:YES];
@@ -96,6 +92,8 @@
 //        [_selectCell hide:YES];
 //    }
 //    _selectCell = cell;
+    
+    
     // 回调
     if (self.sheetDelegate && [self.sheetDelegate respondsToSelector:@selector(sheetCollection:didSelectOrSwipeItemAtIndex:click:)]) {
         [self.sheetDelegate sheetCollection:self didSelectOrSwipeItemAtIndex:index click:NO];

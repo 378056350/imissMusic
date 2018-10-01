@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeCollectionCell.h"
-#import "HomePupularModel.h"
+#import "PupularModel.h"
 
 #pragma mark - 代理
 @class HomeCollection;

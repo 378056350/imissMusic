@@ -7,10 +7,13 @@
 //
 
 #import "BaseTableCell.h"
+#import "SongModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SheetTableCell : BaseTableCell
+
+@property (nonatomic, strong) SongModel *model;
 
 @end
 
