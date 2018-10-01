@@ -28,6 +28,7 @@
     [super viewDidLoad];
     [self header];
     [self table];
+    [self.view setAllowNight:YES];
 }
 
 #pragma mark - UITableViewDataSource
@@ -51,12 +52,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 0) {
-        // 锁屏歌词
-        if (indexPath.row == 0) {
-            
-        }
         // 夜间模式
-        else if (indexPath.row == 1) {
+        if (indexPath.row == 1) {
             
         }
     }
@@ -88,8 +85,10 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *view = ({
         UIView *line = [[UIView alloc] initWithFrame:CGRectMake(countcoordinatesX(15), 2, SCREEN_WIDTH, 0.5)];
-        line.backgroundColor = [kColor_Text_Gary colorWithAlphaComponent:0.2];
+        [line setAllowNight:YES];
+        
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 5)];
+        [view setAllowNight:YES];
         [view addSubview:line];
         view;
     });
@@ -120,6 +119,7 @@
         _table.separatorStyle = UITableViewCellSeparatorStyleNone;
         _table.tableFooterView = [self footer];
         _table.bounces = NO;
+        _table.allowNight = YES;
         [self.view addSubview:_table];
     }
     return _table;

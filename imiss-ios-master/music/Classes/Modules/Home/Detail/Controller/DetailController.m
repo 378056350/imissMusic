@@ -170,7 +170,12 @@
         })];
         [_contentV setModel:_model];
         [_contentV setAlpha:0];
-        [_contentV setBackgroundColor:[UIColor whiteColor]];
+//        [_contentV setBackgroundColor:[UIColor whiteColor]];
+        [_contentV setAllowNight:YES];
+        [_contentV setThemeMap:@{
+                                 kThemeKeyLightBackNormalColor: kColor_White,
+                                 kThemeKeyNightBackNormalColor: kColor_Night_Back_Big
+                                 }];
         [_contentV shadowWithColor:[kColor_Text_Gary colorWithAlphaComponent:0.2] offset:CGSizeMake(0, 5) opacity:1 radius:5];
         [_contentV.layer setCornerRadius:5];
         [self.view addSubview:_contentV];

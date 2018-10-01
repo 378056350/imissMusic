@@ -29,6 +29,8 @@
     [self.cancleBtn setTitleColor:kColor_Text_Gary forState:UIControlStateHighlighted];
     [self.cancleBtn borderForColor:[kColor_Text_Gary colorWithAlphaComponent:0.2] borderWidth:1.f / [UIScreen mainScreen].scale borderType:UIBorderSideTypeTop];
     [self setRoundedCorners:UIRectCornerTopLeft | UIRectCornerTopRight radius:5];
+    [self setAllowNight:YES];
+    [self.cancleBtn setAllowNight:YES];
 }
 
 - (void)createScrollItem {
@@ -51,6 +53,7 @@
             CGFloat top = 0;
             CGRectMake(left, top, width, height);
         })];
+        [view setAllowNight:YES];
         [self.scroll addSubview:view];
         
         UIImageView *icon = [[UIImageView alloc] initWithFrame:({
@@ -68,6 +71,7 @@
         [lab setFont:[UIFont systemFontOfSize:AdjustFont(10)]];
         [lab setTextColor:kColor_Text_Gary];
         [lab setText:arr[1][i]];
+        [lab setAllowNight:YES];
         [view addSubview:lab];
         
         __weak typeof(self) weak = self;

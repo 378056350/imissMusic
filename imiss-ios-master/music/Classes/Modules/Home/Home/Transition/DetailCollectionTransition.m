@@ -100,7 +100,12 @@
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time / 2 / 2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         cell.image = nil;
-        cell.backgroundColor = [UIColor whiteColor];
+        if ([cell isNight] == NO) {
+            cell.backgroundColor = kColor_BG;
+        }
+        else {
+            cell.backgroundColor = HexColor(@"#201523");
+        }
     });
     
     // 圆角

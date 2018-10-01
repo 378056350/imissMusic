@@ -43,6 +43,10 @@
     [self icon];
     [self name];
     [self desc];
+    [self setAllowNight:YES];
+    [self.name setAllowNight:YES];
+    [self.desc setAllowNight:YES];
+    [self.again setAllowNight:YES];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

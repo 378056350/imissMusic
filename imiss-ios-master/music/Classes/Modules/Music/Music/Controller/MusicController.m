@@ -41,6 +41,9 @@
         [_lyric setModel:self.modules.resourceModel];
         [_bottom setModel:self.modules.resourceModel];
     }
+    
+    
+    [self.view setAllowNight:YES];
 }
 
 #pragma mark - 请求
@@ -76,7 +79,12 @@
         self.navigation.alpha = 1;
         self.navigation.top = 0;
         self.bottom.alpha = 1;
-        self.view.backgroundColor = kColor_BG;
+        if ([self.view isNight] == NO) {
+            self.view.backgroundColor = kColor_BG;
+        }
+        else {
+            self.view.backgroundColor = kColor_Night_Back_Small;
+        }
     } completion:^(BOOL finished) {
         
     }];

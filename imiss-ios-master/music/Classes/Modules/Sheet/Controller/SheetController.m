@@ -35,6 +35,7 @@
     [self collection];
     [self table];
     [self getSheetRequest];
+    [self.view setAllowNight:YES];
 }
 
 #pragma mark - set
@@ -111,6 +112,7 @@
 - (BaseView *)collectionView {
     if (!_collectionView) {
         _collectionView = [[BaseView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_header.frame), SCREEN_WIDTH, SCREEN_HEIGHT - TabbarHeight)];
+        _collectionView.allowNight = YES;
         [self.view addSubview:_collectionView];
     }
     return _collectionView;

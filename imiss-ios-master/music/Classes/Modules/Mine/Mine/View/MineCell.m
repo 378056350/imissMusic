@@ -20,6 +20,21 @@
 @implementation MineCell
 
 - (void)initUI {
+    self.allowNight = YES;
+    self.sw.allowNight = YES;
+
+//    self.sw.layer.cornerRadius = self.sw.height / 2;
+//    self.sw.layer.borderColor = [UIColor redColor].CGColor;
+//    self.sw.layer.borderWidth = 1;
+    self.sw.themeMap = @{kThemeKeyLightSwThumbColor: [UIColor whiteColor],
+                         kThemeKeyLightSwOnColor: [kColor_Text_Gary colorWithAlphaComponent:0.5],
+                         kThemeKeyLightSwOffColor: [kColor_Text_Gary colorWithAlphaComponent:0.5]
+                         };
+    
+    self.name.allowNight = YES;
+    self.contentView.allowNight = YES;
+    
+    
     self.backgroundColor = kColor_BG;
     self.nameConstraintL.constant = countcoordinatesX(15);
     self.name.font = [UIFont systemFontOfSize:AdjustFont(14)];
@@ -33,6 +48,7 @@
         if (self.index.section == 0) {
             // 夜间模式
             if (self.index.row == 0) {
+                [self themeChanged];
                 model.nightMode = sender.on;
             }
         }

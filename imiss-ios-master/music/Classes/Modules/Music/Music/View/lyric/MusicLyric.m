@@ -60,6 +60,11 @@
         [ontentMaskView.layer addSublayer:gradientLayer];
         ontentMaskView;
     });
+    
+    
+    self.allowNight = YES;
+    self.table.allowNight = YES;
+    
 }
 // 选中cell
 - (void)chooseIndex:(NSInteger)index {

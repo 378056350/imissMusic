@@ -309,7 +309,7 @@
     //==================================== 背景 ====================================
     UIView *musicBg = ({
         UIView *musicBg = [[UIView alloc] initWithFrame:musicVC.view.frame];
-        musicBg.backgroundColor = kColor_BG;
+        musicBg.allowNight = YES;
         musicBg;
     });
     [containerView addSubview:musicBg];

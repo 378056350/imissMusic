@@ -31,6 +31,13 @@
     [self header];
     [self scroll];
     [self getPopularRequest];
+    
+    
+    [self.view setAllowNight:YES];
+    
+    if ([RLMRealm loadUserInfo].nightMode == YES) {
+        [self.view themeChanged];
+    }
 }
 
 #pragma mark - 请求

@@ -47,6 +47,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(musicPlay) name:MusicModulesConstPlay object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(musicPause) name:MusicModulesConstPause object:nil];
     
+    
+    
+    [self setAllowNight:YES];
 }
 
 

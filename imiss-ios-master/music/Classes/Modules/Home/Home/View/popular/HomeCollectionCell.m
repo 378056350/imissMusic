@@ -41,7 +41,7 @@
     self.content.layer.shadowOpacity = 0.2;
     
     self.nameLab.font = MathFont(18);
-    self.nameLab.textColor = kColor_Text_Black;
+//    self.nameLab.textColor = kColor_Text_Black;
     self.detailLab.font = MathFont(14);
     self.detailLab.textColor = kColor_Text_Gary;
     
@@ -57,6 +57,20 @@
     self.likeLab.textColor = kColor_Text_Gary;
     self.musicLab.textColor = kColor_Text_Gary;
     self.listLab.textColor = kColor_Text_Gary;
+    
+    self.allowNight = YES;
+    self.contentView.allowNight = YES;
+//    self.nameLab.allowNight = YES;
+    self.detailLab.allowNight = YES;
+    self.content.allowNight = YES;
+    
+    self.themeMap = @{kThemeKeyNightBackNormalColor: HexColor(@"#201523")};
+    
+    [self.nameLab setThemeMap:@{
+                                kThemeKeyLightTitleNormalColor: kColor_Text_Black,
+                                kThemeKeyNightTitleNormalColor: kColor_Text_Light
+                                }];
+    
 }
 // 播放
 - (IBAction)playClick:(UIButton *)sender {

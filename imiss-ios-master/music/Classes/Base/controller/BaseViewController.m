@@ -33,6 +33,7 @@ typedef NS_ENUM(NSInteger, BarButtonItemState) {
     [self.navigationController.interactivePopGestureRecognizer setDelegate:self];
     [self.view setBackgroundColor:kColor_BG];
     [self initUI];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(themeChanged) name:kThemeDidChangeNotification object:nil];
 }
 - (void)initUI {
     [self setLeftBtn];
@@ -63,6 +64,14 @@ typedef NS_ENUM(NSInteger, BarButtonItemState) {
 //    }
 //    return _content;
 //}
+- (void)themeChanged {
+    if ([self.view isNight] == NO) {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
+    }
+    else {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    }
+}
 
 #pragma mark - 点击
 // 点击了返回按钮
@@ -168,6 +177,10 @@ typedef NS_ENUM(NSInteger, BarButtonItemState) {
     else {
         [tab hideTabbar:YES];
     }
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

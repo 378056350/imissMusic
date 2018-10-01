@@ -21,7 +21,7 @@
 @implementation MusicNavigation
 
 - (void)initUI {
-    
+    self.allowNight = YES;
 }
 - (IBAction)leftTap:(UITapGestureRecognizer *)sender {
     MusicController *vc = (MusicController *)self.viewController;

@@ -45,6 +45,8 @@
 #import "KKShare.h"
 #import "KKHeaderView.h"
 #import "KKScreenShot.h"
+#import "UIView+UIConfig.h"
+#import "ThemeConst.h"
 
 //================================= Util =====================================//
 #import "Single.h"

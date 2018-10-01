@@ -140,6 +140,9 @@
 		4B97CBCB21627EB000ADEF36 /* mine_share_zone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B97CBC521627EB000ADEF36 /* mine_share_zone.png */; };
 		4B97CBCC21627EB000ADEF36 /* mine_share_wzone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B97CBC621627EB000ADEF36 /* mine_share_wzone.png */; };
 		4B97CBCD21627EB000ADEF36 /* mine_share_qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B97CBC721627EB000ADEF36 /* mine_share_qq.png */; };
+		4B97CBD42162880C00ADEF36 /* ThemeConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B97CBD02162880C00ADEF36 /* ThemeConst.m */; };
+		4B97CBD52162880C00ADEF36 /* ThemeConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B97CBD12162880C00ADEF36 /* ThemeConfig.plist */; };
+		4B97CBD62162880C00ADEF36 /* UIView+UIConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B97CBD22162880C00ADEF36 /* UIView+UIConfig.m */; };
 		4BAF6C95215BBD1A004D7FBB /* HomeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF6C94215BBD1A004D7FBB /* HomeCollection.m */; };
 		4BAF6C9F215BC4BF004D7FBB /* HomeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF6C9D215BC4BF004D7FBB /* HomeCollectionCell.m */; };
 		4BAF6CA0215BC4BF004D7FBB /* HomeCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BAF6C9E215BC4BF004D7FBB /* HomeCollectionCell.xib */; };
@@ -403,6 +406,11 @@
 		4B97CBC521627EB000ADEF36 /* mine_share_zone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_share_zone.png; sourceTree = "<group>"; };
 		4B97CBC621627EB000ADEF36 /* mine_share_wzone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_share_wzone.png; sourceTree = "<group>"; };
 		4B97CBC721627EB000ADEF36 /* mine_share_qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mine_share_qq.png; sourceTree = "<group>"; };
+		4B97CBCF2162880C00ADEF36 /* UIView+UIConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIConfig.h"; sourceTree = "<group>"; };
+		4B97CBD02162880C00ADEF36 /* ThemeConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeConst.m; sourceTree = "<group>"; };
+		4B97CBD12162880C00ADEF36 /* ThemeConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ThemeConfig.plist; sourceTree = "<group>"; };
+		4B97CBD22162880C00ADEF36 /* UIView+UIConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIConfig.m"; sourceTree = "<group>"; };
+		4B97CBD32162880C00ADEF36 /* ThemeConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeConst.h; sourceTree = "<group>"; };
 		4BAF6C93215BBD1A004D7FBB /* HomeCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollection.h; sourceTree = "<group>"; };
 		4BAF6C94215BBD1A004D7FBB /* HomeCollection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollection.m; sourceTree = "<group>"; };
 		4BAF6C9C215BC4BF004D7FBB /* HomeCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionCell.h; sourceTree = "<group>"; };
@@ -850,6 +858,7 @@
 		4B1B3350215A791F00A0C4D2 /* Categorys */ = {
 			isa = PBXGroup;
 			children = (
+				4B97CBCE2162880C00ADEF36 /* Theme */,
 				4B1B3351215A791F00A0C4D2 /* UIImage */,
 				4B1B3354215A791F00A0C4D2 /* UIButton */,
 				4B1B3357215A791F00A0C4D2 /* UIColor */,
@@ -1383,6 +1392,18 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		4B97CBCE2162880C00ADEF36 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				4B97CBCF2162880C00ADEF36 /* UIView+UIConfig.h */,
+				4B97CBD22162880C00ADEF36 /* UIView+UIConfig.m */,
+				4B97CBD32162880C00ADEF36 /* ThemeConst.h */,
+				4B97CBD02162880C00ADEF36 /* ThemeConst.m */,
+				4B97CBD12162880C00ADEF36 /* ThemeConfig.plist */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		4BAF6C96215BC061004D7FBB /* control */ = {
 			isa = PBXGroup;
 			children = (
@@ -1560,6 +1581,7 @@
 				4B97CBCD21627EB000ADEF36 /* mine_share_qq.png in Resources */,
 				3239DD83215F59C0003C4AB2 /* share_close.png in Resources */,
 				4BDFFD87215E460C00CC8331 /* home_like_normal.png in Resources */,
+				4B97CBD52162880C00ADEF36 /* ThemeConfig.plist in Resources */,
 				4B43B934215921B3002F8567 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1662,6 +1684,7 @@
 				3239DD7D215F5663003C4AB2 /* KKScreenShotContent.m in Sources */,
 				4B1B33A4215A791F00A0C4D2 /* UIButton+BarButtonItem.m in Sources */,
 				3245C88E215DB0EB004938C3 /* DetailCollectionTransition.m in Sources */,
+				4B97CBD62162880C00ADEF36 /* UIView+UIConfig.m in Sources */,
 				32C84ACC215E2B0D00888D90 /* MusicBottom.m in Sources */,
 				4B1B3380215A791F00A0C4D2 /* UMSocialManager+Extension.m in Sources */,
 				4B1B3387215A791F00A0C4D2 /* SGPageContentView.m in Sources */,
@@ -1717,6 +1740,7 @@
 				4B1B33B0215A791F00A0C4D2 /* UITableView+Extension.m in Sources */,
 				4BDFFD8D215E513700CC8331 /* MusicCD.m in Sources */,
 				4B1B3383215A791F00A0C4D2 /* LinkageView.m in Sources */,
+				4B97CBD42162880C00ADEF36 /* ThemeConst.m in Sources */,
 				4BDFFD90215E52E900CC8331 /* MusicNavigation.m in Sources */,
 				4B1B338D215A791F00A0C4D2 /* UIViewController+MBProgressHUD.m in Sources */,
 				4B1B3389215A791F00A0C4D2 /* SGPageTitleViewConfigure.m in Sources */,

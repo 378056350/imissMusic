@@ -32,6 +32,13 @@
     self.detail.textColor = kColor_Text_Gary;
     self.time.textColor = kColor_Text_Gary;
     self.iconConstraintL.constant = countcoordinatesX(10);
+    
+    
+    self.name.allowNight = YES;
+    self.detail.allowNight = YES;
+    self.time.allowNight = YES;
+    self.allowNight = YES;
+    self.contentView.allowNight = YES;
 }
 
 - (void)setModel:(SongModel *)model {

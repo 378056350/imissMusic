@@ -42,8 +42,16 @@
     [self.layer setCornerRadius:5];
     [self.maskView.layer setMask:[self greenHeadMaskLayer]];
     [self.scroll addSubview:self.scrollContentView];
-    
     [self.scrollContentView setFrame:self.bounds];
+    
+    self.contentLab.allowNight = YES;
+    self.scroll.allowNight = YES;
+    self.scrollContentView.allowNight = YES;
+    self.nameLab.allowNight = YES;
+    self.detailLab.allowNight = YES;
+    self.contentDescLab.allowNight = YES;
+    self.contentLab.allowNight = YES;
+    
 }
 
 - (CALayer *)greenHeadMaskLayer {

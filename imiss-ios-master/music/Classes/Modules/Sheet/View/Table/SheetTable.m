@@ -24,6 +24,7 @@
     table.dataSource = table;
     table.separatorStyle = UITableViewCellSeparatorStyleNone;
     table.backgroundColor = [UIColor clearColor];
+    table.allowNight = YES;
     return table;
 }
 

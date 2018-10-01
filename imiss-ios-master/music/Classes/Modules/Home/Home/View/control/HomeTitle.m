@@ -51,6 +51,7 @@
                 [weak.delegate homeTitle:weak selectedIndex:i];
             }
         }];
+        [lab setAllowNight:YES];
         [lab setUserInteractionEnabled:YES];
         [self addSubview:lab];
         [self.labs addObject:lab];
@@ -94,6 +95,7 @@
         _line.layer.shadowColor = kColor_Text_Gary.CGColor;
         _line.layer.shadowOffset = CGSizeMake(0, 2);
         _line.layer.shadowOpacity = 1;
+        _line.allowNight = YES;
         [self addSubview:_line];
     }
     return _line;

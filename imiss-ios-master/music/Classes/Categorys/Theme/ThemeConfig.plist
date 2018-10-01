@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>kThemeKeyLightBackTableColor</key>
+	<string>#F5F5F5</string>
+	<key>kThemeKeyNightBackTableColor</key>
+	<string>#201523</string>
+	<key>kThemeKeyLightBackNormalColor</key>
+	<string>#F5F5F5</string>
+	<key>kThemeKeyLightSeparatorColor</key>
+	<string>#F5F5F5</string>
+	<key>kThemeKeyNightTitleNormalColor</key>
+	<string>#8B8B8B</string>
+	<key>kThemeKeyLightBackHighLightColor</key>
+	<string>#F5F5F5</string>
+	<key>kThemeKeyLightSwThumbColor</key>
+	<string>#F5F5F5</string>
+	<key>kThemeKeyNightBorderColor</key>
+	<string>#1B1B1B</string>
+	<key>kThemeKeyNightPlaceholderColor</key>
+	<string>#8B8B8B</string>
+	<key>kThemeKeyNightSeparatorColor</key>
+	<string>#27262A</string>
+	<key>kThemeKeyNightBackNormalColor</key>
+	<string>#232226</string>
+	<key>kThemeKeyLightSwOnColor</key>
+	<string>#F5F5F5</string>
+	<key>kThemeKeyNightSwOnColor</key>
+	<string>#EE2C2C</string>
+	<key>kThemeKeyLightTitleSelectColor</key>
+	<string>#999999</string>
+	<key>kThemeKeyNightSwOffColor</key>
+	<string>#EE2C2C</string>
+	<key>kThemeKeyNightBackHighNightColor</key>
+	<string>#1B1B1B</string>
+	<key>kThemeKeyLightBorderColor</key>
+	<string>#1B1B1B</string>
+	<key>kThemeKeyLightTitleNormalColor</key>
+	<string>#8B8B8B</string>
+	<key>kThemeKeyLightPlaceholderColor</key>
+	<string>#8B8B8B</string>
+	<key>kThemeKeyLightTitleHighLightColor</key>
+	<string>#8B8B8B</string>
+	<key>kThemeKeyNightSwThumbColor</key>
+	<string>#231815</string>
+	<key>kThemeKeyNightTitleSelectColor</key>
+	<string>#999999</string>
+	<key>kThemeKeyNightTitleHighNightColor</key>
+	<string>#8B8B8B</string>
+	<key>kThemeKeyLightSwOffColor</key>
+	<string>#999999</string>
+</dict>
+</plist>

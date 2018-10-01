@@ -21,6 +21,16 @@
     [self nameLab];
     [self detailLab];
     [self setBackgroundColor:kColor_BG];
+    
+    
+    [self setAllowNight:YES];
+    [self.detailLab setAllowNight:YES];
+    
+    
+    [self.nameLab setThemeMap:@{
+                                kThemeKeyLightTitleNormalColor: kColor_Text_Black,
+                                kThemeKeyNightTitleNormalColor: kColor_Text_Light
+                                }];
 }
 
 #pragma mark - set

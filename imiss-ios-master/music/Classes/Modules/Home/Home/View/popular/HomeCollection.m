@@ -145,6 +145,7 @@
             flow;
         })];
 //        [_collection setClipsToBounds:NO];
+        [_collection setAllowNight:YES];
         [_collection setPagingEnabled:NO];
         [_collection setShowsHorizontalScrollIndicator:NO];
         [_collection setDelegate:self];

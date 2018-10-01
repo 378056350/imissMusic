@@ -21,6 +21,8 @@
 - (void)initUI {
     [self setFrame:CGRectMake(0, StatusBarHeight, SCREEN_WIDTH, countcoordinatesX(60))];
     [self nameLab];
+    [self setAllowNight:YES];
+    [self.nameLab setAllowNight:YES];
 }
 
 #pragma mark - set
