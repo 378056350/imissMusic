@@ -47,6 +47,7 @@
 #import "KKScreenShot.h"
 #import "UIView+UIConfig.h"
 #import "ThemeConst.h"
+#import "FakeData.h"
 
 //================================= Util =====================================//
 #import "Single.h"

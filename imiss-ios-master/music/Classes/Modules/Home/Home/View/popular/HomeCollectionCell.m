@@ -60,7 +60,6 @@
     
     self.allowNight = YES;
     self.contentView.allowNight = YES;
-//    self.nameLab.allowNight = YES;
     self.detailLab.allowNight = YES;
     self.content.allowNight = YES;
     
@@ -88,7 +87,13 @@
 // 数据
 - (void)setModel:(SongModel *)model {
     _model = model;
-    [_icon sd_setImageWithURL:[NSURL URLWithString:KStatic(model.big_img)]];
+    if (DEBUG) {
+        [_icon setImage:[UIImage imageNamed:model.big_img]];
+    }
+    else {
+        [_icon sd_setImageWithURL:[NSURL URLWithString:KStatic(model.big_img)]];
+    }
+    
     [_nameLab setText:model.name];
     [_detailLab setText:model.author];
     [_likeLab setText:[NSString getMeasureThousand:[model.likeNumber doubleValue]]];

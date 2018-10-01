@@ -38,4 +38,11 @@
     }];
 }
 
+- (void)setModel:(SheetModel *)model {
+    _model = model;
+    if (DEBUG) {
+        self.icon.image = [UIImage imageNamed:model.img];
+    }
+}
+
 @end

@@ -40,8 +40,14 @@ SingleImplementation(MusicModules)
     _music = music;
     // 音乐资源
     NSURL *path = [NSURL URLWithString:music];
-    NSData *data = [[NSData alloc] initWithContentsOfURL:path];
-    if (!path) {
+    NSData *data;
+    if (DEBUG) {
+        data = [[NSData alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"后来" ofType:@"mp3"]];
+    }
+    else {
+        data = [[NSData alloc] initWithContentsOfURL:path];
+    }
+    if (!path && !DEBUG) {
         return;
     }
     // 播放器

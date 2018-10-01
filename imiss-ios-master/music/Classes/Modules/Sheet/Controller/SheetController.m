@@ -58,9 +58,13 @@
     [self.collectionView showEmptyView:EmptyStateLoading eventBlock:nil];
     [AFNManager POST:CreateSheetRequest params:nil complete:^(APPResult *result) {
         // 成功
-        if (result.status == ServiceStatusSuccess) {
+        if (result.status == ServiceStatusSuccess || DEBUG) {
             // 隐藏
             [weak.collectionView hideEmptyView];
+            if (DEBUG) {
+                result = [APPResult new];
+                result.data = [FakeData sheetData];
+            }
             // 赋值
             NSMutableArray<SheetModel *> *array = [SheetModel mj_objectArrayWithKeyValuesArray:result.data];
             [weak setSheets:array];
@@ -80,7 +84,11 @@
     [AFNManager POST:CreateSongWithSheetRequest params:nil complete:^(APPResult *result) {
         [weak hideHUD];
         // 成功
-        if (result.status == ServiceStatusSuccess) {
+        if (result.status == ServiceStatusSuccess || DEBUG) {
+            if (DEBUG) {
+                result = [APPResult new];
+                result.data = [FakeData songWithSheet];
+            }
             NSMutableArray<SongModel *> *array = [SongModel mj_objectArrayWithKeyValuesArray:result.data];
             [weak setSongs:array];
         }

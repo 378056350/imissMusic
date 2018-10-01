@@ -14,7 +14,13 @@
     ResourceModel *model = [super mj_objectWithKeyValues:keyValues];
     // 数据
     model.datas = ({
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:KStatic(model.lrc)]];
+        NSData *data;
+        if (DEBUG) {
+            data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"后来" ofType:@"lrc"]];
+        }
+        else {
+            data = [NSData dataWithContentsOfURL:[NSURL URLWithString:KStatic(model.lrc)]];
+        }
         NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSArray *datas = [str componentsSeparatedByString:@"\n"];
         datas;

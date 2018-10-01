@@ -47,9 +47,15 @@
     [self.scroll showEmptyView:EmptyStateLoading eventBlock:nil];
     [AFNManager POST:CreatePopularRequest params:nil complete:^(APPResult *result) {
         // 成功
-        if (result.status == ServiceStatusSuccess) {
+        if (result.status == ServiceStatusSuccess || DEBUG) {
             // 隐藏
             [weak.scroll hideEmptyView];
+            // 假数据
+            if (DEBUG) {
+                result = [APPResult new];
+                result.data = [FakeData homeData];
+            }
+            
             // 赋值
             HomePupularListModel *model = [HomePupularListModel mj_objectWithKeyValues:result.data];
             [weak setModel:model];

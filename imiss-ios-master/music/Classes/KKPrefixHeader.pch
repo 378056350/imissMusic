@@ -9,6 +9,9 @@
 #ifndef KKPrefixHeader_pch
 #define KKPrefixHeader_pch
 
+// 是否是debug模式(true: 假数据,   false: 真数据)
+#define DEBUG true
+
 
 //======================================================================//
 //                                 主题

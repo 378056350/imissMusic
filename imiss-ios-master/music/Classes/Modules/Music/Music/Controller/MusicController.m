@@ -52,7 +52,11 @@
     __weak typeof(self) weak = self;
     [AFNManager POST:CreateResourceRequest params:nil complete:^(APPResult *result) {
         // 成功
-        if (result.status == ServiceStatusSuccess) {
+        if (result.status == ServiceStatusSuccess || DEBUG) {
+            if (DEBUG) {
+                result = [APPResult new];
+                result.data = [FakeData resourceData];
+            }
             ResourceModel *model = [ResourceModel mj_objectWithKeyValues:result.data];
             [weak setResourceModel:model];
         }

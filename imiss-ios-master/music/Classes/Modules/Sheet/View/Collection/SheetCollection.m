@@ -57,12 +57,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SheetCollectionCell *cell = [SheetCollectionCell loadItem:collectionView index:indexPath];
     [cell setIndexPath:indexPath];
-//    if ([cell isEqual:_selectCell]) {
-//        [cell show:NO];
-//    }
-//    else {
-//        [cell hide:NO];
-//    }
+    [cell setModel:self.models[indexPath.row]];
     return cell;
 }
 

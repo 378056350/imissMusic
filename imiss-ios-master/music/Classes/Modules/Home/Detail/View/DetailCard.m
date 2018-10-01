@@ -80,7 +80,12 @@
 #pragma mark - set
 - (void)setModel:(SongModel *)model {
     _model = model;
-    [self.iconImg sd_setImageWithURL:[NSURL URLWithString:KStatic(model.small_img)]];
+    if (DEBUG) {
+        [self.iconImg setImage:[UIImage imageNamed:model.small_img]];
+    }
+    else {
+        [self.iconImg sd_setImageWithURL:[NSURL URLWithString:KStatic(model.small_img)]];
+    }
     [self.nameLab setText:model.name];
     [self.detailLab setText:model.introduction];
     [self.contentLab setText:model.detail];

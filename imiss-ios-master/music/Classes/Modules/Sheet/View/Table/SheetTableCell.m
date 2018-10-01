@@ -43,7 +43,12 @@
 
 - (void)setModel:(SongModel *)model {
     _model = model;
-    [self.icon sd_setImageWithURL:[NSURL URLWithString:KStatic(model.small_img)]];
+    if (DEBUG) {
+        [self.icon setImage:[UIImage imageNamed:model.small_img]];
+    }
+    else {
+        [self.icon sd_setImageWithURL:[NSURL URLWithString:KStatic(model.small_img)]];
+    }
     [self.name setText:model.name];
     [self.detail setText:model.introduction];
 }
