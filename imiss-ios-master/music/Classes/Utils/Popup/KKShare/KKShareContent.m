@@ -32,22 +32,17 @@
 }
 
 - (void)createScrollItem {
-    NSArray<NSArray *> *arr = @[@[@"cm2_blogo_pyq", @"cm2_blogo_weixin", @"cm2_blogo_qzone",
-                                  @"cm2_blogo_qq", @"cm2_blogo_sina", @"cm2_blogo_yxq",
-                                  @"cm2_blogo_yixin", @"cm2_blogo_copylink"],
+    NSArray<NSArray *> *arr = @[@[@"mine_share_wzone", @"mine_share_wc", @"mine_share_zone",
+                                  @"mine_share_qq", @"mine_share_wb", @"mine_share_link"],
                                 @[@"微信朋友圈", @"微信好友", @"QQ空间",
-                                  @"QQ好友", @"微博", @"易信朋友圈",
-                                  @"易信好友", @"复制链接"],
+                                  @"QQ好友", @"微博", @"复制链接"],
                                 @[@"微信", @"微信", @"QQ",
-                                  @"QQ", @"微博", @"易信",
-                                  @"易信", @"复制链接"],
+                                  @"QQ", @"微博", @"复制链接"],
                                 @[@(UMSocialPlatformType_WechatTimeLine),
                                   @(UMSocialPlatformType_WechatSession),
                                   @(UMSocialPlatformType_Qzone),
                                   @(UMSocialPlatformType_QQ),
-                                  @(UMSocialPlatformType_Sina),
-                                  @(UMSocialPlatformType_YixinTimeLine),
-                                  @(UMSocialPlatformType_YixinSession)]];
+                                  @(UMSocialPlatformType_Sina)]];
     for (int i=0; i<arr[0].count; i++) {
         UIView *view = [[UIView alloc] initWithFrame:({
             CGFloat width = SCREEN_WIDTH / 4.5;
@@ -106,7 +101,8 @@
             else {
                 // 复制链接
                 UIPasteboard *pab = [UIPasteboard generalPasteboard];
-                [pab setString:weak.url];
+//                [pab setString:weak.url];
+                [pab setString:@"1231231232321"];
                 // 失败
                 if (pab == nil) {
                     [weak showWindowErrorHUD:@"复制链接失败" delay:1];

@@ -37,15 +37,22 @@
 // 受欢迎请求
 - (void)getPopularRequest {
     __weak typeof(self) weak = self;
+    [self.scroll showEmptyView:EmptyStateLoading eventBlock:nil];
     [AFNManager POST:CreatePopularRequest params:nil complete:^(APPResult *result) {
         // 成功
         if (result.status == ServiceStatusSuccess) {
+            // 隐藏
+            [weak.scroll hideEmptyView];
+            // 赋值
             HomePupularListModel *model = [HomePupularListModel mj_objectWithKeyValues:result.data];
             [weak setModel:model];
         }
         // 失败
         else {
-            NSLog(@"fail");
+            [weak.scroll showEmptyView:EmptyStateNetkFailButton eventBlock:^{
+                [weak.scroll showEmptyView:EmptyStateLoading eventBlock:nil];
+                [weak getPopularRequest];
+            }];
         }
     }];
 }

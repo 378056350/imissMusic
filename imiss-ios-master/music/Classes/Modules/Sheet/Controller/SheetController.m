@@ -18,6 +18,7 @@
 }
 
 @property (nonatomic, strong) KKHeaderView *header;
+@property (nonatomic, strong) BaseView *collectionView;
 @property (nonatomic, strong) SheetCollection *collection;
 @property (nonatomic, strong) SheetTable *table;
 @property (nonatomic, strong) NSMutableArray<SheetModel *> *sheets;
@@ -41,6 +42,7 @@
 - (void)setSheets:(NSMutableArray<SheetModel *> *)sheets {
     _sheets = sheets;
     _collection.models = sheets;
+    [self getSongWithSheetRequest];
 }
 // 音乐
 - (void)setSongs:(NSMutableArray<SongModel *> *)songs {
@@ -52,15 +54,22 @@
 // 歌单请求
 - (void)getSheetRequest {
     __weak typeof(self) weak = self;
+    [self.collectionView showEmptyView:EmptyStateLoading eventBlock:nil];
     [AFNManager POST:CreateSheetRequest params:nil complete:^(APPResult *result) {
         // 成功
         if (result.status == ServiceStatusSuccess) {
+            // 隐藏
+            [weak.collectionView hideEmptyView];
+            // 赋值
             NSMutableArray<SheetModel *> *array = [SheetModel mj_objectArrayWithKeyValuesArray:result.data];
             [weak setSheets:array];
         }
         // 失败
         else {
-            NSLog(@"fail");
+            [weak.collectionView showEmptyView:EmptyStateNetkFailButton eventBlock:^{
+                [weak.collectionView showEmptyView:EmptyStateLoading eventBlock:nil];
+                [weak getSheetRequest];
+            }];
         }
     }];
 }
@@ -68,6 +77,7 @@
 - (void)getSongWithSheetRequest {
     __weak typeof(self) weak = self;
     [AFNManager POST:CreateSongWithSheetRequest params:nil complete:^(APPResult *result) {
+        [weak hideHUD];
         // 成功
         if (result.status == ServiceStatusSuccess) {
             NSMutableArray<SongModel *> *array = [SongModel mj_objectArrayWithKeyValuesArray:result.data];
@@ -85,6 +95,7 @@
 - (void)sheetCollection:(SheetCollection *)collection didSelectOrSwipeItemAtIndex:(NSInteger)index click:(BOOL)isClick {
     _selectIndex = index;
     // NSLog(@"操作方式: %@,  Item: %ld", isClick == YES ? @"点击" : @"滑动", index);
+    [self showProgressHUD];
     [self getSongWithSheetRequest];
 }
 
@@ -97,11 +108,18 @@
     }
     return _header;
 }
+- (BaseView *)collectionView {
+    if (!_collectionView) {
+        _collectionView = [[BaseView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_header.frame), SCREEN_WIDTH, SCREEN_HEIGHT - TabbarHeight)];
+        [self.view addSubview:_collectionView];
+    }
+    return _collectionView;
+}
 - (SheetCollection *)collection {
     if (!_collection) {
-        _collection = [SheetCollection initWithFrame:CGRectMake(0, CGRectGetMaxY(_header.frame), SCREEN_WIDTH, countcoordinatesX(140))];
+        _collection = [SheetCollection initWithFrame:CGRectMake(0, 0, self.collectionView.width, countcoordinatesY(140))];
         _collection.sheetDelegate = self;
-        [self.view addSubview:_collection];
+        [self.collectionView addSubview:_collection];
     }
     return _collection;
 }
@@ -112,7 +130,7 @@
             CGRectMake(0, top, SCREEN_WIDTH, SCREEN_HEIGHT - TabbarHeight - top);
         })];
         _table.contentInset = UIEdgeInsetsMake(countcoordinatesX(10), 0, 0, 0);
-        [self.view addSubview:_table];
+        [self.collectionView addSubview:_table];
     }
     return _table;
 }

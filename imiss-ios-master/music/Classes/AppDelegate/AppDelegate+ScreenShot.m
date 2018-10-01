@@ -13,7 +13,9 @@
 // 截屏事件
 - (void)screenshotNotification {
     [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationUserDidTakeScreenshotNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
-        [self userDidTakeScreenshot];
+        if ([RLMRealm loadUserInfo] && [RLMRealm loadUserInfo].screenShare == YES) {
+            [self userDidTakeScreenshot];
+        }
     }];
 }
 // 截屏响应

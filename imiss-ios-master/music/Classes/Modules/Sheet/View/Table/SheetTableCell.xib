@@ -38,7 +38,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGc-16-KbB">
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGc-16-KbB">
                         <rect key="frame" x="286" y="0.0" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -67,7 +67,7 @@
                 <outlet property="name" destination="UIp-eF-hCZ" id="Bt2-Up-WzB"/>
                 <outlet property="time" destination="XGc-16-KbB" id="Rps-RW-u0l"/>
             </connections>
-            <point key="canvasLocation" x="-68.5" y="-50.5"/>
+            <point key="canvasLocation" x="-401" y="-21"/>
         </tableViewCell>
     </objects>
 </document>

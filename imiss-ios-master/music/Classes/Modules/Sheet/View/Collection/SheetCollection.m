@@ -69,35 +69,35 @@
 #pragma mark - UICollectionViewDelegate
 // 点击了某个Cell
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (_selectCell.indexPath.row == indexPath.row) {
+        return;
+    }
+    
     // 滚动
     CGFloat offsetX = indexPath.row * (INSERT + CELLW);
     [collectionView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+    
+    
     // 回调
     if (self.sheetDelegate && [self.sheetDelegate respondsToSelector:@selector(sheetCollection:didSelectOrSwipeItemAtIndex:click:)]) {
         [self.sheetDelegate sheetCollection:self didSelectOrSwipeItemAtIndex:indexPath.row click:YES];
     }
+    // 赋值
+    _selectCell = (SheetCollectionCell *)[self cellForItemAtIndexPath:indexPath];
 }
 
 #pragma mark - SheetCollectionLayoutDelegate
 // 滑动到某个Cell
 - (void)collectionLayout:(SheetCollectionLayout *)layout didSelectItemWithIndex:(NSInteger)index {
-//    // 动画
-//    SheetCollectionCell *cell = (SheetCollectionCell *)[self cellForItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
-//    // 选中新的Cell
-//    if (![cell isEqual:_selectCell]) {
-//        [cell show:YES];
-//    }
-//    // 隐藏之前的
-//    if (_selectCell && ![cell isEqual:_selectCell]) {
-//        [_selectCell hide:YES];
-//    }
-//    _selectCell = cell;
-    
-    
+    if (_selectCell.indexPath.row == index) {
+        return;
+    }
     // 回调
     if (self.sheetDelegate && [self.sheetDelegate respondsToSelector:@selector(sheetCollection:didSelectOrSwipeItemAtIndex:click:)]) {
         [self.sheetDelegate sheetCollection:self didSelectOrSwipeItemAtIndex:index click:NO];
     }
+    // 赋值
+    _selectCell = (SheetCollectionCell *)[self cellForItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
 }
 
 #pragma mark - UISCrollViewDelegate

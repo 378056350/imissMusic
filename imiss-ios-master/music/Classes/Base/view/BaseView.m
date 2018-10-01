@@ -54,7 +54,7 @@
 
 // 初始化UI
 - (void)initUI {
-//    [self emptyView];
+    [self emptyView];
 //    [self progressView];
 }
 
@@ -74,48 +74,48 @@
     self.progressView.progress = progress;
 }
 
-//- (EmptyView *)emptyView {
-//    if (!_emptyView) {
-//        _emptyView = [[EmptyView alloc] init];
-//        [self addSubview:_emptyView];
-//    }
-//    else {
-//        _emptyView.frame = self.bounds;
-//    }
-//    return _emptyView;
-//}
+- (EmptyView *)emptyView {
+    if (!_emptyView) {
+        _emptyView = [[EmptyView alloc] init];
+        [self addSubview:_emptyView];
+    }
+    else {
+        _emptyView.frame = self.bounds;
+    }
+    return _emptyView;
+}
 
-///// 初始化空视图
-//- (void)showEmptyView:(EmptyState)state eventBlock:(EmptyViewEventBlock)eventBlock {
-//    [self.emptyView hide];
-//    _emptyView = [[EmptyView alloc] init];
-//    [self addSubview:_emptyView];
-//    [self.emptyView setState:state];
-//    [self.emptyView setEvent:eventBlock];
-//    [self.emptyView show];
-//}
-///// 初始化空视图
-//- (void)showEmptyView:(EmptyState)state backButton:(BOOL)backButton eventBlock:(EmptyViewEventBlock)eventBlock {
-//    [self.emptyView hide];
-//    _emptyView = [[EmptyView alloc] init];
-//    [self addSubview:_emptyView];
-//    [self.emptyView setState:state];
-//    [self.emptyView setEvent:eventBlock];
-//    [self.emptyView show];
-//}
-///// 初始化空视图
-//- (void)showEmptyView:(EmptyState)state inView:(UIView *)inview eventBlock:(EmptyViewEventBlock)eventBlock {
-//    [self.emptyView hide];
-//    _emptyView = [[EmptyView alloc] init];
-//    [self addSubview:_emptyView];
-//    [self.emptyView setState:state];
-//    [self.emptyView setEvent:eventBlock];
-//    [self.emptyView show];
-//}
-///// 隐藏视图
-//- (void)hideEmptyView {
-//    [self.emptyView hide];
-//}
+/// 初始化空视图
+- (void)showEmptyView:(EmptyState)state eventBlock:(EmptyViewEventBlock)eventBlock {
+    [self.emptyView hide];
+    _emptyView = [[EmptyView alloc] init];
+    [self addSubview:_emptyView];
+    [self.emptyView setState:state];
+    [self.emptyView setEvent:eventBlock];
+    [self.emptyView show];
+}
+/// 初始化空视图
+- (void)showEmptyView:(EmptyState)state backButton:(BOOL)backButton eventBlock:(EmptyViewEventBlock)eventBlock {
+    [self.emptyView hide];
+    _emptyView = [[EmptyView alloc] init];
+    [self addSubview:_emptyView];
+    [self.emptyView setState:state];
+    [self.emptyView setEvent:eventBlock];
+    [self.emptyView show];
+}
+/// 初始化空视图
+- (void)showEmptyView:(EmptyState)state inView:(UIView *)inview eventBlock:(EmptyViewEventBlock)eventBlock {
+    [self.emptyView hide];
+    _emptyView = [[EmptyView alloc] init];
+    [self addSubview:_emptyView];
+    [self.emptyView setState:state];
+    [self.emptyView setEvent:eventBlock];
+    [self.emptyView show];
+}
+/// 隐藏视图
+- (void)hideEmptyView {
+    [self.emptyView hide];
+}
 
 @end
 

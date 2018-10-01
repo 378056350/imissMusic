@@ -58,7 +58,7 @@
 #import "AppProgressView.h"
 
 //================================= Base =====================================//
-#import "KKEmptyView.h"
+#import "EmptyView.h"
 #import "BaseView.h"
 #import "BaseNavigationController.h"
 #import "BaseItem.h"

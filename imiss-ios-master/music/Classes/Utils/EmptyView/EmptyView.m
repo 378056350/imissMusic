@@ -39,7 +39,7 @@
     return self;
 }
 - (void)initUI {
-    [self setBackgroundColor:kColor_White];
+    [self setBackgroundColor:kColor_BG];
     [self icon];
     [self name];
     [self desc];
@@ -79,6 +79,7 @@
         
         self.name.frame = CGRectMake(0, 80 + self.name.height / 2, self.width, 25);
         self.name.text = @"请联网后查看";
+        self.name.textColor = kColor_Text_Gary;
         
         self.desc.frame = CGRectMake(0, CGRectGetMaxY(self.name.frame), self.width, 20);
         self.desc.hidden = NO;
@@ -92,6 +93,7 @@
         
         self.name.frame = CGRectMake(0, 80 + self.name.height / 2, self.width, 25);
         self.name.text = @"请联网后查看";
+        self.name.textColor = kColor_Text_Gary;
         
         self.desc.frame = CGRectMake(0, CGRectGetMaxY(self.name.frame), self.width, 20);
         self.desc.hidden = NO;

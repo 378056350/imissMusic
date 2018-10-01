@@ -37,15 +37,15 @@
 
 - (void)initUI;
 
-////==================================== 空白 ====================================//
-///// 初始化空视图
-//- (void)showEmptyView:(EmptyState)state eventBlock:(EmptyViewEventBlock)eventBlock;
-///// 初始化空视图
-//- (void)showEmptyView:(EmptyState)state backButton:(BOOL)backButton eventBlock:(EmptyViewEventBlock)eventBlock;
-///// 初始化空视图
-//- (void)showEmptyView:(EmptyState)state inView:(UIView *)inview eventBlock:(EmptyViewEventBlock)eventBlock;
-///// 隐藏视图
-//- (void)hideEmptyView;
+//==================================== 空白 ====================================//
+/// 初始化空视图
+- (void)showEmptyView:(EmptyState)state eventBlock:(EmptyViewEventBlock)eventBlock;
+/// 初始化空视图
+- (void)showEmptyView:(EmptyState)state backButton:(BOOL)backButton eventBlock:(EmptyViewEventBlock)eventBlock;
+/// 初始化空视图
+- (void)showEmptyView:(EmptyState)state inView:(UIView *)inview eventBlock:(EmptyViewEventBlock)eventBlock;
+/// 隐藏视图
+- (void)hideEmptyView;
 
 
 

@@ -31,12 +31,8 @@
     [[RLMRealm getRealm] transactionWithBlock:^{
         UserModel *model = [RLMRealm loadUserInfo];
         if (self.index.section == 0) {
-            // 锁屏歌词
-            if (self.index.row == 0) {
-                model.lockLyrics = sender.on;
-            }
             // 夜间模式
-            else if (self.index.row == 1) {
+            if (self.index.row == 0) {
                 model.nightMode = sender.on;
             }
         }
@@ -66,13 +62,8 @@
     
     UserModel *model = [RLMRealm loadUserInfo];
     if (index.section == 0) {
-        // 锁屏歌词
-        if (index.row == 0) {
-            self.status = MineCellStatusSwitch;
-            self.sw.on = model.lockLyrics;
-        }
         // 夜间模式
-        else if (index.row == 1) {
+        if (index.row == 0) {
             self.status = MineCellStatusSwitch;
             self.sw.on = model.nightMode;
         }

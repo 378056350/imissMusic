@@ -126,23 +126,23 @@ typedef NS_ENUM(NSInteger, BarButtonItemState) {
     self.content.progress = progress;
 }
 
-////==================================== 空白 ====================================//
-///// 初始化空视图
-//- (void)showEmptyView:(EmptyState)state eventBlock:(EmptyViewEventBlock)eventBlock {
-//    [self.content showEmptyView:state eventBlock:eventBlock];
-//}
-///// 初始化空视图
-//- (void)showEmptyView:(EmptyState)state backButton:(BOOL)backButton eventBlock:(EmptyViewEventBlock)eventBlock {
-//    [self.content showEmptyView:state backButton:backButton eventBlock:eventBlock];
-//}
-///// 初始化空视图
-//- (void)showEmptyView:(EmptyState)state inView:(UIView *)inview eventBlock:(EmptyViewEventBlock)eventBlock {
-//    [self.content showEmptyView:state inView:inview eventBlock:eventBlock];
-//}
-///// 隐藏视图
-//- (void)hideEmptyView {
-//    [self.content hideEmptyView];
-//}
+//==================================== 空白 ====================================//
+/// 初始化空视图
+- (void)showEmptyView:(EmptyState)state eventBlock:(EmptyViewEventBlock)eventBlock {
+    [self.content showEmptyView:state eventBlock:eventBlock];
+}
+/// 初始化空视图
+- (void)showEmptyView:(EmptyState)state backButton:(BOOL)backButton eventBlock:(EmptyViewEventBlock)eventBlock {
+    [self.content showEmptyView:state backButton:backButton eventBlock:eventBlock];
+}
+/// 初始化空视图
+- (void)showEmptyView:(EmptyState)state inView:(UIView *)inview eventBlock:(EmptyViewEventBlock)eventBlock {
+    [self.content showEmptyView:state inView:inview eventBlock:eventBlock];
+}
+/// 隐藏视图
+- (void)hideEmptyView {
+    [self.content hideEmptyView];
+}
 
 #pragma mark - 线条
 - (void)hideNavigationBarLine {

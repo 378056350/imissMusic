@@ -8,6 +8,7 @@
 
 #import "SheetTable.h"
 #import "SheetTableCell.h"
+#import "MusicController.h"
 
 #pragma mark - 声明
 @interface SheetTable()<UITableViewDelegate, UITableViewDataSource>
@@ -48,6 +49,28 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    MusicController *vc = [[MusicController alloc] init];
+    vc.model = self.models[indexPath.row];
+    [self.viewController.navigationController pushViewController:vc animated:YES];
+}
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.hidden = YES;
+    
+    
+    POPBasicAnimation *basic = ({
+        POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
+        basic.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        basic.beginTime = CACurrentMediaTime() + indexPath.row * 0.1f;
+        basic.fromValue = @(CGPointMake(SCREEN_WIDTH * 1.5, cell.top + cell.height / 2));
+        basic.toValue   = @(CGPointMake(SCREEN_WIDTH * 0.5, cell.top + cell.height / 2));
+        basic.duration  = 0.3f;
+        basic;
+    });
+    [basic setAnimationDidStartBlock:^(POPAnimation *anim) {
+        cell.hidden = NO;
+    }];
+    [cell pop_addAnimation:basic forKey:@"basic"];
 }
 
 @end
