@@ -33,6 +33,10 @@
 * `MBProgressHUD `: 第三方HUD弹框
 * `JZNavigationExtension `: 第三方导航栏
 
+**Python**
+
+* `Django `: Python后端框架
+
 ## 实现功能
 欢迎页面、歌单页面、我的页面、播放页面
 
