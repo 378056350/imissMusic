@@ -7,7 +7,7 @@
 //
 
 #import "DetailController.h"
-#import "DetailCollectionTransition.h"
+#import "HomeDetailTransition.h"
 
 #define BTN_W 30
 #define BTN_PADDING countcoordinatesX(20)
@@ -148,7 +148,7 @@
 // 转场动画
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
     if (operation == UINavigationControllerOperationPop) {
-        return [DetailCollectionTransition transitionWithTransitionType:DetailCollectionTransitionTypePop];
+        return [HomeDetailTransition transitionWithTransitionType:HomeDetailTransitionTypePop];
     }
     return nil;
 }

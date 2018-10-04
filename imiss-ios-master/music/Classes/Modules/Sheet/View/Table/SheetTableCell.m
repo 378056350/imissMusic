@@ -11,9 +11,6 @@
 #pragma mark - 声明
 @interface SheetTableCell()
 
-@property (weak, nonatomic) IBOutlet UIImageView *icon;
-@property (weak, nonatomic) IBOutlet UILabel *name;
-@property (weak, nonatomic) IBOutlet UILabel *detail;
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *iconConstraintL;
 

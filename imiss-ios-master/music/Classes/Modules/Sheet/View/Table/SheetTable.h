@@ -10,9 +10,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#pragma mark - 代理
+@class SheetTable;
+@protocol SheetTableDelegate<NSObject>
+@optional
+- (void)sheetTable:(SheetTable *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+
+@end
+
+
+#pragma mark - 声明
 @interface SheetTable : UITableView
 
 @property (nonatomic, strong) NSMutableArray<SongModel *> *models;
+@property (nonatomic, weak  ) id<SheetTableDelegate> sheetDelegate;
 
 + (instancetype)initWithFrame:(CGRect)frame;
 

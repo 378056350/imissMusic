@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "SheetTableCell.h"
 
 @interface SheetController : BaseViewController
+
+@property (nonatomic, strong) SheetTableCell *selectCell;
 
 @end

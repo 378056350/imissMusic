@@ -10,8 +10,8 @@
 #import "HomeContent.h"
 #import "DetailController.h"
 #import "MusicController.h"
-#import "DetailCollectionTransition.h"
-#import "MusicCollectionTransition.h"
+#import "HomeDetailTransition.h"
+#import "HomeMusicTransition.h"
 
 #pragma mark - 声明
 @interface HomeController()<HomeTitleDelegate, HomeContentDelegate, HomeCollectionDelegate, UINavigationControllerDelegate>
@@ -104,22 +104,22 @@
     if (operation == UINavigationControllerOperationPush) {
         // 详情页
         if ([toVC isKindOfClass:[DetailController class]]) {
-            return [DetailCollectionTransition transitionWithTransitionType:DetailCollectionTransitionTypePush];
+            return [HomeDetailTransition transitionWithTransitionType:HomeDetailTransitionTypePush];
         }
         // 播放页
         else if ([toVC isKindOfClass:[MusicController class]]) {
-            return [MusicCollectionTransition transitionWithTransitionType:MusicCollectionTransitionPush];
+            return [HomeMusicTransition transitionWithTransitionType:HomeMusicTransitionPush];
         }
     }
     // Pop
     else if (operation == UINavigationControllerOperationPop) {
         // 详情页
         if ([toVC isKindOfClass:[DetailController class]]) {
-            return [DetailCollectionTransition transitionWithTransitionType:DetailCollectionTransitionTypePop];
+            return [HomeDetailTransition transitionWithTransitionType:HomeDetailTransitionTypePop];
         }
         // 播放页
         else if ([toVC isKindOfClass:[MusicController class]]) {
-            return [MusicCollectionTransition transitionWithTransitionType:MusicCollectionTransitionPop];
+            return [HomeMusicTransition transitionWithTransitionType:HomeMusicTransitionPop];
         }
     }
     return nil;

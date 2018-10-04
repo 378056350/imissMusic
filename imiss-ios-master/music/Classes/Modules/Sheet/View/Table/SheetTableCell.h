@@ -13,6 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SheetTableCell : BaseTableCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *icon;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *detail;
+
 @property (nonatomic, strong) SongModel *model;
 
 @end

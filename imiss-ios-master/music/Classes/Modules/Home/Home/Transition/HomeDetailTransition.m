@@ -1,32 +1,32 @@
 //
-//  DetailCollectionTransition.m
+//  HomeDetailTransition.m
 //  music
 //
 //  Created by zhongke on 2018/9/28.
 //  Copyright © 2018年 kk. All rights reserved.
 //
 
-#import "DetailCollectionTransition.h"
+#import "HomeDetailTransition.h"
 #import "HomeCollection.h"
 #import "DetailController.h"
 
 #pragma mark - 声明
-@interface DetailCollectionTransition ()
+@interface HomeDetailTransition ()
 
 @property (nonatomic, weak) UIViewController *vc;
 /**手势类型*/
-@property (nonatomic, assign) DetailCollectionTransitionType type;
+@property (nonatomic, assign) HomeDetailTransitionType type;
 
 @end
 
 #pragma mark - 实现
-@implementation DetailCollectionTransition
+@implementation HomeDetailTransition
 
 #pragma mark - 初始化
-+ (instancetype)transitionWithTransitionType:(DetailCollectionTransitionType)type {
++ (instancetype)transitionWithTransitionType:(HomeDetailTransitionType)type {
     return [[self alloc] initWithTransitionType:type];
 }
-- (instancetype)initWithTransitionType:(DetailCollectionTransitionType)type {
+- (instancetype)initWithTransitionType:(HomeDetailTransitionType)type {
     if (self = [super init]) {
         _type = type;
     }
@@ -35,10 +35,10 @@
 
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    if (_type == DetailCollectionTransitionTypePush) {
+    if (_type == HomeDetailTransitionTypePush) {
         return 0.8f;
     }
-    else if (_type == DetailCollectionTransitionTypePop) {
+    else if (_type == HomeDetailTransitionTypePop) {
         return 0.8f;
     }
     return 0;
@@ -47,17 +47,17 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
     // 为了将两种动画的逻辑分开，变得更加清晰，我们分开书写逻辑，
     switch (_type) {
-        case DetailCollectionTransitionTypePush:
-            [self presentAnimation:transitionContext];
+        case HomeDetailTransitionTypePush:
+            [self pushAnimation:transitionContext];
             break;
             
-        case DetailCollectionTransitionTypePop:
-            [self dismissAnimation:transitionContext];
+        case HomeDetailTransitionTypePop:
+            [self popAnimation:transitionContext];
             break;
     }
 }
 // 实现present动画逻辑代码
-- (void)presentAnimation:(id<UIViewControllerContextTransitioning>)transitionContext {
+- (void)pushAnimation:(id<UIViewControllerContextTransitioning>)transitionContext {
     HomeController *homeVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     DetailController *detailVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *containerView = [transitionContext containerView];
@@ -165,7 +165,7 @@
     }];
 }
 // 实现dismiss动画逻辑代码
-- (void)dismissAnimation:(id<UIViewControllerContextTransitioning>)transitionContext {
+- (void)popAnimation:(id<UIViewControllerContextTransitioning>)transitionContext {
     HomeController *homeVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     DetailController *detailVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIView *containerView = [transitionContext containerView];

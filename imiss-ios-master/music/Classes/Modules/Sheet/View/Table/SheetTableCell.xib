@@ -32,8 +32,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabelLabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqk-eZ-gcN">
-                        <rect key="frame" x="57" y="17.5" width="271" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqk-eZ-gcN">
+                        <rect key="frame" x="57" y="17.5" width="121" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -50,7 +50,6 @@
                     <constraint firstItem="UIp-eF-hCZ" firstAttribute="leading" secondItem="Fqk-eZ-gcN" secondAttribute="leading" id="MWb-Fh-Inm"/>
                     <constraint firstItem="Fqk-eZ-gcN" firstAttribute="bottom" secondItem="ays-qO-FPY" secondAttribute="bottom" constant="-2" id="NJd-6L-sJa"/>
                     <constraint firstAttribute="bottom" secondItem="ays-qO-FPY" secondAttribute="bottom" constant="10" id="SH6-sl-i2V"/>
-                    <constraint firstItem="XGc-16-KbB" firstAttribute="trailing" secondItem="Fqk-eZ-gcN" secondAttribute="trailing" id="Yo9-5K-XAb"/>
                     <constraint firstItem="ays-qO-FPY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ZBa-8p-68M"/>
                     <constraint firstItem="XGc-16-KbB" firstAttribute="height" secondItem="UIp-eF-hCZ" secondAttribute="height" id="ZYg-5h-Nit"/>
                     <constraint firstItem="ays-qO-FPY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="eed-aZ-M0w"/>

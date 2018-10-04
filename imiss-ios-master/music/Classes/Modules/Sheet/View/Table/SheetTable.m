@@ -8,7 +8,6 @@
 
 #import "SheetTable.h"
 #import "SheetTableCell.h"
-#import "MusicController.h"
 
 #pragma mark - 声明
 @interface SheetTable()<UITableViewDelegate, UITableViewDataSource>
@@ -50,10 +49,10 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    MusicController *vc = [[MusicController alloc] init];
-    vc.model = self.models[indexPath.row];
-    [self.viewController.navigationController pushViewController:vc animated:YES];
+    // 回调
+    if (self.sheetDelegate && [self.sheetDelegate respondsToSelector:@selector(sheetTable:didSelectRowAtIndexPath:)]) {
+        [self.sheetDelegate sheetTable:self didSelectRowAtIndexPath:indexPath];
+    }
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     cell.hidden = YES;

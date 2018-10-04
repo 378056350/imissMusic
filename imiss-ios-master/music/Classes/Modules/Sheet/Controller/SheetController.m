@@ -10,9 +10,11 @@
 #import "SheetCollection.h"
 #import "SheetTable.h"
 #import "SheetModel.h"
+#import "SheetMusicTransition.h"
+#import "MusicController.h"
 
 #pragma mark - 声明
-@interface SheetController()<SheetCollectionDelegate> {
+@interface SheetController()<SheetCollectionDelegate, SheetTableDelegate, UINavigationControllerDelegate> {
     // 当前选中Index
     NSInteger _selectIndex;
 }
@@ -108,6 +110,18 @@
     [self getSongWithSheetRequest];
 }
 
+#pragma mark - SheetTableDelegate
+// 点击Table
+- (void)sheetTable:(SheetTable *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    _selectCell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    MusicController *vc = [[MusicController alloc] init];
+    vc.model = self.songs[indexPath.row];
+    [self.navigationController pushViewController:vc animated:YES];
+
+}
+
+
 #pragma mark - get
 - (KKHeaderView *)header {
     if (!_header) {
@@ -139,10 +153,31 @@
             CGFloat top = CGRectGetMaxY(_collection.frame);
             CGRectMake(0, top, SCREEN_WIDTH, SCREEN_HEIGHT - TabbarHeight - top);
         })];
+        _table.sheetDelegate = self;
         _table.contentInset = UIEdgeInsetsMake(countcoordinatesX(10), 0, 0, 0);
         [self.collectionView addSubview:_table];
     }
     return _table;
+}
+
+#pragma mark - 系统
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.navigationController setDelegate:self];
+}
+
+#pragma mark - UINavigationControllerDelegate
+// 转场动画
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+    // Push
+    if (operation == UINavigationControllerOperationPush) {
+        return [SheetMusicTransition transitionWithTransitionType:SheetMusicTransitionTypePush];
+    }
+    // Pop
+    else if (operation == UINavigationControllerOperationPop) {
+        return [SheetMusicTransition transitionWithTransitionType:SheetMusicTransitionTypePop];
+    }
+    return nil;
 }
 
 @end

@@ -7,8 +7,9 @@
 //
 
 #import "MusicController.h"
-#import "MusicCollectionTransition.h"
 #import "MusicModules.h"
+#import "HomeMusicTransition.h"
+#import "SheetMusicTransition.h"
 
 #pragma mark - 声明
 @interface MusicController()<UINavigationControllerDelegate, MusicModulesDelegate>
@@ -203,7 +204,13 @@
 // 转场动画
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
     if (operation == UINavigationControllerOperationPop) {
-        return [MusicCollectionTransition transitionWithTransitionType:MusicCollectionTransitionPop];
+        BaseTabBarController *tab = (BaseTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+        if (tab.selectedIndex == 0) {
+            return [HomeMusicTransition transitionWithTransitionType:HomeMusicTransitionPop];
+        }
+        else if (tab.selectedIndex == 1) {
+            return [SheetMusicTransition transitionWithTransitionType:SheetMusicTransitionTypePop];
+        }
     }
     return nil;
 }

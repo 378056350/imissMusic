@@ -1,31 +1,31 @@
 //
-//  MusicCollectionTransition.m
+//  HomeMusicTransition.m
 //  music
 //
 //  Created by zhongke on 2018/9/28.
 //  Copyright © 2018年 kk. All rights reserved.
 //
 
-#import "MusicCollectionTransition.h"
+#import "HomeMusicTransition.h"
 #import "MusicController.h"
 
 #pragma mark - 声明
-@interface MusicCollectionTransition()
+@interface HomeMusicTransition()
 
 @property (nonatomic, weak) UIViewController *vc;
 /**手势类型*/
-@property (nonatomic, assign) MusicCollectionTransitionType type;
+@property (nonatomic, assign) HomeMusicTransitionType type;
 
 @end
 
 #pragma mark - 实现
-@implementation MusicCollectionTransition
+@implementation HomeMusicTransition
 
 #pragma mark - 初始化
-+ (instancetype)transitionWithTransitionType:(MusicCollectionTransitionType)type {
++ (instancetype)transitionWithTransitionType:(HomeMusicTransitionType)type {
     return [[self alloc] initWithTransitionType:type];
 }
-- (instancetype)initWithTransitionType:(MusicCollectionTransitionType)type {
+- (instancetype)initWithTransitionType:(HomeMusicTransitionType)type {
     if (self = [super init]) {
         _type = type;
     }
@@ -34,10 +34,10 @@
 
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    if (_type == MusicCollectionTransitionPush) {
+    if (_type == HomeMusicTransitionPush) {
         return 0.5f;
     }
-    else if (_type == MusicCollectionTransitionPop) {
+    else if (_type == HomeMusicTransitionPop) {
         return 0.5f;
     }
     return 0;
@@ -46,17 +46,17 @@
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
     // 为了将两种动画的逻辑分开，变得更加清晰，我们分开书写逻辑，
     switch (_type) {
-        case MusicCollectionTransitionPush:
-            [self presentAnimation:transitionContext];
+        case HomeMusicTransitionPush:
+            [self pushAnimation:transitionContext];
             break;
             
-        case MusicCollectionTransitionPop:
-            [self dismissAnimation:transitionContext];
+        case HomeMusicTransitionPop:
+            [self popAnimation:transitionContext];
             break;
     }
 }
 // 实现present动画逻辑代码
-- (void)presentAnimation:(id<UIViewControllerContextTransitioning>)transitionContext {
+- (void)pushAnimation:(id<UIViewControllerContextTransitioning>)transitionContext {
     BaseTabBarController *tab = (BaseTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
     [tab hideTabbar:YES];
     // 首页
@@ -254,7 +254,7 @@
     }];
 }
 // 实现dismiss动画逻辑代码
-- (void)dismissAnimation:(id<UIViewControllerContextTransitioning>)transitionContext {
+- (void)popAnimation:(id<UIViewControllerContextTransitioning>)transitionContext {
     // 首页
     HomeController *homeVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     // 播放
