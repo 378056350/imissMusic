@@ -1,0 +1,16 @@
+{
+  "presets": ["react-native"],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./"],
+      "alias": [
+        {
+          "@TABBAR_PATH":"./src/module/tabbar"
+        },
+        {
+        "@STORE_PTAH":"./src/redux/store"
+        }
+      ]
+    }]
+  ]
+}
