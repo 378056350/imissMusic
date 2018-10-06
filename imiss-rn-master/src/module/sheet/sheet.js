@@ -1,29 +1,23 @@
 import {
   StyleSheet,
   Text,
-  View,
-  Button
+  View
 } from 'react-native';
 import React, { Component } from 'react'
 
-export default class Home extends Component {
-  
+export default class Sheet extends Component {
   static navigationOptions = {
-    title: 'Home',
+    title: 'Sheet',
   };
-
   render() {
-    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to Hom123e!
+          Welcome to Sheet!
         </Text>
-        <Button 
-          onPress={() => navigate('Music')}
-          title="Learn More"
-        />
-        
+        <Text style={styles.instructions}>
+          To get started, edit App.js
+        </Text>
       </View>
     );
   }
