@@ -4,34 +4,17 @@
     ["module-resolver", {
       "root": ["./"],
       "alias": [
-        {
-          "@TABBAR_PATH":"./src/module/tabbar"
-        },
-        {
-          "@STORE_PATH":"./src/redux/store"
-        },
-        {
-          "@HOME_PATH":"./src/module/home"
-        },
-        {
-          "@SHEET_PATH":"./src/module/sheet"
-        },
-        {
-          "@MINE_PATH":"./src/module/mine"
-        },
-        {
-          "@MUSIC_PATH":"./src/module/music"
-        },
-        {
-          "@UTIL_PATH":"./src/util"
-        },
-        {
-          "@COMPONENT_PATH":"./src/component"
-        },
-        {
-          "@RESOURCE_PATH":"./src/assets"
-        }
-      ]
+        {"@TABBAR_PATH":"./src/module/tabbar"},
+        {"@STORE_PATH":"./src/redux/store"},
+        {"@HOME_PATH":"./src/module/home"},
+        {"@SHEET_PATH":"./src/module/sheet"},
+        {"@MINE_PATH":"./src/module/mine"},
+        {"@MUSIC_PATH":"./src/module/music"},
+        {"@UTIL_PATH":"./src/util"},
+        {"@COMPONENT_PATH":"./src/component"},
+        {"@RESOURCE_PATH":"./src/assets"}
+      ],
+      "extensions": [".js", ".ios.js", ".android.js"]
     }]
   ]
 }

@@ -74,6 +74,7 @@ global.SCREEN_HEIGHT = screenH;
 
 global.MainColor = '#FE6E6F';
 global.kColor_BG = '#F5F5F5';
+global.kColor_BG_Dark = '#F1F1F1';
 global.kColor_Text_Black = '#231815';
 global.kColor_Text_Gary = '#999999';
 global.kColor_Text_Light = '#8B8B8B';

@@ -9,6 +9,7 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import Home from '@HOME_PATH/home'
 import Sheet from '@SHEET_PATH/sheet'
 import Mine from '@MINE_PATH/Mine'
+import About from '@MINE_PATH/About'
 import Music from '@MUSIC_PATH/music'
 
 const HomeStack = createStackNavigator (
@@ -31,6 +32,46 @@ const HomeStack = createStackNavigator (
     gesturesEnabled: 'false'
   }
 );
+HomeStack.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+    tabBarVisible = false;
+  }
+  return {
+    tabBarVisible,
+  };
+};
+
+const MineStack = createStackNavigator (
+  { 
+    Mine: { 
+      screen: Mine,
+      navigationOptions: {
+        header: null
+      }
+    },
+    About: { 
+      screen: About,
+      navigationOptions: {
+        header: null
+      }
+    },
+  },
+  {
+    mode: 'card',
+    gesturesEnabled: 'false'
+  }
+);
+// MineStack.navigationOptions = ({ navigation }) => {
+//   let tabBarVisible = true;
+//   if (navigation.state.index > 0) {
+//     tabBarVisible = false;
+//   }
+//   return {
+//     tabBarVisible,
+//   };
+// };
+
 
 const TabMainScreenNavigator = createBottomTabNavigator (
   {
@@ -57,7 +98,7 @@ const TabMainScreenNavigator = createBottomTabNavigator (
       }
     },
     Mine: { 
-      screen: Mine,
+      screen: MineStack,
       navigationOptions: {
         tabBarLabel: '我的',
         tabBarIcon: ({focused}) => (                

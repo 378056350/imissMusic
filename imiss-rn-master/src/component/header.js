@@ -5,13 +5,14 @@ import {
   Button
 } from 'react-native';
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class Header extends Component {
   
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.name}>Header</Text>
+        <Text style={styles.name}>{this.props.name}</Text>
       </View>
     );
   }
@@ -31,4 +32,10 @@ const styles = StyleSheet.create({
   }
 });
 
+Header.propTypes = {
+  name: PropTypes.string,
+};
+Header.defaultProps = {
+  name: '',
+};
 
