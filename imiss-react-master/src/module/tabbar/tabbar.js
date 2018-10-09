@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { MainColor, kColor_Text_Gary } from '@PUBLIC_PATH'
 import { TabBar } from 'antd-mobile';
 import Home from '@HOME_PATH/home'
-import Account from '@ACCOUNT_PATH/account'
+import Sheet from '@SHEET_PATH/sheet'
 import Mine from '@MINE_PATH/mine'
 
 export default class tabbar extends Component {
@@ -65,21 +65,21 @@ export default class tabbar extends Component {
           hidden={this.state.hidden}
         >
           {this.tabbar_item(
-            "首页", 
+            "", 
             <Home/>, 
             require('@IMAGE_PATH/cm4_btm_icn_discovery@3x.png'), 
             require('@IMAGE_PATH/cm4_btm_icn_discovery_prs@3x.png'), 
             'blueTab')
           }
           {this.tabbar_item(
-            "我的", 
-            <Account/>, 
+            "", 
+            <Sheet/>, 
             require('@IMAGE_PATH/cm4_btm_icn_music@3x.png'), 
             require('@IMAGE_PATH/cm4_btm_icn_music_prs@3x.png'), 
             'redTab')
           }
           {this.tabbar_item(
-            "账户", 
+            "", 
             <Mine/>, 
             require('@IMAGE_PATH/cm4_btm_icn_account@3x.png'), 
             require('@IMAGE_PATH/cm4_btm_icn_account_prs@3x.png'), 

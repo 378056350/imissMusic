@@ -215,7 +215,7 @@ module.exports = {
       // 设置别名
       '@TABBAR_PATH': path.resolve(__dirname, '../src/module/tabbar'),
       '@HOME_PATH': path.resolve(__dirname, '../src/module/home'),
-      '@ACCOUNT_PATH': path.resolve(__dirname, '../src/module/account'),
+      '@SHEET_PATH': path.resolve(__dirname, '../src/module/sheet'),
       '@MINE_PATH': path.resolve(__dirname, '../src/module/mine'),
       '@PUBLIC_PATH': path.resolve(__dirname, '../src/util/public'),
       '@CSS_PATH': path.resolve(__dirname, '../src/assets/css'),

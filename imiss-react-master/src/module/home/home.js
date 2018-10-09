@@ -1,5 +1,5 @@
 import '@CSS_PATH/home.less'
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React, { Component } from 'react'
 import { InputItem, Carousel, WingBlank } from 'antd-mobile';
 import Server from '../../network/server';
@@ -35,7 +35,8 @@ export default class home extends Component {
   render() {
     return (
       <div className="home">
-        {this.navbar()}
+        <div>asd</div>
+        <Link to='/Ranking'>首页首页首页首页</Link>
       </div>
     )
   }
