@@ -1,93 +1,77 @@
-import '@CSS_PATH/tabbar.less'
-import React, { Component } from 'react'
-import { MainColor, kColor_Text_Gary } from '@PUBLIC_PATH'
-import { TabBar } from 'antd-mobile';
-import Home from '@HOME_PATH/home'
-import Sheet from '@SHEET_PATH/sheet'
-import Mine from '@MINE_PATH/mine'
+import '@CSS_PATH/tabbar.less';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import RestoreIcon from '@material-ui/icons/Restore';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
-export default class tabbar extends Component {
+import Home from '@HOME_PATH/home';
+import Sheet from '@SHEET_PATH/sheet';
+import Mine from '@MINE_PATH/mine';
+
+
+class SimpleBottomNavigation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'blueTab',
-      hidden: false,
+      value: 0,
     };
   }
 
-  tabbar_item = (title, object, img, select_img, select_tab)=>{
-    return (
-      <TabBar.Item
-        title={title}
-        key="Life"
-        icon={
-          <img 
-            style={{
-              width: '22px',
-              height: '22px',
-              marginBottom: '2px'
-            }}
-            src={img}
-            alt={""}
-          />
-        }
-        selectedIcon={
-          <img 
-            style={{
-              width: '22px',
-              height: '22px',
-              marginBottom: '2px'
-            }}
-            src={select_img}
-            alt={""}
-          />
-        }
-        selected={this.state.selectedTab === select_tab}
-        onPress={() => {
-          this.setState({
-            selectedTab: select_tab,
-          });
-        }}
-      >
-        {object}
-      </TabBar.Item>
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
 
-    )
+  _onChang = (event, value) => {
+    this.setState({ value });
+  }
+
+  // 显示某个页面
+  displayModule = () => {
+    var index = this.state.value
+    var arr = [];
+    arr.push (<div className={index == 0 ? "module" : "module hide"}><Home/></div>)
+    arr.push (<div className={index == 1 ? "module" : "module hide"}><Sheet/></div>)
+    arr.push (<div className={index == 2 ? "module" : "module hide"}><Mine/></div>)
+    return arr;
   }
 
   render() {
+    const { classes } = this.props;
+    const { value } = this.state;
+
     return (
       <div className="tabbar">
-        <TabBar
-          unselectedTintColor={kColor_Text_Gary}
-          tintColor={MainColor}
-          barTintColor="white"
-          hidden={this.state.hidden}
+        <div className="content">
+          {this.displayModule()}
+        </div>
+        <BottomNavigation
+          value={value}
+          onChange={this.handleChange}
+          className={classes.root}
         >
-          {this.tabbar_item(
-            "", 
-            <Home/>, 
-            require('@IMAGE_PATH/cm4_btm_icn_discovery@3x.png'), 
-            require('@IMAGE_PATH/cm4_btm_icn_discovery_prs@3x.png'), 
-            'blueTab')
-          }
-          {this.tabbar_item(
-            "", 
-            <Sheet/>, 
-            require('@IMAGE_PATH/cm4_btm_icn_music@3x.png'), 
-            require('@IMAGE_PATH/cm4_btm_icn_music_prs@3x.png'), 
-            'redTab')
-          }
-          {this.tabbar_item(
-            "", 
-            <Mine/>, 
-            require('@IMAGE_PATH/cm4_btm_icn_account@3x.png'), 
-            require('@IMAGE_PATH/cm4_btm_icn_account_prs@3x.png'), 
-            'greenTab')
-          }
-        </TabBar>
+          <BottomNavigationAction label="" icon={<RestoreIcon />} />
+          <BottomNavigationAction label="" icon={<FavoriteIcon />} />
+          <BottomNavigationAction label="" icon={<LocationOnIcon />} />
+        </BottomNavigation>
       </div>
     );
   }
 }
 
+
+const styles = {
+  root: {
+    width: '100%',
+    borderTop: '1px solid lightgray;'
+  }
+};
+
+SimpleBottomNavigation.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(SimpleBottomNavigation);

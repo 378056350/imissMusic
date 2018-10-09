@@ -1,8 +1,7 @@
 import '@CSS_PATH/mine.less'
 import React, { Component } from 'react'
 import { AdjustFont } from '@PUBLIC_PATH'
-import { NavBar, List, Switch, Button } from 'antd-mobile'
-import Cell from '@COMPONENT_PATH/Cell'
+import Header from '@COMPONENT_PATH/Header'
 
 export default class mine extends Component {
 
@@ -13,22 +12,11 @@ export default class mine extends Component {
     };
   }
   
-  // 导航栏
-  navbar = ()=>{
-    return (
-      <NavBar className="nav">
-      </NavBar>
-    )
-  }
-
-  
-
-
   // 主视图
   render() {
     return (
-      <div className="mine">
-        {this.navbar()}
+      <div className="kk_mine">
+        <Header name={"AAAA"}/>
       </div>
     );
   }
