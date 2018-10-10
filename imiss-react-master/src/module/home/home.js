@@ -1,43 +1,43 @@
 import '@CSS_PATH/home.less'
-import { Link } from "react-router-dom";
 import React, { Component } from 'react'
-import Server from '../../network/server';
+import PropTypes from 'prop-types'
+import Paper from '@material-ui/core/Paper'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
+import HomePopular from '@HOME_PATH/homePopular'
+import HomeRecommend from '@HOME_PATH/homeRecommend'
 
-export default class home extends Component {
+export default class home extends React.Component {
 
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
     this.state = {
-      data: ['1', '2', '3'],
-      imgHeight: 176,
+      value: 0
     };
   }
 
-  componentDidMount() {
-    
-  }
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
 
-  //============================ 点击 ============================//
-  onItemClick = (index)=>{
-    
-  }
-
-  //============================ 界面 ============================//
-  // 导航栏
-  navbar = ()=>{
-    return (
-      <div className="nav">
-      
-      </div>
-    )
-  }
   render() {
+    const { value } = this.state;
     return (
-      <div className="home">
-        <div>asd</div>
-        <Link to='/Ranking'>asdasdsadas</Link>
-      </div>
-    )
+      <Paper className="kk_home">
+        <Tabs
+          value={this.state.value}
+          onChange={this.handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          centered
+        >
+          <Tab label="Popular" />
+          <Tab label="Recommend" />
+        </Tabs>
+        {value === 0 && <HomePopular/>}
+        {value === 1 && <HomeRecommend/>}
+      </Paper>
+    );
   }
 }
 
